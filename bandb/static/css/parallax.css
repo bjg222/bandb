@@ -1,9 +1,52 @@
 @charset "utf-8";
 /* CSS Document */
 
-.plax-viewport {
+.plx-viewport {
 	height: 100vh;
 	overflow-x: hidden;
 	overflow-y: auto;
 	perspective: 300px;
+}
+.plx-group {
+	position: relative;
+	height: 100vh;
+	transform-style: preserve-3d;
+}
+.plx-layer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+.plx-layer.plx-near {
+	transform: translateZ(180px) scale(0.4);
+}
+.plx-layer.plx-fore {
+	transform: translateZ(90px) scale(0.7);
+}
+.plx-layer.plx-base {
+	transform: translateZ(0);
+}
+.plx-layer.plx-back {
+	transform: translateZ(-300px) scale(2);
+}
+.plx-layer.plx-deep {
+	transform: translateZ(-600px) scale(3);
+}
+.debug {
+	position: fixed;
+	top: 0;
+	left: 0.5em;
+	z-index: 999;
+	background: rgba(0,0,0,0.85);
+	color: #fff;
+	padding: 0.5em;
+	border-radius: 0 0 5px 5px;
+}
+.debug-on .plx-group {
+	transform: translate3d(700px, 0, -800px) rotateY(40deg);
+}
+.debug-on .plx-layer {
+	border: 1px black solid
 }
