@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* CSS Document */
+
+.plax-viewport {
+	height: 100vh;
+	overflow-x: hidden;
+	overflow-y: auto;
+	perspective: 300px;
+}
