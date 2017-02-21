@@ -1,0 +1,139 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>B and B</title>
+<link href="../static/css/materialize.css" rel="stylesheet" type="text/css">
+<link href="../static/css/parallax.css" rel="stylesheet" type="text/css">
+<style>
+* {
+  box-sizing: border-box;
+}
+#group-image {
+  z-index: 1;
+}
+#group-image .plx-base {
+  height: 750px;
+}
+#group-image #us {
+  background-image: url(../static/img/us.png);
+  background-size: auto 40%
+}
+#group-image #trees {
+  background-image: url(../static/img/trees.png);
+  background-size: cover;
+  background-position: top center;
+  left: -0.5%;
+  top: -2%
+}
+#group-image #moon {
+  background-image: url(../static/img/moon.png);
+  background-size: auto 40%;
+  background-position: 52% -15%;
+}
+#group-image #title #names {
+  margin: 0 auto;
+  padding-top: 130px;
+  color: whitesmoke;
+  font-size: 3em;
+  font-family: cursive;
+  display: table;
+}
+#group-image #title h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 6rem
+}
+#group-image #title #billy {
+  padding-right: 2.5em;
+}
+#group-image #title #betsy {
+  padding-left: 2.5em;
+}
+#group-image #title #billy::first-letter, #group-image #title #betsy::first-letter {
+  font-size: 1.5em;
+}
+#group-intro {
+  z-index: 2;
+}
+#group-intro .plx-base {
+  background-color: orange;
+}
+</style>
+<style>
+#hero-text {
+  z-index: 1;
+}
+#hero-text .plx-base {
+  height: 800px;
+}
+#hero-text #bg {
+  background-image: url(../static/img/ilu_bg.jpg);
+}
+#hero-text #l1 {
+  background-image: url(../static/img/ilu_03.png);
+  background-position: left bottom;
+}
+#hero-text #l2 {
+  background-image: url(../static/img/ilu_02.png);
+}
+#hero-text #man {
+  background-image: url(../static/img/ilu_man.png);
+  background-position: right bottom;
+}
+#hero-text #ol {
+  background-image: url(../static/img/ilu_overlay.png);
+}
+#hero-text #l3 {
+  background-image: url(../static/img/ilu_01.png);
+}
+</style>
+</head>
+
+<body>
+<div class="debug">
+  <input name="debugcheck" id="debugcheck" type="checkbox">
+  <label for="debugcheck">Debug</label>
+</div>
+<div class="plx-viewport"> 
+  <!--  <div id="hero-text" class="plx-group">
+    <div id="bg" class="plx-layer plx-image plx-z-n600"></div>
+    <div id="l1" class="plx-layer plx-image plx-z-n450"></div>
+    <div id="l2" class="plx-layer plx-image plx-z-n300"></div>
+    <div id="man" class="plx-layer plx-image plx-z-n200"></div>
+    <div id="ol" class="plx-layer plx-image plx-z-n100"></div>
+    <div id="l3" class="plx-layer plx-image plx-base"></div>
+  </div>
+  <div id="group-intro" class="plx-group">
+    <div class="plx-layer plx-base">
+      <h1 style="height:2000px;margin:0 auto;padding:10;">Blah, blah, blah</h1>
+    </div>
+  </div>-->
+  <div id="group-image" class="plx-group">
+    <div id="us" class="plx-layer plx-image plx-base"></div>
+    <div id="trees" class="plx-layer plx-image plx-z-n200"></div>
+    <div id="moon" class="plx-layer plx-image plx-z-n300"></div>
+    <div id="title" class="plx-layer plx-content plx-z-n125">
+      <div id="names">
+        <h1 id="billy">Billy</h1>
+        <h1 id="and">&</h1>
+        <h1 id="betsy">Betsy</h1>
+      </div>
+    </div>
+  </div>
+  <div id="group-intro" class="plx-group">
+    <div class="plx-layer plx-base">
+      <h1 style="height:2000px;margin:0 auto;padding:10;">Blah, blah, blah</h1>
+    </div>
+  </div>
+</div>
+<script>
+  var debugInput = document.querySelector("input");
+  function updateDebugState() {
+      document.body.classList.toggle('debug-on', debugInput.checked);
+  }
+  debugInput.addEventListener("click", updateDebugState);
+  updateDebugState();
+</script>
+</body>
+</html>
