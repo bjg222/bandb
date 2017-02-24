@@ -2,6 +2,22 @@
 
 @import "reset/reset";
 @import url("http://fonts.googleapis.com/icon?family=Material+Icons");
+@import "materialize/mixins";
+
+$primary-color: color("blue", "darken-4");
+$secondary-color: color("blue-grey", "lighten-5");
+
 @import "materialize/materialize";
 @import "parallax/parallax";
 @import "flex/flex";
+
+.debug {
+  position: fixed;
+  top: 0;
+  left: 0.5em;
+  z-index: 999;
+  background: rgba(0,0,0,0.85);
+  color: #fff;
+  padding: 0.5em;
+  border-radius: 0 0 5px 5px;
+}

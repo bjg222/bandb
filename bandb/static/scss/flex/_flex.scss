@@ -1,4 +1,18 @@
 @charset "UTF-8";
 .flex {
-  display: flex
+  width: 70%;
+  max-width: $large-screen;
+  margin: 0 auto;
+  padding: 10px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: stretch;
+}
+.flex div {
+  padding: 10px;
+}
+.debug-on .flex div {
+  outline: 1px black dotted;
 }

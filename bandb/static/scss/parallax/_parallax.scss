@@ -85,16 +85,6 @@ html, body {
     }
   }
 }
-.debug {
-  position: fixed;
-  top: 0;
-  left: 0.5em;
-  z-index: 999;
-  background: rgba(0,0,0,0.85);
-  color: #fff;
-  padding: 0.5em;
-  border-radius: 0 0 5px 5px;
-}
 .debug-on .plx-group {
   transform: translate3d(700px, 0, -800px) rotateY(40deg);
 }
