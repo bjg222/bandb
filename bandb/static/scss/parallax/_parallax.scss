@@ -76,6 +76,9 @@ html, body {
   @extend %plx-layer;
   position: relative;
   @include translateZ-and-scale(0px);
+  &.solid {
+    background-color: $background-color;
+  }
 }
 @each $d in $layer-distances {
   @if ($d != 0px) {

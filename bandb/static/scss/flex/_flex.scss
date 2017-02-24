@@ -1,7 +1,13 @@
 @charset "UTF-8";
+$flex-container-width: 0.7;
 .flex {
-  width: 70%;
-  max-width: $large-screen;
+  @media #{$small-and-down} {
+    width: 100%;
+  }
+  @media #{$medium-and-up} {
+    width: $flex-container-width * 100%;
+    max-width: $large-screen;
+  }
   margin: 0 auto;
   padding: 10px;
   display: flex;
@@ -10,8 +16,19 @@
   align-content: stretch;
   align-items: stretch;
 }
-.flex div {
+.flex > div {
   padding: 10px;
+  margin: 10px;
+  flex-basis: 0;
+  flex: 1 1 0;
+  @media #{$small-and-down} {
+    width: 100%;
+    flex-basis: auto;
+  }
+  @media #{$medium-and-up} {
+    min-width: $small-screen * $flex-container-width * 0.7;
+  }
+  
 }
 .debug-on .flex div {
   outline: 1px black dotted;

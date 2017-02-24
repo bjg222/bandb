@@ -4,10 +4,39 @@
 @import url("http://fonts.googleapis.com/icon?family=Material+Icons");
 @import "materialize/mixins";
 
-$primary-color: color("blue", "darken-4");
-$secondary-color: color("blue-grey", "lighten-5");
+$navy: (
+  "base":       navy,
+  "lighten-5":  scale-color(navy, $lightness: 85%),
+  "lighten-4":  scale-color(navy, $lightness: 68%),
+  "lighten-3":  scale-color(navy, $lightness: 51%),
+  "lighten-2":  scale-color(navy, $lightness: 34%),
+  "lighten-1":  scale-color(navy, $lightness: 17%),
+  "darken-1":   scale-color(navy, $lightness: -17%),
+  "darken-2":   scale-color(navy, $lightness: -34%),
+  "darken-3":   scale-color(navy, $lightness: -51%),
+  "darken-4":   scale-color(navy, $lightness: -68%)
+);
+$shades: map-merge($shades, ("ivory": ivory, "silver": silver));
+$colors: map-merge($colors, ("shades": $shades, "navy": $navy));
+
+$background-color: color("navy", "darken-2");
+$card-color: color("shades", "ivory");
+$primary-color: color("navy", "base");
+$secondary-color: color("amber", "lighten-3");
+$error-color: color("red", "darken-3");
+$link-color: color("teal", "darken-1");
 
 @import "materialize/materialize";
+
+p {
+  text-align: justify;
+  margin-bottom: 10px !important;
+}
+
+.card {
+  background-color: $card-color;
+}
+
 @import "parallax/parallax";
 @import "flex/flex";
 
