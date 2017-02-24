@@ -22,9 +22,12 @@ class Comment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.String(4096))
 
-
-@app.route('/', methods=["GET", "POST"])
+@app.route('/')
 def index():
+    return render_template("parallax.html")
+
+@app.route('/form', methods=["GET", "POST"])
+def form():
     if request.method == "GET":
         return render_template("main_page.html", comments=Comment.query.all())
     comment = Comment(content=request.form["contents"])
