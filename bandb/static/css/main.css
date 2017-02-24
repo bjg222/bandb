@@ -1,0 +1,240 @@
+/* line 30, ../scss/parallax/_parallax.scss */
+html, body {
+  transform: translateZ(0);
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100%; }
+
+/* line 37, ../scss/parallax/_parallax.scss */
+.plx-viewport {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 300px;
+  position: absolute;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+/* line 49, ../scss/parallax/_parallax.scss */
+.plx-group {
+  position: relative;
+  transform-style: preserve-3d;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+/* line 56, ../scss/parallax/_parallax.scss */
+.plx-base, .plx-n600, .plx-n500, .plx-n400, .plx-n300, .plx-n250, .plx-n200, .plx-n150, .plx-n125, .plx-n100, .plx-n75, .plx-n50, .plx-n25, .plx-25, .plx-50, .plx-75, .plx-100, .plx-80, .plx-60, .plx-40, .plx-20, .plx-n20, .plx-n40, .plx-n60, .plx-n30, .plx-n10, .plx-10, .plx-30, .plx-70, .plx-90, .plx-120, .plx-140, .plx-160, .plx-180, .plx-200 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-attachment: scroll;
+  text-align: center; }
+
+/* line 74, ../scss/parallax/_parallax.scss */
+.plx-base {
+  position: relative;
+  transform: translateZ(0px) scale(1); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-n600 {
+  transform: translateZ(-600px) scale(3); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-n500 {
+  transform: translateZ(-500px) scale(2.66667); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-n400 {
+  transform: translateZ(-400px) scale(2.33333); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-n300 {
+  transform: translateZ(-300px) scale(2); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-n250 {
+  transform: translateZ(-250px) scale(1.83333); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-n200 {
+  transform: translateZ(-200px) scale(1.66667); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-n150 {
+  transform: translateZ(-150px) scale(1.5); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-n125 {
+  transform: translateZ(-125px) scale(1.41667); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-n100 {
+  transform: translateZ(-100px) scale(1.33333); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-n75 {
+  transform: translateZ(-75px) scale(1.25); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-n50 {
+  transform: translateZ(-50px) scale(1.16667); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-n25 {
+  transform: translateZ(-25px) scale(1.08333); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-25 {
+  transform: translateZ(25px) scale(0.91667); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-50 {
+  transform: translateZ(50px) scale(0.83333); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-75 {
+  transform: translateZ(75px) scale(0.75); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-100 {
+  transform: translateZ(100px) scale(0.66667); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-80 {
+  transform: translateZ(80px) scale(0.73333); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-60 {
+  transform: translateZ(60px) scale(0.8); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-40 {
+  transform: translateZ(40px) scale(0.86667); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-20 {
+  transform: translateZ(20px) scale(0.93333); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-n20 {
+  transform: translateZ(-20px) scale(1.06667); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-n40 {
+  transform: translateZ(-40px) scale(1.13333); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-n60 {
+  transform: translateZ(-60px) scale(1.2); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-n50 {
+  transform: translateZ(-50px) scale(1.16667); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-n40 {
+  transform: translateZ(-40px) scale(1.13333); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-n30 {
+  transform: translateZ(-30px) scale(1.1); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-n20 {
+  transform: translateZ(-20px) scale(1.06667); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-n10 {
+  transform: translateZ(-10px) scale(1.03333); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-10 {
+  transform: translateZ(10px) scale(0.96667); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-20 {
+  transform: translateZ(20px) scale(0.93333); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-30 {
+  transform: translateZ(30px) scale(0.9); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-40 {
+  transform: translateZ(40px) scale(0.86667); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-50 {
+  transform: translateZ(50px) scale(0.83333); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-60 {
+  transform: translateZ(60px) scale(0.8); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-70 {
+  transform: translateZ(70px) scale(0.76667); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-80 {
+  transform: translateZ(80px) scale(0.73333); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-90 {
+  transform: translateZ(90px) scale(0.7); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-100 {
+  transform: translateZ(100px) scale(0.66667); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-120 {
+  transform: translateZ(120px) scale(0.6); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-140 {
+  transform: translateZ(140px) scale(0.53333); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-160 {
+  transform: translateZ(160px) scale(0.46667); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-180 {
+  transform: translateZ(180px) scale(0.4); }
+
+/* line 81, ../scss/parallax/_parallax.scss */
+.plx-200 {
+  transform: translateZ(200px) scale(0.33333); }
+
+/* line 87, ../scss/parallax/_parallax.scss */
+.debug {
+  position: fixed;
+  top: 0;
+  left: 0.5em;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 0.5em;
+  border-radius: 0 0 5px 5px; }
+
+/* line 97, ../scss/parallax/_parallax.scss */
+.debug-on .plx-group {
+  transform: translate3d(700px, 0, -800px) rotateY(40deg); }
+
+/* line 100, ../scss/parallax/_parallax.scss */
+.debug-on .plx-layer, .debug-on .plx-base {
+  outline: 1px black solid; }

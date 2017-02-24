@@ -1,12 +1,11 @@
 ﻿<!doctype html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>B and B</title>
-<link href="../static/css/materialize.css" rel="stylesheet" type="text/css">
-<link href="../static/css/parallax.css" rel="stylesheet" type="text/css">
+<link href="../static/css/main.css" rel="stylesheet" type="text/css">
 <style>
-  * { box-sizing: border-box; }
   #group-image { z-index: 1; }
   #group-image .plx-base { height: 750px; }
   #group-image #us { background-image: url(../static/img/us.png); background-size: auto 40% }
@@ -21,34 +20,8 @@
   #group-intro { z-index: 2; }
   #group-intro .plx-base { background-color: orange;}
 </style>
-<style>
-  #hero-text {
-    z-index: 1;
-  }
-  #hero-text .plx-base {
-    height: 800px;
-  }
-  #hero-text #bg {
-    background-image: url(../static/img/ilu_bg.jpg);
-  }
-  #hero-text #l1 {
-    background-image: url(../static/img/ilu_03.png);
-    background-position: left bottom;
-  }
-  #hero-text #l2 {
-    background-image: url(../static/img/ilu_02.png);
-  }
-  #hero-text #man {
-    background-image: url(../static/img/ilu_man.png);
-    background-position: right bottom;
-  }
-  #hero-text #ol {
-    background-image: url(../static/img/ilu_overlay.png);
-  }
-  #hero-text #l3 {
-    background-image: url(../static/img/ilu_01.png);
-  }
-</style>
+<script src="../static/js/jquery-3.1.1.js"></script>
+<script src="../static/js/materialize.js"></script>
 </head>
 
 <body>
@@ -57,24 +30,11 @@
   <label for="debugcheck">Debug</label>
 </div>
 <div class="plx-viewport">
-<!--  <div id="hero-text" class="plx-group">
-    <div id="bg" class="plx-layer plx-image plx-z-n600"></div>
-    <div id="l1" class="plx-layer plx-image plx-z-n450"></div>
-    <div id="l2" class="plx-layer plx-image plx-z-n300"></div>
-    <div id="man" class="plx-layer plx-image plx-z-n200"></div>
-    <div id="ol" class="plx-layer plx-image plx-z-n100"></div>
-    <div id="l3" class="plx-layer plx-image plx-base"></div>
-  </div>
-  <div id="group-intro" class="plx-group">
-    <div class="plx-layer plx-base">
-      <h1 style="height:2000px;margin:0 auto;padding:10;">Blah, blah, blah</h1>
-    </div>
-  </div>-->
   <div id="group-image" class="plx-group">
-    <div id="us" class="plx-layer plx-image plx-base"></div>
-    <div id="trees" class="plx-layer plx-image plx-z-n200"></div>
-    <div id="moon" class="plx-layer plx-image plx-z-n300"></div>
-    <div id="title" class="plx-layer plx-content plx-z-n125">
+    <div id="us" class="plx-base"></div>
+    <div id="trees" class="plx-n200"></div>
+    <div id="moon" class="plx-n300"></div>
+    <div id="title" class="plx-n125">
       <div id="names">
         <h1 id="billy">Billy</h1>
         <h1 id="and">&</h1>
