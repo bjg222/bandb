@@ -24,8 +24,7 @@
 }
 
 $viewer-distance: 300px;
-$layer-distances: make-layer-distance-list((0px -600px, 100px -300px, 50px -150px, 25px 100px, 20px -60px, 10px 100px, 20px 200px));
-@debug $layer-distances;
+$layer-distances: make-layer-distance-list((0px -600px, 100px -300px, 50px -150px, 25px -100px, 20px -60px, 10px 100px, 20px 200px));
 
 html, body {
   transform: translateZ(0);
@@ -34,7 +33,7 @@ html, body {
   padding: 0;
   height: 100%;
 }
-.plx-viewport {
+#plx-viewport {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
@@ -46,7 +45,7 @@ html, body {
   margin: 0;
   box-sizing: border-box;
 }
-.plx-group {
+%plx-group {
   position: relative;
   transform-style: preserve-3d;
   padding: 0;
@@ -67,30 +66,30 @@ html, body {
   background-repeat: no-repeat;
   background-size: auto;
   background-attachment: scroll;
-  text-align: center;
 }
 @mixin translateZ-and-scale($distance) {
     transform: translateZ($distance) scale(1 - $distance / $viewer-distance);
 }
-.plx-base {
+%plx-base {
   @extend %plx-layer;
   position: relative;
   @include translateZ-and-scale(0px);
-  &.solid {
-    background-color: $background-color;
-  }
+}
+%plx-solid {
+  @extend %plx-base;
+  background-color: $background-color;
 }
 @each $d in $layer-distances {
   @if ($d != 0px) {
-    .plx-#{if($d < 0, 'n' + (-$d / 1px), $d / 1px)} {
+    %plx-#{if($d < 0, 'n' + (-$d / 1px), $d / 1px)} {
       @extend %plx-layer;
       @include translateZ-and-scale($d);
     }
   }
 }
-.debug-on .plx-group {
+.debug-on %plx-group {
   transform: translate3d(700px, 0, -800px) rotateY(40deg);
 }
-.debug-on .plx-layer, .debug-on .plx-base {
+.debug-on %plx-layer{
   outline: 1px black solid;
 }

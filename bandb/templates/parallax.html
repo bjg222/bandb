@@ -5,26 +5,77 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>B and B</title>
 <link href="../static/css/main.css" rel="stylesheet" type="text/css">
-<style>
-  #group-image { z-index: 1; }
-  #group-image .plx-base { height: 100vh; }
-  #group-image #us { background-image: url(../static/img/us.png); background-size: auto 40% }
-  #group-image #trees { background-image: url(../static/img/trees.png); background-size: cover; background-position: top center; left: -0.5vw; top: -10vh; }
-  #group-image #moon { background-image: url(../static/img/moon.png); background-size: auto 40%; background-position: top center; left: 7vw; top: -22vh}
-  #group-image #title #names { margin: 0 auto; padding-top: 130px; color: whitesmoke; font-size: 3em; font-family: cursive; display: table; }
-  #group-image #title h1 { margin: 0; padding: 0; font-size: 6rem}
-  #group-image #title #billy { padding-right: 2.5em; }
-  #group-image #title #betsy { padding-left: 2.5em; }
-  #group-image #title #billy::first-letter, #group-image #title #betsy::first-letter { font-size: 1.5em; }
-  
-  #group-intro { z-index: 2; }
-  
-  #group-divider { z-index: 1; }
-  #group-divider .plx-base { height: 200px; }
-  #group-divider :not(.plx-base) { background-image: url(https://static.pexels.com/photos/107956/pexels-photo-107956.jpeg); background-size: cover; top: -50%; bottom: -50%; left: -1vw; }
-  
-  #group-us { z-index: 2; }
-</style>
+<!--<style>
+#group-image {
+  z-index: 1;
+}
+#group-image .plx-base {
+  height: 100vh;
+}
+#group-image #us {
+  background-image: url(../static/img/us.png);
+  background-size: auto 40%
+}
+#group-image #trees {
+  background-image: url(../static/img/trees.png);
+  background-size: cover;
+  background-position: top center;
+  left: -0.5vw;
+  top: -10vh;
+}
+#group-image #moon {
+  background-image: url(../static/img/moon.png);
+  background-size: auto 40%;
+  background-position: top center;
+  left: 7vw;
+  top: -22vh
+}
+#group-image #title #names {
+  margin: 0 auto;
+  padding-top: 130px;
+  color: ivory;
+  font-size: 3em;
+  text-align: center;
+  font-family: cursive;
+  display: table;
+}
+#group-image #title h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 6rem
+}
+#group-image #title #billy {
+  padding-right: 2.5em;
+}
+#group-image #title #betsy {
+  padding-left: 2.5em;
+}
+#group-image #title #billy::first-letter, #group-image #title #betsy::first-letter {
+  font-size: 1.5em;
+}
+#group-intro {
+  z-index: 2;
+}
+#group-divider {
+  z-index: 1;
+}
+#group-divider .plx-base {
+  height: 200px;
+}
+#group-divider :not(.plx-base) {
+  background-image: url(https://static.pexels.com/photos/107956/pexels-photo-107956.jpeg);
+  background-size: cover;
+  top: -50%;
+  bottom: -50%;
+  left: -1vw;
+}
+#group-us {
+  z-index: 2;
+}
+#group-party {
+  z-index: 2;
+}
+</style>-->
 <script src="../static/js/jquery-3.1.1.js"></script>
 <script src="../static/js/materialize.js"></script>
 </head>
@@ -34,21 +85,21 @@
   <input name="debugcheck" id="debugcheck" type="checkbox">
   <label for="debugcheck">Debug</label>
 </div>
-<div class="plx-viewport">
-  <div id="group-image" class="plx-group">
-    <div id="us" class="plx-base"></div>
-    <div id="trees" class="plx-n200"></div>
-    <div id="moon" class="plx-n300"></div>
-    <div id="title" class="plx-n125">
-      <div id="names">
+<div id="plx-viewport">
+  <div id="group-image">
+    <div id="us"></div>
+    <div id="trees"></div>
+    <div id="moon"></div>
+    <div id="title">
+      <div>
         <h1 id="billy">Billy</h1>
         <h1 id="and">&amp;</h1>
         <h1 id="betsy">Betsy</h1>
       </div>
     </div>
   </div>
-  <div id="group-intro" class="plx-group">
-    <div class="plx-base solid">
+  <div class="group-panel">
+    <div class="cards">
       <div class="flex">
         <div class="card">
           <div class="card-content">
@@ -70,40 +121,230 @@
       </div>
     </div>
   </div>
-  <div id="group-divider" class="plx-group">
-    <div class="plx-base"></div>
-    <div class="plx-n100"></div>
+  <div class="group-divider">
+    <div class="window"></div>
+    <div class="background"></div>
   </div>
-  <div id="group-us" class="plx-group">
-    <div class="plx-base solid">
-      <div class="flex">
-        <div class="card horizontal">
-          <div class="card-image">
-            <img src="../static/img/man.jpg">
-            <span class="card-title">Billy Gallagher</span>
+  <div class="group-panel">
+    <div class="cards">
+      <div class="flex columns">
+        <div class="flex rows">
+          <div class="card-bio">
+            <div class="card-image">
+              <img src="../static/img/man.jpg">
+              <span class="card-title">Billy</span>
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <p>Since I was a little kid, I have been fascinated with the skies!  I spent many nights sitting in the back yard
+                with my telescope or binoculars looking at the stars and planets, or laying on the ground watching meteor showers.
+                After I wandered my way around the country, going to college in Indiana at Notre Dame, grad school in Atlanta at 
+                Georgia Tech, and jobs in New Jersey, Maryland, and California, I finally landed in DC after my defense, with a job
+                in space robotics at NASA Goddard Space Flight Center!</p>
+              </div>
+            </div>
           </div>
-          <div class="card-stacked">
-            <div class="card-content">
-              <p>Since I was a little kid, I have been fascinated with the skies!  I spent many nights sitting in the back yard
-              with my telescope or binoculars looking at the stars and planets, or laying on the ground watching meteor showers.
-              After I wandered my way around the country, going to college in Indiana at Notre Dame, grad school in Atlanta at 
-              Georgia Tech, and jobs in New Jersey, Maryland, and California, I finally landed in DC after my defense, with a job
-              in space robotics at NASA Goddard Space Flight Center!</p>
+          <div class="card-bio">
+            <div class="card-image">
+              <img src="../static/img/woman.jpg">
+              <span class="card-title">Betsy</span>
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <p>Retnec Thgilf Ecaps Draddog ASAN ta scitobor ecaps ni boj a htiw, esnefed ym retfa CD ni dednal yllanif I,
+                Ainrofilac dna, Dnalyra, Yesrej Wen ni sboj dna, Hcet Aigroeg ta Atnalta ni loohcs darg, Emad Erton ta Anaidni ni
+                egelloc ot gniog, yrtnuoc eht dnuora yaw ym derednaw I retfa! Srewohs roetem gnihctaw dnuorg eht no gniyal ro,
+                stenalp dna srats eht ta gnikool sraluconib ro epocselet ym htiw dray kcab eht ni gnittis sthgin ynam tneps I. Seiks
+                eht htiw detanicsaf neeb evah I, dik elttil a saw I ecnis!</p>
+              </div>
             </div>
           </div>
         </div>
-        <div class="card horizontal">
-          <div class="card-image">
-            <img src="../static/img/woman.jpg">
-            <span class="card-title">Betsy Congdon</span>
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">We're Thrilled!</span>
+            <p>As two people who love adventures, we are both so excited to begin our journey, 
+            and to have our friends and family join us for this celebration.  Each and every one
+            of you is special to us, and we hope that you're just as eager as we are to cherish
+            old memories and make new ones!</p>
+            <p>On this website, we've endeavored to provide all the information you need to join us,
+            and we hope that you'll use it to share your thoughts, ideas, and pictures with us. 
+            There is informaiton on the time and location for the festivities, stories about us, and
+            a place for all of you to share comments and upload pictures of us that you've taken over
+            the years.  Also, you'll be able to share with us all of the wonderful pictures you're
+            going to take at the upcoming festivities!</p>
+            <p>Thanks, and see you soon!</p>
+            <p style="font-family: cursive;"> Billy &amp; Betsy</p>
           </div>
-          <div class="card-stacked">
-            <div class="card-content">
-              <p>Retnec Thgilf Ecaps Draddog ASAN ta scitobor ecaps ni boj a htiw, esnefed ym retfa CD ni dednal yllanif I, Ainrofilac 
-              dna, Dnalyra, Yesrej Wen ni sboj dna, Hcet Aigroeg ta Atnalta ni loohcs darg, Emad Erton ta Anaidni ni egelloc ot gniog,
-              yrtnuoc eht dnuora yaw ym derednaw I retfA! Srewohs roetem gnihctaw dnuorg eht no gniyal ro, stenalp dna srats eht ta
-              gnikool sraluconib ro epocselet ym htiw dray kcab eht ni gnittis sthgin ynam tneps I. Seiks eht htiw detanicsaf neeb evah
-              I, dik elttil a saw I ecnis!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="group-divider">
+    <div class="window"></div>
+    <div class="background"></div>
+  </div>
+  <div class="group-panel">
+    <div class="cards">
+      <div class="flex columns">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">We're Thrilled!</span>
+            <p>As two people who love adventures, we are both so excited to begin our journey, 
+            and to have our friends and family join us for this celebration.  Each and every one
+            of you is special to us, and we hope that you're just as eager as we are to cherish
+            old memories and make new ones!</p>
+            <p>On this website, we've endeavored to provide all the information you need to join us,
+            and we hope that you'll use it to share your thoughts, ideas, and pictures with us. 
+            There is informaiton on the time and location for the festivities, stories about us, and
+            a place for all of you to share comments and upload pictures of us that you've taken over
+            the years.  Also, you'll be able to share with us all of the wonderful pictures you're
+            going to take at the upcoming festivities!</p>
+            <p>Thanks, and see you soon!</p>
+            <p style="font-family: cursive;"> Billy &amp; Betsy</p>
+          </div>
+        </div>
+        <div class="flex rows">
+          <div class="card-bio">
+            <div class="card-image">
+              <img src="../static/img/man.jpg">
+              <span class="card-title">Tanner</span>
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <span class="card-title">Billy's college roommate</span>
+                <p>Since I was a little kid, I have been fascinated with the skies!  I spent many nights sitting in the back yard
+                with my telescope or binoculars looking at the stars and planets, or laying on the ground watching meteor showers.</p>
+              </div>
+            </div>
+          </div>
+          <div class="card-bio">
+            <div class="card-image">
+              <img src="../static/img/man.jpg">
+              <span class="card-title">David</span>
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <span class="card-title">Subtitle here</span>
+                <p>Retnec Thgilf Ecaps Draddog ASAN ta scitobor ecaps ni boj a htiw, esnefed ym retfa CD ni dednal yllanif I,
+                Ainrofilac dna, Dnalyra, Yesrej Wen ni sboj dna, Hcet Aigroeg ta Atnalta ni loohcs darg, Emad Erton ta Anaidni ni
+                egelloc ot gniog, yrtnuoc eht dnuora yaw ym derednaw I retfa!</p>
+              </div>
+            </div>
+          </div>
+          <div class="card-bio">
+            <div class="card-image">
+              <img src="../static/img/man.jpg">
+              <span class="card-title">Deny</span>
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <span class="card-title">Subtitle here</span>
+                <p>Retnec Thgilf Ecaps Draddog ASAN ta scitobor ecaps ni boj a htiw, esnefed ym retfa CD ni dednal yllanif I,
+                Ainrofilac dna, Dnalyra, Yesrej Wen ni sboj dna, Hcet Aigroeg ta Atnalta ni loohcs darg, Emad Erton ta Anaidni ni
+                egelloc ot gniog, yrtnuoc eht dnuora yaw ym derednaw I retfa!</p>
+              </div>
+            </div>
+          </div>
+          <div class="card-bio">
+            <div class="card-image">
+              <img src="../static/img/woman.jpg">
+              <span class="card-title">Jen</span>
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <span class="card-title">Subtitle here</span>
+                <p>Since I was a little kid, I have been fascinated with the skies!  I spent many nights sitting in the back yard
+                with my telescope or binoculars looking at the stars and planets, or laying on the ground watching meteor showers.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card-bio">
+            <div class="card-image">
+              <img src="../static/img/woman.jpg">
+              <span class="card-title">Jen</span>
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <span class="card-title">Subtitle here</span>
+                <p>Retnec Thgilf Ecaps Draddog ASAN ta scitobor ecaps ni boj a htiw, esnefed ym retfa CD ni dednal yllanif I,
+                Ainrofilac dna, Dnalyra, Yesrej Wen ni sboj dna, Hcet Aigroeg ta Atnalta ni loohcs darg, Emad Erton ta Anaidni ni
+                egelloc ot gniog, yrtnuoc eht dnuora yaw ym derednaw I retfa!
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card-bio">
+            <div class="card-image">
+              <img src="../static/img/woman.jpg">
+              <span class="card-title">Jenn</span>
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <span class="card-title">Subtitle here</span>
+                <p>Since I was a little kid, I have been fascinated with the skies!  I spent many nights sitting in the back yard
+                with my telescope or binoculars looking at the stars and planets, or laying on the ground watching meteor showers.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card-bio">
+            <div class="card-image">
+              <img src="../static/img/man.jpg">
+              <span class="card-title">Patrick</span>
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <span class="card-title">Subtitle here</span>
+                <p>Since I was a little kid, I have been fascinated with the skies!  I spent many nights sitting in the back yard
+                with my telescope or binoculars looking at the stars and planets, or laying on the ground watching meteor showers.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card-bio">
+            <div class="card-image">
+              <img src="../static/img/man.jpg">
+              <span class="card-title">Shahin</span>
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <span class="card-title">Subtitle here</span>
+                <p>Retnec Thgilf Ecaps Draddog ASAN ta scitobor ecaps ni boj a htiw, esnefed ym retfa CD ni dednal yllanif I,
+                Ainrofilac dna, Dnalyra, Yesrej Wen ni sboj dna, Hcet Aigroeg ta Atnalta ni loohcs darg, Emad Erton ta Anaidni ni
+                egelloc ot gniog, yrtnuoc eht dnuora yaw ym derednaw I retfa!
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card-bio">
+            <div class="card-image">
+              <img src="../static/img/woman.jpg">
+              <span class="card-title">Shelby</span>
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <span class="card-title">Subtitle here</span>
+                <p>Since I was a little kid, I have been fascinated with the skies!  I spent many nights sitting in the back yard
+                with my telescope or binoculars looking at the stars and planets, or laying on the ground watching meteor showers.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card-bio">
+            <div class="card-image">
+              <img src="../static/img/woman.jpg">
+              <span class="card-title">Simmie</span>
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <span class="card-title">Subtitle here</span>
+                <p>Retnec Thgilf Ecaps Draddog ASAN ta scitobor ecaps ni boj a htiw, esnefed ym retfa CD ni dednal yllanif I,
+                Ainrofilac dna, Dnalyra, Yesrej Wen ni sboj dna, Hcet Aigroeg ta Atnalta ni loohcs darg, Emad Erton ta Anaidni ni
+                egelloc ot gniog, yrtnuoc eht dnuora yaw ym derednaw I retfa!
+                </p>
+              </div>
             </div>
           </div>
         </div>

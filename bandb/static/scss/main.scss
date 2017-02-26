@@ -1,6 +1,7 @@
 @charset "utf-8";
 
 @import "reset/reset";
+
 @import url("http://fonts.googleapis.com/icon?family=Material+Icons");
 @import "materialize/mixins";
 
@@ -19,26 +20,84 @@ $navy: (
 $shades: map-merge($shades, ("ivory": ivory, "silver": silver));
 $colors: map-merge($colors, ("shades": $shades, "navy": $navy));
 
-$background-color: color("navy", "darken-2");
-$card-color: color("shades", "ivory");
+$background-color: color("navy", "darken-4");
 $primary-color: color("navy", "base");
 $secondary-color: color("amber", "lighten-3");
 $error-color: color("red", "darken-3");
 $link-color: color("teal", "darken-1");
+$card-bg-color: color("shades", "ivory");
+$card-link-color: $link-color;
+
+$card-padding: 15px;
 
 @import "materialize/materialize";
+
+@import "parallax/parallax";
+@import "flex/flex";
 
 p {
   text-align: justify;
   margin-bottom: 10px !important;
 }
 
-.card {
-  background-color: $card-color;
+@mixin big-first-letter {
+  &::first-letter {
+    font-size: 1.5em;
+  }
 }
 
-@import "parallax/parallax";
-@import "flex/flex";
+.card {
+  margin: $card-padding / 2;
+}
+
+@mixin card-bio-media($screen-size, $width, $n-children)  {
+  @media #{$screen-size} {
+    
+    @if length($width) > 1 {
+      min-width: min($width...);
+      max-width: max($width...);
+    } @else if $width {
+      width: $width;
+    }
+    
+    $selector: "";
+    @each $n in $n-children {
+      $selector: $selector + "&:nth-child(" + $n + "), ";
+    }
+    
+    #{$selector} {
+      .card-image {
+        order: 2;
+        .card-title {
+          left: auto;
+          right: 0;
+        }
+      }
+      .card-title {
+        text-align: right;
+      }
+      .card-content {
+        padding-left: $card-padding * 2 / 3;
+        padding-right: $card-padding;
+      }
+    }
+  }
+}
+
+.card-bio {
+  @extend .card, .card.horizontal;
+  padding: $card-padding;
+  .card-image {
+    max-width: 33%;
+    vertical-align: bottom;
+  }
+  .card-content {
+    padding: 0px $card-padding * 2 / 3 0px $card-padding;
+  }
+  @include card-bio-media($small-and-down, null, ("2n",));
+  @include card-bio-media($medium-only, (350px, 700px), ("2n",));
+  @include card-bio-media($large-and-up, (350px, 700px), ("4n-2", "4n-1"));
+}
 
 .debug {
   position: fixed;
@@ -50,3 +109,5 @@ p {
   padding: 0.5em;
   border-radius: 0 0 5px 5px;
 }
+
+@import "sections";

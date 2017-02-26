@@ -8,27 +8,35 @@ $flex-container-width: 0.7;
     width: $flex-container-width * 100%;
     max-width: $large-screen;
   }
+  .flex {
+    width: 100%;
+    padding: 0;
+  }
   margin: 0 auto;
   padding: 10px;
   display: flex;
-  flex-flow: row wrap;
+  flex-wrap: wrap;
   justify-content: center;
   align-content: stretch;
   align-items: stretch;
+  &.rows {
+    flex-direction: row;
+  }
+  &.columns {
+    flex-direction: column;
+  }
 }
 .flex > div {
-  padding: 10px;
-  margin: 10px;
-  flex-basis: 0;
-  flex: 1 1 0;
-  @media #{$small-and-down} {
-    width: 100%;
-    flex-basis: auto;
+  flex-grow: 1;
+  flex-shrink: 1;
+  &:not(.flex) {
+    @media #{$small-and-down} {
+      flex-basis: auto;
+    }
+    @media #{$medium-and-up} {
+      flex-basis: 0;
+    }
   }
-  @media #{$medium-and-up} {
-    min-width: $small-screen * $flex-container-width * 0.7;
-  }
-  
 }
 .debug-on .flex div {
   outline: 1px black dotted;
