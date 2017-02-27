@@ -1,0 +1,61 @@
+@mixin card-bio-media($screen-size, $width, $n-children)  {
+  @media #{$screen-size} {
+    
+    @if length($width) == 3 {
+      width: nth($width, 2);
+      $width: set-nth($width, 2, nth($width, 1));
+      min-width: min($width...);
+      max-width: max($width...);
+    } @else if length($width) == 2 {
+      min-width: min($width...);
+      max-width: max($width...);
+    } @else if $width {
+      width: $width;
+    }
+    
+    $selector: "";
+    @each $n in $n-children {
+      $selector: $selector + "&:nth-child(" + $n + "), ";
+    }
+    
+    #{$selector} {
+      .card-image {
+        order: 2;
+        .card-title {
+          left: auto;
+          right: 0;
+        }
+      }
+      .card-title {
+        text-align: right;
+      }
+      .card-content {
+        padding-left: $card-padding * 2 / 3;
+        padding-right: $card-padding;
+      }
+    }
+  }
+}
+
+.card-bio {
+  @extend .card, .card.horizontal;
+  padding: $card-padding;
+  .card-image {
+    max-width: 33%;
+    vertical-align: bottom;
+  }
+  .card-content {
+    padding: 0px $card-padding * 2 / 3 0px $card-padding;
+    .card-title:first-child {
+      font-size: 21px;
+      line-height: 28px;
+    }
+    .card-title:not(:first-child) {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+  @include card-bio-media($small-and-down, null, ("2n",));
+  @include card-bio-media($medium-only, (300px, 600px), ("2n",));
+  @include card-bio-media($large-and-up, (300px, 50%, 600px), ("4n-2", "4n-1"));
+}

@@ -1,0 +1,14 @@
+p {
+  text-align: justify;
+  margin-bottom: 10px !important;
+}
+
+@mixin big-first-letter {
+  &::first-letter {
+    font-size: 1.5em;
+  }
+}
+
+.card {
+  margin: $card-padding / 2;
+}

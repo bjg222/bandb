@@ -6263,6 +6263,67 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 @media (min-height: 40.125em) {
   .picker--time .picker__box {
     margin-bottom: 5em; } }
+p {
+  text-align: justify;
+  margin-bottom: 10px !important; }
+
+.card, .card-bio {
+  margin: 7.5px; }
+
+.card-bio {
+  padding: 15px; }
+  .card-bio .card-image {
+    max-width: 33%;
+    vertical-align: bottom; }
+  .card-bio .card-content {
+    padding: 0px 10px 0px 15px; }
+    .card-bio .card-content .card-title:first-child {
+      font-size: 21px;
+      line-height: 28px; }
+    .card-bio .card-content .card-title:not(:first-child) {
+      font-size: 18px;
+      line-height: 24px; }
+  @media only screen and (max-width: 600px) {
+    .card-bio:nth-child(2n) .card-image {
+      order: 2; }
+      .card-bio:nth-child(2n) .card-image .card-title {
+        left: auto;
+        right: 0; }
+    .card-bio:nth-child(2n) .card-title {
+      text-align: right; }
+    .card-bio:nth-child(2n) .card-content {
+      padding-left: 10px;
+      padding-right: 15px; } }
+  @media only screen and (min-width: 601px) and (max-width: 992px) {
+    .card-bio {
+      min-width: 300px;
+      max-width: 600px; }
+      .card-bio:nth-child(2n) .card-image {
+        order: 2; }
+        .card-bio:nth-child(2n) .card-image .card-title {
+          left: auto;
+          right: 0; }
+      .card-bio:nth-child(2n) .card-title {
+        text-align: right; }
+      .card-bio:nth-child(2n) .card-content {
+        padding-left: 10px;
+        padding-right: 15px; } }
+  @media only screen and (min-width: 993px) {
+    .card-bio {
+      width: 50%;
+      min-width: 300px;
+      max-width: 600px; }
+      .card-bio:nth-child(4n-2) .card-image, .card-bio:nth-child(4n-1) .card-image {
+        order: 2; }
+        .card-bio:nth-child(4n-2) .card-image .card-title, .card-bio:nth-child(4n-1) .card-image .card-title {
+          left: auto;
+          right: 0; }
+      .card-bio:nth-child(4n-2) .card-title, .card-bio:nth-child(4n-1) .card-title {
+        text-align: right; }
+      .card-bio:nth-child(4n-2) .card-content, .card-bio:nth-child(4n-1) .card-content {
+        padding-left: 10px;
+        padding-right: 15px; } }
+
 html, body {
   transform: translateZ(0);
   overflow: hidden;
@@ -6334,7 +6395,7 @@ html, body {
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-content: stretch;
   align-items: stretch; }
   @media only screen and (max-width: 600px) {
@@ -6364,60 +6425,6 @@ html, body {
 
 .debug-on .flex div {
   outline: 1px black dotted; }
-
-p {
-  text-align: justify;
-  margin-bottom: 10px !important; }
-
-.card, .card-bio {
-  margin: 7.5px; }
-
-.card-bio {
-  padding: 15px; }
-  .card-bio .card-image {
-    max-width: 33%;
-    vertical-align: bottom; }
-  .card-bio .card-content {
-    padding: 0px 10px 0px 15px; }
-  @media only screen and (max-width: 600px) {
-    .card-bio:nth-child(2n) .card-image {
-      order: 2; }
-      .card-bio:nth-child(2n) .card-image .card-title {
-        left: auto;
-        right: 0; }
-    .card-bio:nth-child(2n) .card-title {
-      text-align: right; }
-    .card-bio:nth-child(2n) .card-content {
-      padding-left: 10px;
-      padding-right: 15px; } }
-  @media only screen and (min-width: 601px) and (max-width: 992px) {
-    .card-bio {
-      min-width: 350px;
-      max-width: 700px; }
-      .card-bio:nth-child(2n) .card-image {
-        order: 2; }
-        .card-bio:nth-child(2n) .card-image .card-title {
-          left: auto;
-          right: 0; }
-      .card-bio:nth-child(2n) .card-title {
-        text-align: right; }
-      .card-bio:nth-child(2n) .card-content {
-        padding-left: 10px;
-        padding-right: 15px; } }
-  @media only screen and (min-width: 993px) {
-    .card-bio {
-      min-width: 350px;
-      max-width: 700px; }
-      .card-bio:nth-child(4n-2) .card-image, .card-bio:nth-child(4n-1) .card-image {
-        order: 2; }
-        .card-bio:nth-child(4n-2) .card-image .card-title, .card-bio:nth-child(4n-1) .card-image .card-title {
-          left: auto;
-          right: 0; }
-      .card-bio:nth-child(4n-2) .card-title, .card-bio:nth-child(4n-1) .card-title {
-        text-align: right; }
-      .card-bio:nth-child(4n-2) .card-content, .card-bio:nth-child(4n-1) .card-content {
-        padding-left: 10px;
-        padding-right: 15px; } }
 
 .debug {
   position: fixed;

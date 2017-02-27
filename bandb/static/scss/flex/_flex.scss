@@ -16,7 +16,7 @@ $flex-container-width: 0.7;
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-content: stretch;
   align-items: stretch;
   &.rows {
