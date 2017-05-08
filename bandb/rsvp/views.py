@@ -45,6 +45,7 @@ def form():
         details.guest.default = 'Guest of ' + session['addressee']
     else:
         del details.guest
+#     raise Exception('Breakpoint')
     form = rsvp
     if (rsvp.validate_on_submit()):
         session['attending'] = bool(rsvp.attending.data)
@@ -56,6 +57,8 @@ def form():
         if (session['guest'] and 99 in details.attendees.data):
             session['attendees'].append(details.guest)
         return redirect(url_for('.review'))
+    if (form is details and not details.guest.data):
+        details.guest.data = details.guest.default
     return render_template('form.html', form=form)
 
 @rsvp.route('/review')
