@@ -1,0 +1,19 @@
+{% extends "rsvp_base.html" %}
+
+{% block rsvp_content %}
+<form action="{{ url_for('rsvp.form') }}" method="post">
+{{ form.hidden_tag() }}
+{% if 'attending' in form %}
+	{{ form.attending.label() }}<br />
+	{{ form.attending() }}<br /><br />
+{% else %}
+	{{ form.attendees.label() }}<br />
+	{{ form.attendees() }}<br /><br />
+	{% if 'guest' in form %}
+		{{ form.guest.label() }}<br />
+		{{ form.guest() }}<br /><br />
+	{% endif %}
+{% endif %}
+{{ form.submit() }}
+</form>
+{% endblock rsvp_content%}

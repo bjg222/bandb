@@ -1,0 +1,12 @@
+{% extends "rsvp_base.html" %}
+
+{% block rsvp_content %}
+<form action="{{ url_for('rsvp.verify') }}" method="post">
+{{ form.hidden_tag() }}
+{{ form.last_name.label() }}<br />
+{{ form.last_name() }}<br /><br />
+{{ form.invite_code.label() }}<br />
+{{ form.invite_code() }}<br /><br />
+{{ form.submit() }}
+</form>
+{% endblock rsvp_content%}

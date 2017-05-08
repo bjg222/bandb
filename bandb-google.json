@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "studious-matrix-166415",
+  "private_key_id": "4e674b9645ec8d9df3bd972ab79e7290692afc70",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCizVpjH2ibF/eZ\nFVUurERyJvOFF5mGCwf/n0fNSZvuRWuu0J0sMVHqBJ8o23o/PxHzoj2QeFfa+hFe\nHzaYVchxoC2rbPwrJ3NtwESwuWpreH+iXMedERfbbF3x3C6JL0SSF/C2acrKFOUs\niODLvxaigYd9fpPtKpSMSmTnbOrtD0lzwQh9LmFlxOE0jMoGxUOCua7CsPc3/ecq\nK+8acW6W0GjiVxucHBj0r/UOMhlweS5b3nR0GsVnVFGuE5g0VgnSAl9/wj47fhbr\nvTcQH1GBRZcRgdupCWOjQTAEtR7JdKOnPPE4ruz0tgrhiazgLi3BFbkGYHLFKfPe\nWat8zWczAgMBAAECggEAfs1delkLW8l2IzjXaQvqH9Mw11gDTsEm0LXZ8g5EMnjF\nn5qC4NnlSFWjNeqEs+BG9jFGrFDfdQJTJrE/D7W48q9lAuFXI7GNmU0o81Dnj5+C\nIg8Lts2KfHBSV8A8SsOTMAsPhLSvq2hM+7v9AxTp51bmFhvR0ebZXs/O+eX+sPZ3\n3fTlIaaHUlGJV1ofwVEdoIF09ZJ1qmZ7s6ide+W7HPiA8xQuIvP3LPGFOtb+azcN\nxNn9NIGqDCyKbRRopbql4gLhAuYFmWxLFMg09SSxKsZCI2Co/0v66fxtu3IcKMQB\nOvmRTtwhFeto915YqlbuEW/kriUe/yfG6bNwitzbsQKBgQDmGipo4uzHwrk4po0E\nAbhUI8TJ1Ev+ruEjUcediZY7qHolpvlfoQraPDd4ptjP6jSori4RGdOPxN6b46SU\njDuemBbT1NFHm/vpfAkF+gHc0j5gs8UPXwG1vDa/uTH1LMZwldGbLQonFsil/hIZ\nO4q+uGYEPpexhzt/mVyBVoPeKwKBgQC1IBm8JCfJgfDndKZplnOLxCrny3TguB0p\nJCeWzEFHJhFN5ClYORrLE3FMXxpKSm8lc+ANVvvdF6WJcstOF1+ipU5vUWpCEbrW\nJEYqOpedMvNOu1Oq+Tm5ibOVBZOQbc1/z3sNYiSwwLOMr2SUPIpQzjrFhqIJdEMX\nDg5M4NCfGQKBgGBCIeuuwo7ujr18LxG2Bn5sWC52eTQZxGUaGP92Rzq9yBtoNnoi\nzH9vIWV/psOTnmPSOcM9optKKDXejUL3RxmZVjNXnBTw0/lgwgWWCKFv8lhR2+YK\nQJTeH6kkuBlwmbMPeZgIx26CwX1vQ/L6TZhrW4H7DUpe4C0I4wHYR2HxAoGAN4Xh\nnbUPpUv6B1nQ8ak3Pm8iH/BUodaOyd/VavquQBtBTrlUm0DWH86T+q9kpcVvkPGW\ni0BQ8ROgoSPZgtTTck5uXt18T0iUF7UC9UsE0yGdSFNQcKb5tRCrRlFxTOL8DeQS\neqXNTYmlAMl7cZ2lYOP3TDnbTj6fml+qrpJ0IXECgYB9q0qvBkWx9Chua3jsy62s\nwdK9klUf85TjVFc5VBbP7aBd1+b59NhllcgE98o+ioPP+UE0Arcru5ba9Ejs0FZ5\nwwWguKohX6NqUeEEDNjDLwkI3pV8IKQ7q4lRhg38v3DR3ysftfoQxEYpppF85Hao\n8aHPmCI+8YWrFY09D0Yn0g==\n-----END PRIVATE KEY-----\n",
+  "client_email": "wedding-rsvp@studious-matrix-166415.iam.gserviceaccount.com",
+  "client_id": "110168558618337623485",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/wedding-rsvp%40studious-matrix-166415.iam.gserviceaccount.com"
+}
