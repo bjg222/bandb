@@ -5,7 +5,7 @@ Created on May 3, 2017
 '''
 
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, SelectMultipleField, RadioField
+from wtforms import StringField, SubmitField, SelectMultipleField, RadioField, FieldList
 from wtforms.validators import InputRequired, Length, Optional
 from wtforms.widgets import TableWidget, CheckboxInput
 
@@ -17,7 +17,7 @@ class VerifyForm(FlaskForm):
 # def str_to_bool(s):
 #     return s in ['yes', 'Yes', 'y', 'Y', 'true', 'True', 't', 'T']
 
-class RsvpForm(FlaskForm):
+class ResponseForm(FlaskForm):
     attending = RadioField('Please indicate if you will be attending', choices=[(1, 'Yes'), (0, 'No')], coerce=int, validators=[InputRequired()], widget=TableWidget(), default=1)
     submit = SubmitField('Submit')
 
@@ -25,7 +25,9 @@ class RsvpForm(FlaskForm):
 #     widget = TableWidget()
 #     option_widget = CheckboxInput()
 
-class RsvpDetailsForm(FlaskForm):
+class DetailsForm(FlaskForm):
     attendees = SelectMultipleField('Please indicate who will be attending', coerce=int, validators=[InputRequired()], widget=TableWidget(), option_widget=CheckboxInput())
-    guest = StringField('Please enter the name of your guest')
+    guest = StringField('Please enter the name of your guest', validators=[InputRequired()])
+    songs = FieldList(StringField('Please enter your song requests'), min_entries=1, max_entries=3)
     submit = SubmitField('Submit')
+

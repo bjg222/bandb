@@ -1,0 +1,10 @@
+{% extends "rsvp_base.html" %}
+
+{% block rsvp_content %}
+<form action="{{ url_for('rsvp.response') }}" method="post">
+{{ form.hidden_tag() }}
+{{ form.attending.label() }}<br />
+{{ form.attending() }}<br /><br />
+{{ form.submit() }}
+</form>
+{% endblock rsvp_content%}

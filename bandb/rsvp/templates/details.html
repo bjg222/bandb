@@ -1,0 +1,18 @@
+{% extends "rsvp_base.html" %}
+
+{% block rsvp_content %}
+<form action="{{ url_for('rsvp.details') }}" method="post">
+{{ form.hidden_tag() }}
+{{ form.attendees.label() }}<br />
+{{ form.attendees() }}<br /><br />
+{% if 'guest' in form %}
+	{{ form.guest.label() }}<br />
+	{{ form.guest() }}<br /><br />
+{% endif %}
+{{ form.songs[0].label() }}<br />
+{% for elem in form.songs %}
+	{{ elem() }}<br />
+{% endfor %}<br />
+{{ form.submit() }}
+</form>
+{% endblock rsvp_content%}
