@@ -6,28 +6,25 @@ Created on May 3, 2017
 
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, SelectMultipleField, RadioField, FieldList
-from wtforms.validators import InputRequired, Length, Optional
+from wtforms.validators import InputRequired, Length
 from wtforms.widgets import TableWidget, CheckboxInput
 
 class VerifyForm(FlaskForm):
-    last_name = StringField('Please enter your last name', validators=[InputRequired()])
-    invite_code = StringField('Please enter the code from your invitation', validators=[InputRequired(), Length(min=4,max=4)])
+    last_name = StringField(validators=[InputRequired()])
+    invite_code = StringField(validators=[InputRequired(), Length(min=4,max=4)])
     submit = SubmitField('Submit')
-
-# def str_to_bool(s):
-#     return s in ['yes', 'Yes', 'y', 'Y', 'true', 'True', 't', 'T']
 
 class ResponseForm(FlaskForm):
-    attending = RadioField('Please indicate if you will be attending', choices=[(1, 'Yes'), (0, 'No')], coerce=int, validators=[InputRequired()], widget=TableWidget(), default=1)
+    attending = RadioField(choices=[(1, 'Yes'), (0, 'No')], coerce=int, validators=[InputRequired()], widget=TableWidget(), default=1)
     submit = SubmitField('Submit')
 
-# class MultiCheckboxField(SelectMultipleField):
-#     widget = TableWidget()
-#     option_widget = CheckboxInput()
-
 class DetailsForm(FlaskForm):
-    attendees = SelectMultipleField('Please indicate who will be attending', coerce=int, validators=[InputRequired()], widget=TableWidget(), option_widget=CheckboxInput())
-    guest = StringField('Please enter the name of your guest', validators=[InputRequired()])
-    songs = FieldList(StringField('Please enter your song requests'), min_entries=1, max_entries=3)
+    attendees = SelectMultipleField(coerce=int, validators=[InputRequired()], widget=TableWidget(), option_widget=CheckboxInput())
+    guest = StringField(validators=[InputRequired()])
+    diet = StringField()
+    songs = FieldList(StringField(), min_entries=1, max_entries=3)
+    submit = SubmitField('Submit')
+
+class SubmitForm(FlaskForm):
     submit = SubmitField('Submit')
 

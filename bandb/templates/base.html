@@ -2,9 +2,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>B and B</title>
+<title>{% block title %}Home{% endblock %} - B and B</title>
+{% block js %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.1.1.js') }}"></script>
+{% endblock %}
 </head>
 <body>
+{% with msgs = get_flashed_messages() %}
+	{% if msgs %}
+		<ul class=flashes>
+			{% for msg in msgs %}
+			<li>{{ msg }}</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+{% endwith %}
 {% block content %}{% endblock %}
 </body>
 </html>

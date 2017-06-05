@@ -3,7 +3,7 @@
 {% block rsvp_content %}
 <form action="{{ url_for('rsvp.response') }}" method="post">
 {{ form.hidden_tag() }}
-{{ form.attending.label() }}<br />
+<label for="{{ form.attending.id }}">Will you be attending?</label><br />
 {{ form.attending() }}<br /><br />
 {{ form.submit() }}
 </form>

@@ -1,18 +1,44 @@
 {% extends "rsvp_base.html" %}
 
+{% block js %}
+{{ super() }}
+<script type="text/javascript">
+$(document).ready(function() {
+	var nsongs = 1;
+	$('#songs-add-link').click(function() {
+		if (nsongs >= 3)
+			return;
+		var sp = $('.song-input').last().clone();
+		var inp = $('input', sp);
+		inp.attr('id', inp.attr('id').slice(0,-1) + (Number(inp.attr('id').slice(-1)) + 1));
+		inp.attr('name', inp.attr('name').slice(0,-1) + (Number(inp.attr('name').slice(-1)) + 1));
+		inp.val('');
+		$('#songs').append(sp);
+		nsongs ++;
+		if (nsongs >= 3)
+			$('#songs-add').remove();
+	});
+});
+</script>
+{% endblock js %}
+
 {% block rsvp_content %}
 <form action="{{ url_for('rsvp.details') }}" method="post">
 {{ form.hidden_tag() }}
-{{ form.attendees.label() }}<br />
+<label for="{{ form.attendees.id }}">Please indicate who will be attending:</label><br />
 {{ form.attendees() }}<br /><br />
 {% if 'guest' in form %}
-	{{ form.guest.label() }}<br />
+	<label for="{{ form.guest.id }}">Please enter your guest's name:</label><br />
 	{{ form.guest() }}<br /><br />
 {% endif %}
-{{ form.songs[0].label() }}<br />
+<label for="{{ form.diet.id }}">If any attendees have food allergies or special dietary restrictions, please list then below:</label><br />
+{{ form.diet() }}<br /><br />
+<label for="{{ form.songs.id }}">If you have any songs you'd love to hear at the reception, please send us your requests below:</label><br />
+<span id="songs">
 {% for elem in form.songs %}
-	{{ elem() }}<br />
-{% endfor %}<br />
+	<span class="song-input">{{ elem() }}<br /></span>
+{% endfor %}</span>
+<span id="songs-add"><a href='#' id="songs-add-link">Add</a><br /></span><br />
 {{ form.submit() }}
 </form>
 {% endblock rsvp_content%}

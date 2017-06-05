@@ -3,10 +3,10 @@
 {% block rsvp_content %}
 <form action="{{ url_for('rsvp.verify') }}" method="post">
 {{ form.hidden_tag() }}
-{{ form.last_name.label() }}<br />
+<label for="{{ form.last_name.id }}">Please enter your last name:</label><br />
 {{ form.last_name() }}<br /><br />
-{{ form.invite_code.label() }}<br />
+<label for="{{ form.invite_code.id }}">Please enter the 4 digit code on your invitation:</label><br />
 {{ form.invite_code() }}<br /><br />
 {{ form.submit() }}
 </form>
-{% endblock rsvp_content%}
+{% endblock rsvp_content %}
