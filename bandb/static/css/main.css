@@ -4771,7 +4771,7 @@ button.btn-floating {
   left: 0;
   height: 18px; }
 
-/*!
+/*
  * Waves v0.6.0
  * http://fian.my.id/Waves
  *
@@ -7043,7 +7043,7 @@ input[type=range]:focus::-ms-fill-upper {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch; }
 
-/*!
+/*
  * Default mobile-first, responsive styling for pickadate.js
  * Demo: http://amsul.github.io/pickadate.js
  */
