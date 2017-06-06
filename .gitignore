@@ -92,3 +92,6 @@ support
 # Eclipse/PyDev
 .project
 .pydevproject
+
+# SASS
+.sass-cache
