@@ -3,7 +3,7 @@ from flask import Flask, session
 from flask_sqlalchemy import SQLAlchemy
 
 from .main import main
-from .rsvp import rsvp
+#from .rsvp import rsvp
 
 app = Flask(__name__)
 #TODO: Actual config.  config.py is blank right now, and I'm just manually configging here.  Fix this.
@@ -11,7 +11,7 @@ app.config['DEBUG'] = True
 app.config['SECRET_KEY'] = 'bandb-key'
 
 app.register_blueprint(main)
-app.register_blueprint(rsvp, url_prefix='/rsvp')
+#app.register_blueprint(rsvp, url_prefix='/rsvp')
 
 
 

@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+#index {
+	#group-hero-image {
+	  #us {
+	    @extend %plx-base;
+	    height: 100vh;
+	    background-image: url(/static/img/main/index/us.png);
+	    background-size: auto 40%;
+	  }
+	  #trees {
+	    @include make-plx-layer(-200px);
+	    background-image: url(/static/img/main/index/trees.png);
+	    background-size: cover;
+	    background-position: top center;
+	    left: -0.5vw;
+	    top: -10vh;
+	  }
+	  #moon {
+	    @include make-plx-layer(-300px);
+	    background-image: url(/static/img/main/index/moon.png);
+	    background-size: auto 40%;
+	    background-position: top center;
+	    left: 7vw;
+	    top: -22vh
+	  }
+	  #title {
+	    @include make-plx-layer(-125px);
+	    > div {
+	      margin: 0 auto;
+	      padding-top: 130px;
+	      color: ivory;
+	      font-size: 3em;
+	      text-align: center;
+	      font-family: annabelle-jf, cursive;
+		  font-style: normal;
+		  font-weight: 400;
+	      display: table;
+	    }
+	    h1 {
+	      margin: 0;
+	      padding: 0;
+	      font-size: 6rem
+	    }
+	    #billy {
+	      padding-right: 2.5em;
+	      @include big-first-letter;
+	    }
+	    #betsy {
+	      padding-left: 2.5em;
+	      @include big-first-letter;
+	    }
+	  }
+	}
+	
+	.group-divider > .background {
+	    background-image: url(http://www.storywarren.com/wp-content/uploads/2016/09/space-1.jpg);
+	}
+}

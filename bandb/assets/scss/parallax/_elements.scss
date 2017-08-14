@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+#group-hero-image {
+	@extend %plx-group;
+	z-index: 1;
+}
+
+.group-panel {
+  @extend %plx-group;
+  z-index: 3;
+}
+
+.group-divider {
+  @extend %plx-group;
+  z-index: 2;
+  > .window {
+    @extend %plx-base;
+    height: 200px;
+  }
+  > .background {
+    @include make-plx-layer(-80px);
+    background-size: cover;
+    top: -40%;
+    bottom: -40%;
+    left: -1vw; 
+  }
+}

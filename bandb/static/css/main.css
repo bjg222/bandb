@@ -7830,7 +7830,7 @@ html, body {
   box-sizing: border-box; }
 
 /* line 48, ../../assets/scss/parallax/_parallax.scss */
-#group-image, .group-panel, .group-divider {
+#group-hero-image, .group-panel, .group-divider {
   position: relative;
   transform-style: preserve-3d;
   padding: 0;
@@ -7839,7 +7839,7 @@ html, body {
   transition: transform 1s; }
 
 /* line 56, ../../assets/scss/parallax/_parallax.scss */
-.group-panel > .cards, #group-image #us, .group-divider > .window, #group-image #moon, #group-image #trees, #group-image #title, .group-divider > .background {
+.group-divider > .window, #index #group-hero-image #us, .group-divider > .background, #index #group-hero-image #trees, #index #group-hero-image #moon, #index #group-hero-image #title {
   position: absolute;
   top: 0;
   left: 0;
@@ -7853,38 +7853,51 @@ html, body {
   background-size: auto;
   background-attachment: scroll; }
 
-/* line 73, ../../assets/scss/parallax/_parallax.scss */
-.group-panel > .cards, #group-image #us, .group-divider > .window {
-  position: relative;
-  transform: translateZ(0px) scale(1); }
-
-/* line 78, ../../assets/scss/parallax/_parallax.scss */
-.group-panel > .cards {
-  background-color: #000029; }
-
-/* line 84, ../../assets/scss/parallax/_parallax.scss */
-#group-image #moon {
-  transform: translateZ(-300px) scale(2); }
-
-/* line 84, ../../assets/scss/parallax/_parallax.scss */
-#group-image #trees {
-  transform: translateZ(-200px) scale(1.66667); }
-
-/* line 84, ../../assets/scss/parallax/_parallax.scss */
-#group-image #title {
-  transform: translateZ(-125px) scale(1.41667); }
-
-/* line 84, ../../assets/scss/parallax/_parallax.scss */
-.group-divider > .background {
-  transform: translateZ(-80px) scale(1.26667); }
-
-/* line 90, ../../assets/scss/parallax/_parallax.scss */
-.debug-on #group-image, .debug-on .group-panel, .debug-on .group-divider {
-  transform: translate3d(700px, 0, -800px) rotateY(40deg); }
+/* line 77, ../../assets/scss/parallax/_parallax.scss */
+.group-divider > .window, #index #group-hero-image #us {
+  transform: translateZ(0px) scale(1);
+  position: relative; }
 
 /* line 93, ../../assets/scss/parallax/_parallax.scss */
-.debug-on .group-panel > .cards, .debug-on #group-image #us, #group-image .debug-on #us, .debug-on .group-divider > .window, .debug-on #group-image #moon, #group-image .debug-on #moon, .debug-on #group-image #trees, #group-image .debug-on #trees, .debug-on #group-image #title, #group-image .debug-on #title, .debug-on .group-divider > .background {
+.debug-on #group-hero-image, .debug-on .group-panel, .debug-on .group-divider {
+  transform: translate3d(700px, 0, -800px) rotateY(40deg); }
+
+/* line 96, ../../assets/scss/parallax/_parallax.scss */
+.debug-on .group-divider > .window, .debug-on #index #group-hero-image #us, #index #group-hero-image .debug-on #us, .debug-on .group-divider > .background, .debug-on #index #group-hero-image #trees, #index #group-hero-image .debug-on #trees, .debug-on #index #group-hero-image #moon, #index #group-hero-image .debug-on #moon, .debug-on #index #group-hero-image #title, #index #group-hero-image .debug-on #title {
   outline: 1px black solid; }
+
+/* line 99, ../../assets/scss/parallax/_parallax.scss */
+.debug {
+  position: fixed;
+  top: 0;
+  left: 0.5em;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 0.5em;
+  border-radius: 0 0 5px 5px; }
+
+/* line 3, ../../assets/scss/parallax/_elements.scss */
+#group-hero-image {
+  z-index: 1; }
+
+/* line 8, ../../assets/scss/parallax/_elements.scss */
+.group-panel {
+  z-index: 3; }
+
+/* line 13, ../../assets/scss/parallax/_elements.scss */
+.group-divider {
+  z-index: 2; }
+  /* line 16, ../../assets/scss/parallax/_elements.scss */
+  .group-divider > .window {
+    height: 200px; }
+  /* line 20, ../../assets/scss/parallax/_elements.scss */
+  .group-divider > .background {
+    transform: translateZ(-80px) scale(1.26667);
+    background-size: cover;
+    top: -40%;
+    bottom: -40%;
+    left: -1vw; }
 
 /* line 3, ../../assets/scss/flex/_flex.scss */
 .flex {
@@ -7932,80 +7945,58 @@ html, body {
 .debug-on .flex div {
   outline: 1px black dotted; }
 
-/* line 18, ../../assets/scss/main.scss */
-.debug {
-  position: fixed;
-  top: 0;
-  left: 0.5em;
-  z-index: 999;
-  background: rgba(0, 0, 0, 0.85);
-  color: #fff;
-  padding: 0.5em;
-  border-radius: 0 0 5px 5px; }
-
-/* line 3, ../../assets/scss/page/_sections.scss */
-#group-image {
-  z-index: 1; }
-  /* line 6, ../../assets/scss/page/_sections.scss */
-  #group-image #us {
-    height: 100vh;
-    background-image: url(../img/us.png);
-    background-size: auto 40%; }
-  /* line 12, ../../assets/scss/page/_sections.scss */
-  #group-image #trees {
-    background-image: url(../img/trees.png);
-    background-size: cover;
-    background-position: top center;
-    left: -0.5vw;
-    top: -10vh; }
-  /* line 20, ../../assets/scss/page/_sections.scss */
-  #group-image #moon {
-    background-image: url(../img/moon.png);
-    background-size: auto 40%;
-    background-position: top center;
-    left: 7vw;
-    top: -22vh; }
-  /* line 30, ../../assets/scss/page/_sections.scss */
-  #group-image #title > div {
+/* line 5, ../../assets/scss/pages/main/_index.scss */
+#index #group-hero-image #us {
+  height: 100vh;
+  background-image: url(/static/img/main/index/us.png);
+  background-size: auto 40%; }
+/* line 11, ../../assets/scss/pages/main/_index.scss */
+#index #group-hero-image #trees {
+  transform: translateZ(-200px) scale(1.66667);
+  background-image: url(/static/img/main/index/trees.png);
+  background-size: cover;
+  background-position: top center;
+  left: -0.5vw;
+  top: -10vh; }
+/* line 19, ../../assets/scss/pages/main/_index.scss */
+#index #group-hero-image #moon {
+  transform: translateZ(-300px) scale(2);
+  background-image: url(/static/img/main/index/moon.png);
+  background-size: auto 40%;
+  background-position: top center;
+  left: 7vw;
+  top: -22vh; }
+/* line 27, ../../assets/scss/pages/main/_index.scss */
+#index #group-hero-image #title {
+  transform: translateZ(-125px) scale(1.41667); }
+  /* line 29, ../../assets/scss/pages/main/_index.scss */
+  #index #group-hero-image #title > div {
     margin: 0 auto;
     padding-top: 130px;
     color: ivory;
     font-size: 3em;
     text-align: center;
-    font-family: cursive;
+    font-family: annabelle-jf, cursive;
+    font-style: normal;
+    font-weight: 400;
     display: table; }
-  /* line 39, ../../assets/scss/page/_sections.scss */
-  #group-image #title h1 {
+  /* line 40, ../../assets/scss/pages/main/_index.scss */
+  #index #group-hero-image #title h1 {
     margin: 0;
     padding: 0;
     font-size: 6rem; }
-  /* line 44, ../../assets/scss/page/_sections.scss */
-  #group-image #title #billy {
+  /* line 45, ../../assets/scss/pages/main/_index.scss */
+  #index #group-hero-image #title #billy {
     padding-right: 2.5em; }
     /* line 7, ../../assets/scss/materialize/customization/_tweaks.scss */
-    #group-image #title #billy::first-letter {
+    #index #group-hero-image #title #billy::first-letter {
       font-size: 1.5em; }
-  /* line 48, ../../assets/scss/page/_sections.scss */
-  #group-image #title #betsy {
+  /* line 49, ../../assets/scss/pages/main/_index.scss */
+  #index #group-hero-image #title #betsy {
     padding-left: 2.5em; }
     /* line 7, ../../assets/scss/materialize/customization/_tweaks.scss */
-    #group-image #title #betsy::first-letter {
+    #index #group-hero-image #title #betsy::first-letter {
       font-size: 1.5em; }
-
-/* line 55, ../../assets/scss/page/_sections.scss */
-.group-panel {
-  z-index: 3; }
-
-/* line 63, ../../assets/scss/page/_sections.scss */
-.group-divider {
-  z-index: 2; }
-  /* line 66, ../../assets/scss/page/_sections.scss */
-  .group-divider > .window {
-    height: 200px; }
-  /* line 70, ../../assets/scss/page/_sections.scss */
-  .group-divider > .background {
-    background-image: url(https://static.pexels.com/photos/107956/pexels-photo-107956.jpeg);
-    background-size: cover;
-    top: -40%;
-    bottom: -40%;
-    left: -1vw; }
+/* line 56, ../../assets/scss/pages/main/_index.scss */
+#index .group-divider > .background {
+  background-image: url(http://www.storywarren.com/wp-content/uploads/2016/09/space-1.jpg); }

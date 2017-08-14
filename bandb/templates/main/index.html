@@ -1,0 +1,13 @@
+{% extends "main/main_base.html" %}
+
+{% set page_sections = ['main/panels/summary.html', '',
+						'main/panels/story.html', '',
+						'main/panels/party.html', '',
+						'main/panels/venue.html'
+						] %}
+
+{% block page_id %}index{% endblock %}
+
+{% block plx_hero_image %}
+{% include "main/heros/index.html" %}
+{% endblock %}

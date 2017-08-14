@@ -1,0 +1,28 @@
+{% extends "parallax.html" %}
+
+{% block page_id %}main{% endblock %}
+
+{% block plx_content %}
+<!-- sections: {{sections}} -->
+{% if not sections %}
+	{% set sections = page_sections %}
+{% endif %}
+<!-- sections: {{sections}} -->
+{% for sect in sections %}
+	<!-- sect: {{sect}} -->
+	{% if sect[-4:] == 'html' %}
+		<div class="group-panel">
+			{% include sect %}
+		</div>
+	{% elif not sect or sect[-4:] == 'png' or sect[-4:] == 'jpg' %}
+		<div class="group-divider">
+		    <div class="window"></div>
+		    {% if sect %}
+		    	<div class="background" style="background-image:url({{sec}})"></div>
+		    {% else %}
+		    	<div class="background"></div>
+		    {% endif %}
+		</div>
+	{% endif %}
+{% endfor %}
+{% endblock %}

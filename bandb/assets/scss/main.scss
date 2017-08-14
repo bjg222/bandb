@@ -13,17 +13,10 @@
 @import "materialize/customization/cardbio";
   
 @import "parallax/parallax";
+@import "parallax/elements";
+
 @import "flex/flex";
 
-.debug {
-  position: fixed;
-  top: 0;
-  left: 0.5em;
-  z-index: 999;
-  background: rgba(0,0,0,0.85);
-  color: #fff;
-  padding: 0.5em;
-  border-radius: 0 0 5px 5px;
-}
+@import "elements/elements";
 
-@import "page/sections";
+@import "pages/pages";
