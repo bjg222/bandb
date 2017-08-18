@@ -1,21 +1,15 @@
-@charset "utf-8";
+
 
 @import "reset/reset";
 
 @import url("http://fonts.googleapis.com/icon?family=Material+Icons");
 @import "materialize/mixins";
 
-@import "materialize/customization/variables";
+@import "elements/variables";
 
 @import "materialize/materialize";
-
-@import "materialize/customization/tweaks";
-@import "materialize/customization/cardbio";
   
 @import "parallax/parallax";
-@import "parallax/elements";
-
-@import "flex/flex";
 
 @import "elements/elements";
 

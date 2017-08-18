@@ -13,7 +13,10 @@ $navy: (
 $shades: map-merge($shades, ("ivory": ivory, "silver": silver));
 $colors: map-merge($colors, ("shades": $shades, "navy": $navy));
 
-$background-color: color("navy", "darken-4");
+$dark-background-color: color("navy", "darken-4");
+$light-background-color: color("shades", "ivory");
+$on-dark-text-color: color("shades", "silver");
+$on-light-text-color: $off-black;
 $primary-color: color("navy", "base");
 $secondary-color: color("amber", "lighten-3");
 $error-color: color("red", "darken-3");
@@ -21,4 +24,5 @@ $link-color: color("teal", "darken-1");
 $card-bg-color: color("shades", "ivory");
 $card-link-color: $link-color;
 
-$card-padding: 15px;
+$roboto-font-path: "static/fonts/roboto/";
+

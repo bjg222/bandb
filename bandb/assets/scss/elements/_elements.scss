@@ -1,0 +1,43 @@
+//Materialize Adjustments
+
+
+html {
+	font-family: ingra, "helvetica neue", "segoe ui", "franklin gothic", sans-serif;
+	font-weight: 200;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: ingra-2, "helvetica neue", "segoe ui", "franklin gothic", sans-serif;
+	font-weight: 100;
+}
+
+p {
+  text-align: justify;
+  margin-bottom: 10px;
+}
+
+.row:last-child {
+	margin-bottom: 0;
+}
+
+//.card {
+//  margin: $card-padding / 2;
+//}
+
+
+
+//New Elements
+
+
+@mixin big-first-letter {
+  &::first-letter {
+    font-size: 1.5em;
+  }
+}
+
+.signature {
+	font-family: annabelle-jf, "apple chancery", "monotype corsiva", "lucida calligraphy", "lucida handwriting"cursive;
+	@extend h5;
+	padding-top: 0.3rem;
+	padding-bottom: 0.4rem;
+}

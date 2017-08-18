@@ -1,0 +1,72 @@
+@charset "utf-8";
+
+$viewer-distance: 300px;
+
+html, body {
+  transform: translateZ(0);
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+#plx-viewport {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: $viewer-distance;
+  position: absolute;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+%plx-group {
+  position: relative;
+  transform-style: preserve-3d;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: transform 1s;
+}
+%plx-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-attachment: scroll;
+}
+@mixin translateZ-and-scale($distance) {
+    transform: translateZ($distance) scale(1 - $distance / $viewer-distance);
+}
+@mixin make-plx-layer($dist) {
+	@extend %plx-layer;
+	@include translateZ-and-scale($dist);
+}
+%plx-base {
+ 	@include make-plx-layer(0px);
+	position: relative;
+}
+.debug-on %plx-group {
+  transform: translate3d(700px, 0, -800px) rotateY(40deg);
+}
+.debug-on %plx-layer{
+  outline: 1px black solid;
+}
+.debug {
+  position: fixed;
+  top: 0;
+  left: 0.5em;
+  z-index: 999;
+  background: rgba(0,0,0,0.85);
+  color: #fff;
+  padding: 0.5em;
+  border-radius: 0 0 5px 5px;
+}

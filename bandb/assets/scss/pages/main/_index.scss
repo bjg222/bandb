@@ -32,25 +32,36 @@
 	      color: ivory;
 	      font-size: 3em;
 	      text-align: center;
-	      font-family: annabelle-jf, cursive;
-		  font-style: normal;
-		  font-weight: 400;
 	      display: table;
-	    }
-	    h1 {
-	      margin: 0;
-	      padding: 0;
-	      font-size: 6rem
-	    }
-	    #billy {
-	      padding-right: 2.5em;
-	      @include big-first-letter;
-	    }
-	    #betsy {
-	      padding-left: 2.5em;
-	      @include big-first-letter;
+          h1 {
+            margin: 0;
+            padding: 0;
+            font-size: 6rem;
+	        font-family: annabelle-jf, cursive;
+		    font-style: normal;
+		    font-weight: 400;
+            &#billy {
+              padding-right: 2.5em;
+              @include big-first-letter;
+            }
+            &#betsy {
+              padding-left: 2.5em;
+              @include big-first-letter;
+            }
+          }
 	    }
 	  }
+	}
+	
+	card-image {
+		#eastern-market {
+			background-image: url("/static/img/main/easternmarket.png");
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			&.small {
+			}
+		}
 	}
 	
 	.group-divider > .background {

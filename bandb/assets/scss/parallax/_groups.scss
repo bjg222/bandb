@@ -8,6 +8,16 @@
 .group-panel {
   @extend %plx-group;
   z-index: 3;
+  > .background {
+  	@extend %plx-base;
+    padding: 5rem 0;
+  	background-color: $dark-background-color;
+  	color: $on-dark-text-color;
+  	&.lightbg {
+  		background-color: $light-background-color;
+  		color: $on-light-text-color
+  	}
+  }
 }
 
 .group-divider {

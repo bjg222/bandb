@@ -3,6 +3,5 @@
 //BJG: Pulled out of _materialize.scss so that the mixins and color definitions can be imported separately from the rule generation, to allow for custom variables to be added that use them
 
 // Mixins
-// @import "components/prefixer";
 @import "components/mixins";
 @import "components/color";

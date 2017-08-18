@@ -337,6 +337,8 @@ $shades: (
   "transparent":  transparent
 );
 
+$off-black: rgba(0, 0, 0, 0.87) !default;
+
 $colors: (
   "materialize-red": $materialize-red,
   "red": $red,
@@ -359,7 +361,7 @@ $colors: (
   "blue-grey": $blue-grey,
   "grey": $grey,
   "shades": $shades
-);
+)  !default;
 
 // usage: color("name_of_color", "type_of_color")
 // to avoid to repeating map-get($colors, ...)
@@ -371,7 +373,7 @@ $colors: (
       @return map-get($curr_color, $type);
     }
   }
-  @warn "Unknown `#{name}` in $colors.";
+  @warn "Unknown `#{$color}` - `#{$type}` in $colors.";
   @return null;
 }
 
