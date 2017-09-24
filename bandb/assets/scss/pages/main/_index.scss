@@ -34,12 +34,10 @@
 	      text-align: center;
 	      display: table;
           h1 {
+          	@extend .elegant;
             margin: 0;
             padding: 0;
             font-size: 6rem;
-	        font-family: annabelle-jf, cursive;
-		    font-style: normal;
-		    font-weight: 400;
             &#billy {
               padding-right: 2.5em;
               @include big-first-letter;
@@ -53,16 +51,7 @@
 	  }
 	}
 	
-	card-image {
-		#eastern-market {
-			background-image: url("/static/img/main/easternmarket.png");
-			background-position: center;
-			background-size: cover;
-			background-repeat: no-repeat;
-			&.small {
-			}
-		}
-	}
+	@include make-card-image(eastern-market, "/static/img/main/easternmarket.png", $is-horizontal: true);
 	
 	.group-divider > .background {
 	    background-image: url(http://www.storywarren.com/wp-content/uploads/2016/09/space-1.jpg);

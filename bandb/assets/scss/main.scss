@@ -1,5 +1,4 @@
 
-
 @import "reset/reset";
 
 @import url("http://fonts.googleapis.com/icon?family=Material+Icons");
@@ -14,3 +13,7 @@
 @import "elements/elements";
 
 @import "pages/pages";
+
+debug-output {
+	width: image-width("../static/img/main/easternmarket.png");
+}

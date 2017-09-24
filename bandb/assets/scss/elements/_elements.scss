@@ -20,9 +20,68 @@ p {
 	margin-bottom: 0;
 }
 
-//.card {
-//  margin: $card-padding / 2;
-//}
+.card {
+	color: $on-light-text-color;
+	.card-image {
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	.card-title {
+		&.big {
+			font-size: 36px;
+			margin-bottom: 16px;
+		}
+	}
+	.card-content {
+		.text{
+			font-size: 1.2em;
+			margin-bottom: 0.4em;
+		}
+		.major {
+			font-size: 1.8em;
+			margin-bottom: 0.5em;
+		}
+		.minor {
+			font-size: 0.85em;
+			margin-bottom: 0.25em;
+		}
+	}
+}
+
+@mixin make-card-image($div-id, $img-url, $is-horizontal: false) {
+	$img-width: image-width("..#{$img-url}");
+	$img-height: image-height("..#{$img-url}");
+	$img-ratio: $img-width / $img-height;
+	//$card-selector: if($is-horizontal, ".card.horizontal", ".card");
+	//$img-selector: ".card-image##{$div-id}";
+	@debug $img-url;
+	@debug $img-width;
+	@debug $img-height;
+	@debug $img-ratio;
+	.card {
+		.card-image##{$div-id} {
+			background-image: url($img-url);
+		}
+		&:not(.horizontal) .card-image##{$div-id} {
+			height: 100% / $img-ratio;
+		}
+		&.horizontal {
+			.card-image##{$div-id} {
+				width: 50%;
+			}
+			&.small .card-image##{$div-id} {
+				max-width: 300px * $img-ratio;
+			}
+			&.medium .card-image##{$div-id} {
+				max-width: 400px * $img-ratio;
+			}
+			&.large .card-image##{$div-id} {
+				max-width: 500px * $img-ratio;
+			}
+		}
+	}
+}
 
 
 
@@ -35,9 +94,15 @@ p {
   }
 }
 
+.elegant {
+	font-family: annabelle-jf, "apple chancery", "monotype corsiva", "lucida calligraphy", "lucida handwriting", cursive;
+	font-weight: 400;
+	font-style: normal;
+}
+
 .signature {
-	font-family: annabelle-jf, "apple chancery", "monotype corsiva", "lucida calligraphy", "lucida handwriting"cursive;
 	@extend h5;
+	@extend .elegant;
 	padding-top: 0.3rem;
 	padding-bottom: 0.4rem;
 }

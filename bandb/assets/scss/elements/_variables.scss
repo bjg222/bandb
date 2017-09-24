@@ -21,7 +21,7 @@ $primary-color: color("navy", "base");
 $secondary-color: color("amber", "lighten-3");
 $error-color: color("red", "darken-3");
 $link-color: color("teal", "darken-1");
-$card-bg-color: color("shades", "ivory");
+$card-bg-color: $light-background-color;
 $card-link-color: $link-color;
 
 $roboto-font-path: "static/fonts/roboto/";
