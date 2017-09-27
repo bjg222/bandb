@@ -51,8 +51,6 @@
 	  }
 	}
 	
-	@include make-card-image(eastern-market, "/static/img/main/easternmarket.png", $is-horizontal: true);
-	
 	.group-divider > .background {
 	    background-image: url(http://www.storywarren.com/wp-content/uploads/2016/09/space-1.jpg);
 	}

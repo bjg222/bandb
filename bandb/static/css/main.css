@@ -3081,7 +3081,7 @@ a {
 }
 
 /* line 57, ../../assets/scss/materialize/components/_global.scss */
-.z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-floating, .dropdown-content, .collapsible, .side-nav {
+.z-depth-1, nav, .toast, .btn, .btn-large, .btn-floating, .dropdown-content, .collapsible, .side-nav {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
 }
 
@@ -5357,198 +5357,6 @@ small {
 /* line 8, ../../assets/scss/materialize/components/_transitions.scss */
 .scale-transition.scale-in {
   transform: scale(1);
-}
-
-/* line 3, ../../assets/scss/materialize/components/_cards.scss */
-.card-panel {
-  transition: box-shadow .25s;
-  padding: 24px;
-  margin: 0.5rem 0 1rem 0;
-  border-radius: 2px;
-  background-color: ivory;
-}
-
-/* line 12, ../../assets/scss/materialize/components/_cards.scss */
-.card {
-  position: relative;
-  margin: 0.5rem 0 1rem 0;
-  background-color: ivory;
-  transition: box-shadow .25s;
-  border-radius: 2px;
-}
-/* line 21, ../../assets/scss/materialize/components/_cards.scss */
-.card .card-title {
-  font-size: 24px;
-  font-weight: 300;
-}
-/* line 24, ../../assets/scss/materialize/components/_cards.scss */
-.card .card-title.activator {
-  cursor: pointer;
-}
-/* line 30, ../../assets/scss/materialize/components/_cards.scss */
-.card.small, .card.medium, .card.large {
-  position: relative;
-}
-/* line 33, ../../assets/scss/materialize/components/_cards.scss */
-.card.small .card-image, .card.medium .card-image, .card.large .card-image {
-  max-height: 60%;
-  overflow: hidden;
-}
-/* line 37, ../../assets/scss/materialize/components/_cards.scss */
-.card.small .card-image + .card-content, .card.medium .card-image + .card-content, .card.large .card-image + .card-content {
-  max-height: 40%;
-}
-/* line 40, ../../assets/scss/materialize/components/_cards.scss */
-.card.small .card-content, .card.medium .card-content, .card.large .card-content {
-  max-height: 100%;
-  overflow: hidden;
-}
-/* line 44, ../../assets/scss/materialize/components/_cards.scss */
-.card.small .card-action, .card.medium .card-action, .card.large .card-action {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-/* line 52, ../../assets/scss/materialize/components/_cards.scss */
-.card.small {
-  height: 300px;
-}
-/* line 56, ../../assets/scss/materialize/components/_cards.scss */
-.card.medium {
-  height: 400px;
-}
-/* line 60, ../../assets/scss/materialize/components/_cards.scss */
-.card.large {
-  height: 500px;
-}
-/* line 65, ../../assets/scss/materialize/components/_cards.scss */
-.card.horizontal {
-  display: flex;
-}
-/* line 67, ../../assets/scss/materialize/components/_cards.scss */
-.card.horizontal.small .card-image, .card.horizontal.medium .card-image, .card.horizontal.large .card-image {
-  height: 100%;
-  max-height: none;
-  overflow: visible;
-}
-/* line 72, ../../assets/scss/materialize/components/_cards.scss */
-.card.horizontal.small .card-image img, .card.horizontal.medium .card-image img, .card.horizontal.large .card-image img {
-  height: 100%;
-}
-/* line 80, ../../assets/scss/materialize/components/_cards.scss */
-.card.horizontal .card-image {
-  max-width: 50%;
-}
-/* line 82, ../../assets/scss/materialize/components/_cards.scss */
-.card.horizontal .card-image img {
-  border-radius: 2px 0 0 2px;
-  max-width: 100%;
-  width: auto;
-}
-/* line 89, ../../assets/scss/materialize/components/_cards.scss */
-.card.horizontal .card-stacked {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  position: relative;
-}
-/* line 95, ../../assets/scss/materialize/components/_cards.scss */
-.card.horizontal .card-stacked .card-content {
-  flex-grow: 1;
-}
-/* line 103, ../../assets/scss/materialize/components/_cards.scss */
-.card.sticky-action .card-action {
-  z-index: 2;
-}
-/* line 107, ../../assets/scss/materialize/components/_cards.scss */
-.card.sticky-action .card-reveal {
-  z-index: 1;
-  padding-bottom: 64px;
-}
-/* line 116, ../../assets/scss/materialize/components/_cards.scss */
-.card .card-image {
-  position: relative;
-}
-/* line 120, ../../assets/scss/materialize/components/_cards.scss */
-.card .card-image img {
-  display: block;
-  border-radius: 2px 2px 0 0;
-  position: relative;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-}
-/* line 131, ../../assets/scss/materialize/components/_cards.scss */
-.card .card-image .card-title {
-  color: ivory;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  max-width: 100%;
-  padding: 24px;
-}
-/* line 141, ../../assets/scss/materialize/components/_cards.scss */
-.card .card-content {
-  padding: 24px;
-  border-radius: 0 0 2px 2px;
-}
-/* line 145, ../../assets/scss/materialize/components/_cards.scss */
-.card .card-content p {
-  margin: 0;
-  color: inherit;
-}
-/* line 149, ../../assets/scss/materialize/components/_cards.scss */
-.card .card-content .card-title {
-  display: block;
-  line-height: 32px;
-  margin-bottom: 8px;
-}
-/* line 154, ../../assets/scss/materialize/components/_cards.scss */
-.card .card-content .card-title i {
-  line-height: 32px;
-}
-/* line 160, ../../assets/scss/materialize/components/_cards.scss */
-.card .card-action {
-  position: relative;
-  background-color: inherit;
-  border-top: 1px solid rgba(160, 160, 160, 0.2);
-  padding: 16px 24px;
-}
-/* line 161, ../../assets/scss/materialize/components/_cards.scss */
-.card .card-action:last-child {
-  border-radius: 0 0 2px 2px;
-}
-/* line 169, ../../assets/scss/materialize/components/_cards.scss */
-.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
-  color: #00897b;
-  margin-right: 24px;
-  transition: color .3s ease;
-  text-transform: uppercase;
-}
-/* line 175, ../../assets/scss/materialize/components/_cards.scss */
-.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating):hover {
-  color: #00efd7;
-}
-/* line 179, ../../assets/scss/materialize/components/_cards.scss */
-.card .card-reveal {
-  padding: 24px;
-  position: absolute;
-  background-color: ivory;
-  width: 100%;
-  overflow-y: auto;
-  left: 0;
-  top: 100%;
-  height: 100%;
-  z-index: 3;
-  display: none;
-}
-/* line 191, ../../assets/scss/materialize/components/_cards.scss */
-.card .card-reveal .card-title {
-  cursor: pointer;
-  display: block;
 }
 
 /* line 1, ../../assets/scss/materialize/components/_toast.scss */
@@ -10181,48 +9989,48 @@ p {
   margin-bottom: 0;
 }
 
-/* line 23, ../../assets/scss/elements/_elements.scss */
-.card {
-  color: rgba(0, 0, 0, 0.87);
-}
-/* line 25, ../../assets/scss/elements/_elements.scss */
-.card .card-image {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-/* line 31, ../../assets/scss/elements/_elements.scss */
-.card .card-title.big {
-  font-size: 36px;
-  margin-bottom: 16px;
-}
-/* line 37, ../../assets/scss/elements/_elements.scss */
-.card .card-content .text {
-  font-size: 1.2em;
-  margin-bottom: 0.4em;
-}
-/* line 41, ../../assets/scss/elements/_elements.scss */
-.card .card-content .major {
-  font-size: 1.8em;
-  margin-bottom: 0.5em;
-}
-/* line 45, ../../assets/scss/elements/_elements.scss */
-.card .card-content .minor {
-  font-size: 0.85em;
-  margin-bottom: 0.25em;
+/* line 24, ../../assets/scss/elements/_elements.scss */
+.col img {
+  width: 100%;
 }
 
-/* line 97, ../../assets/scss/elements/_elements.scss */
+/* line 39, ../../assets/scss/elements/_elements.scss */
 .elegant, .signature, #index #group-hero-image #title > div h1 {
   font-family: annabelle-jf, "apple chancery", "monotype corsiva", "lucida calligraphy", "lucida handwriting", cursive;
   font-weight: 400;
   font-style: normal;
 }
+/* line 43, ../../assets/scss/elements/_elements.scss */
+.elegant.big, .big.signature, #index #group-hero-image #title > div h1.big {
+  margin-top: 0.445rem;
+}
 
-/* line 103, ../../assets/scss/elements/_elements.scss */
+/* line 48, ../../assets/scss/elements/_elements.scss */
 .signature {
   padding-top: 0.3rem;
   padding-bottom: 0.4rem;
+}
+
+/* line 55, ../../assets/scss/elements/_elements.scss */
+.big {
+  font-size: 3.56rem;
+  margin-bottom: 0.89rem;
+}
+
+/* line 60, ../../assets/scss/elements/_elements.scss */
+.lines div {
+  font-size: 1.2em;
+  margin-bottom: 0.3em;
+}
+/* line 63, ../../assets/scss/elements/_elements.scss */
+.lines div.major {
+  font-size: 1.7em;
+  margin-bottom: 0.5em;
+}
+/* line 68, ../../assets/scss/elements/_elements.scss */
+.lines div.minor {
+  font-size: 0.85em;
+  margin-bottom: 0.2em;
 }
 
 /* line 5, ../../assets/scss/pages/main/_index.scss */
@@ -10272,7 +10080,7 @@ p {
 #index #group-hero-image #title > div h1#billy {
   padding-right: 2.5em;
 }
-/* line 92, ../../assets/scss/elements/_elements.scss */
+/* line 34, ../../assets/scss/elements/_elements.scss */
 #index #group-hero-image #title > div h1#billy::first-letter {
   font-size: 1.5em;
 }
@@ -10280,35 +10088,11 @@ p {
 #index #group-hero-image #title > div h1#betsy {
   padding-left: 2.5em;
 }
-/* line 92, ../../assets/scss/elements/_elements.scss */
+/* line 34, ../../assets/scss/elements/_elements.scss */
 #index #group-hero-image #title > div h1#betsy::first-letter {
   font-size: 1.5em;
 }
-/* line 63, ../../assets/scss/elements/_elements.scss */
-#index .card .card-image#eastern-market {
-  background-image: url("/static/img/main/easternmarket.png");
-}
-/* line 66, ../../assets/scss/elements/_elements.scss */
-#index .card:not(.horizontal) .card-image#eastern-market {
-  height: 97.33124%;
-}
-/* line 70, ../../assets/scss/elements/_elements.scss */
-#index .card.horizontal .card-image#eastern-market {
-  width: 50%;
-}
-/* line 73, ../../assets/scss/elements/_elements.scss */
-#index .card.horizontal.small .card-image#eastern-market {
-  max-width: 308.22581px;
-}
-/* line 76, ../../assets/scss/elements/_elements.scss */
-#index .card.horizontal.medium .card-image#eastern-market {
-  max-width: 410.96774px;
-}
-/* line 79, ../../assets/scss/elements/_elements.scss */
-#index .card.horizontal.large .card-image#eastern-market {
-  max-width: 513.70968px;
-}
-/* line 56, ../../assets/scss/pages/main/_index.scss */
+/* line 54, ../../assets/scss/pages/main/_index.scss */
 #index .group-divider > .background {
   background-image: url(http://www.storywarren.com/wp-content/uploads/2016/09/space-1.jpg);
 }

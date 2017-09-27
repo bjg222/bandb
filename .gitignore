@@ -95,3 +95,4 @@ support
 
 # SASS
 .sass-cache
+*.map
