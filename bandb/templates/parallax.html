@@ -1,11 +1,11 @@
-﻿{% extends "base.html" %}
+{% extends "base.html" %}
 
 {% block content %}
 
-<div class="debug">
+<!-- <div class="debug">
   <input name="debugcheck" id="debugcheck" type="checkbox">
   <label for="debugcheck">Debug</label>
-</div>
+</div> -->
 <div id="plx-viewport">
 	<div id="{% block page_id %}page{% endblock %}">
 		<div id="group-hero-image">
@@ -15,14 +15,14 @@
 	</div>
 </div>
 
-<script>
+<!-- <script>
   var debugInput = document.querySelector("input");
   function updateDebugState() {
       document.body.classList.toggle('debug-on', debugInput.checked);
   }
   debugInput.addEventListener("click", updateDebugState);
   updateDebugState();
-</script>
+</script> -->
 
 {% endblock content %}
 

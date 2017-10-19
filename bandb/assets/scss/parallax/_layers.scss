@@ -54,7 +54,7 @@ html, body {
  	@include make-plx-layer(0px);
 	position: relative;
 }
-.debug-on %plx-group {
+/* .debug-on %plx-group {
   transform: translate3d(700px, 0, -800px) rotateY(40deg);
 }
 .debug-on %plx-layer{
@@ -69,4 +69,4 @@ html, body {
   color: #fff;
   padding: 0.5em;
   border-radius: 0 0 5px 5px;
-}
+} */

@@ -9900,28 +9900,22 @@ html, body {
   position: relative;
 }
 
-/* line 57, ../../assets/scss/parallax/_layers.scss */
-.debug-on #group-hero-image, .debug-on .group-panel, .debug-on .group-divider {
+/* .debug-on %plx-group {
   transform: translate3d(700px, 0, -800px) rotateY(40deg);
 }
-
-/* line 60, ../../assets/scss/parallax/_layers.scss */
-.debug-on .group-panel > .background, .debug-on .group-divider > .window, .debug-on #index #group-hero-image #us, #index #group-hero-image .debug-on #us, .debug-on .group-divider > .background, .debug-on #index #group-hero-image #trees, #index #group-hero-image .debug-on #trees, .debug-on #index #group-hero-image #moon, #index #group-hero-image .debug-on #moon, .debug-on #index #group-hero-image #title, #index #group-hero-image .debug-on #title {
+.debug-on %plx-layer{
   outline: 1px black solid;
 }
-
-/* line 63, ../../assets/scss/parallax/_layers.scss */
 .debug {
   position: fixed;
   top: 0;
   left: 0.5em;
   z-index: 999;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0,0,0,0.85);
   color: #fff;
   padding: 0.5em;
   border-radius: 0 0 5px 5px;
-}
-
+} */
 /* line 3, ../../assets/scss/parallax/_groups.scss */
 #group-hero-image {
   z-index: 1;
