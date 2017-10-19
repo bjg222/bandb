@@ -26,3 +26,9 @@ $link-color: color("teal", "darken-1");
 
 $roboto-font-path: "static/fonts/roboto/";
 
+$h1-fontsize: 4rem;
+$h2-fontsize: $h1-fontsize * 0.8;
+$h3-fontsize: $h2-fontsize * 0.8;
+$h4-fontsize: $h3-fontsize * 0.8;
+$h5-fontsize: $h4-fontsize * 0.8;
+$h6-fontsize: $h5-fontsize * 0.8;
