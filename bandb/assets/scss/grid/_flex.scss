@@ -170,7 +170,7 @@ $numerators: (
     }
 
     .col {
-        flex: 1 1 0;
+        flex: 1 1 auto;
         margin: 0;
         padding: ($row-spacing) 0 0 ($col-spacing);
         // > div:only-child {
@@ -197,6 +197,19 @@ $numerators: (
                 }
                 &-baseline {
                     align-self: baseline;
+                }
+            }
+
+            &.#{$p}no {
+                &-grow {
+                    flex-grow: 0;
+                }
+                &-shrink {
+                    flex-shrink: 0;
+                }
+                &-adjust {
+                    flex-grow: 0;
+                    flex-shrink: 0;
                 }
             }
         }

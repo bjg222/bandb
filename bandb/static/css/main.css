@@ -6,7 +6,7 @@ Original sources:
 html5doctor.com Reset Stylesheet v1.6.1 | Richard Clark - http://richclarkdesign.com 
 sanitize.css v4.0.0 | CC0 License | github.com/10up/sanitize.css */
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
-html, body, div, span, object, iframe, h1, h2, h3, h4, h5, .signature, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, .signature, h6, a, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -3157,7 +3157,7 @@ a.xs-visible, abbr.xs-visible, acronym.xs-visible, audio.xs-visible, b.xs-visibl
   }
 }
 .row .col {
-  flex: 1 1 0;
+  flex: 1 1 auto;
   margin: 0;
   padding: 0.5rem 0 0 1.5rem;
 }
@@ -3248,6 +3248,16 @@ a.xs-visible, abbr.xs-visible, acronym.xs-visible, audio.xs-visible, b.xs-visibl
 .row .col.self-baseline {
   align-self: baseline;
 }
+.row .col.no-grow {
+  flex-grow: 0;
+}
+.row .col.no-shrink {
+  flex-shrink: 0;
+}
+.row .col.no-adjust {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
 .row .col.xs-full {
   flex: 0 0 100%;
 }
@@ -3334,6 +3344,16 @@ a.xs-visible, abbr.xs-visible, acronym.xs-visible, audio.xs-visible, b.xs-visibl
 }
 .row .col.xs-self-baseline {
   align-self: baseline;
+}
+.row .col.xs-no-grow {
+  flex-grow: 0;
+}
+.row .col.xs-no-shrink {
+  flex-shrink: 0;
+}
+.row .col.xs-no-adjust {
+  flex-grow: 0;
+  flex-shrink: 0;
 }
 @media screen and (min-width: 301px) {
   .row .col.s-full {
@@ -3422,6 +3442,16 @@ a.xs-visible, abbr.xs-visible, acronym.xs-visible, audio.xs-visible, b.xs-visibl
   }
   .row .col.s-self-baseline {
     align-self: baseline;
+  }
+  .row .col.s-no-grow {
+    flex-grow: 0;
+  }
+  .row .col.s-no-shrink {
+    flex-shrink: 0;
+  }
+  .row .col.s-no-adjust {
+    flex-grow: 0;
+    flex-shrink: 0;
   }
 }
 @media screen and (min-width: 601px) {
@@ -3512,6 +3542,16 @@ a.xs-visible, abbr.xs-visible, acronym.xs-visible, audio.xs-visible, b.xs-visibl
   .row .col.m-self-baseline {
     align-self: baseline;
   }
+  .row .col.m-no-grow {
+    flex-grow: 0;
+  }
+  .row .col.m-no-shrink {
+    flex-shrink: 0;
+  }
+  .row .col.m-no-adjust {
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
 }
 @media screen and (min-width: 901px) {
   .row .col.l-full {
@@ -3600,6 +3640,16 @@ a.xs-visible, abbr.xs-visible, acronym.xs-visible, audio.xs-visible, b.xs-visibl
   }
   .row .col.l-self-baseline {
     align-self: baseline;
+  }
+  .row .col.l-no-grow {
+    flex-grow: 0;
+  }
+  .row .col.l-no-shrink {
+    flex-shrink: 0;
+  }
+  .row .col.l-no-adjust {
+    flex-grow: 0;
+    flex-shrink: 0;
   }
 }
 @media screen and (min-width: 1201px) {
@@ -3690,6 +3740,16 @@ a.xs-visible, abbr.xs-visible, acronym.xs-visible, audio.xs-visible, b.xs-visibl
   .row .col.xl-self-baseline {
     align-self: baseline;
   }
+  .row .col.xl-no-grow {
+    flex-grow: 0;
+  }
+  .row .col.xl-no-shrink {
+    flex-shrink: 0;
+  }
+  .row .col.xl-no-adjust {
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
 }
 @media screen and (min-width: 1801px) {
   .row .col.xxl-full {
@@ -3778,6 +3838,16 @@ a.xs-visible, abbr.xs-visible, acronym.xs-visible, audio.xs-visible, b.xs-visibl
   }
   .row .col.xxl-self-baseline {
     align-self: baseline;
+  }
+  .row .col.xxl-no-grow {
+    flex-grow: 0;
+  }
+  .row .col.xxl-no-shrink {
+    flex-shrink: 0;
+  }
+  .row .col.xxl-no-adjust {
+    flex-grow: 0;
+    flex-shrink: 0;
   }
 }
 
@@ -4077,7 +4147,7 @@ td, th {
   padding: 0;
 }
 .section.full-height, #index .section.save-the-date, #index .section.us, #index .section.story, #index .section.party, #index .section.events, #index .section.registry {
-  min-height: 100vh;
+  min-height: 110vh;
 }
 
 .container {
@@ -4573,8 +4643,19 @@ td, th {
   justify-content: center;
 }
 #index .section.events > .container > .row > .col img, #index .section.events > .container > .row > .col .img, #index .section.registry > .container > .row > .col img, #index .section.registry > .container > .row > .col .img {
-  max-width: 100%;
-  max-height: 250px;
+  max-width: 90%;
+  max-height: 200px;
+}
+#index .section.registry a.col {
+  min-width: 200px;
+  max-width: 350px;
+}
+#index .section.registry a.col h1, #index .section.registry a.col h2, #index .section.registry a.col h3, #index .section.registry a.col h4, #index .section.registry a.col h5, #index .section.registry a.col .signature, #index .section.registry a.col h6 {
+  flex: 0 0 35%;
+}
+#index .section.registry a.col img, #index .section.registry a.col .img {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 /*# sourceMappingURL=main.css.map */

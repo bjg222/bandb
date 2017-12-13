@@ -280,10 +280,27 @@
 			> .container > .row > .col {
 				@include align-and-valign(center, middle);
 				img, .img {
-					max-width: 100%;
-					max-height: 250px;
+					max-width: 90%;
+					max-height: 200px;
 				}
 			}
 		}
+		&.registry {
+			a.col {
+				min-width: 200px;
+				max-width: 350px;
+				#{headings()} {
+					flex: 0 0 35%;
+				}
+				img, .img {
+					margin-top: 1rem;
+					margin-bottom: 1rem;
+				}
+			}
+		}
+		// &.registry a.row {
+		// 	//height: 100%;
+		// 	@include align(center);
+		// }
 	}
 }
