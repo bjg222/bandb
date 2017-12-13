@@ -55,23 +55,235 @@
 	.group-divider > .background {
 	    background-image: url(http://www.storywarren.com/wp-content/uploads/2016/09/space-1.jpg);
 	}
-	
-	.person {
-		@extend .s12;
-		@extend .l6;
-		margin-top: 10px;
-		margin-bottom: 10px;
-		img {
-			width: 50%; 
-			max-width: 175px;
+
+	.section.save-the-date {
+		@extend .full-height;
+		@include valign(middle);
+		.front {
+			@extend .accent;
+			@include align(center);
+			@include valign(middle);
+			@include for-screens((
+				xs: 3.75rem,
+				s: 4rem,
+				m: 5rem,
+				xl: 5.5rem
+			)) {
+				font-size: for-screens-value();
+			}
+			@include for-screens((
+				xs: 250px,
+				l: 270px
+			)) {
+				min-width: for-screens-value();
+			}
+			@include for-screens((
+				xs: 350px,
+				m: 400px
+			)) {
+				max-width: for-screens-value();
+			}
 		}
-		&:nth-child(even) img {
-			margin-left: 10px;
-			float: right;
+		.back {
+			@include valign(middle);
+			flex-grow: 2;
+			width: 100%;
+			@include for-screens((
+				xs: 250px,
+				s: 300px,
+				m: 365px,
+				l: 425px
+			)) {
+				min-width: for-screens-value();
+			}
+			@include for-screens((
+				xs: 400px,
+				m: 500px,
+				xl: 575px
+			)) {
+				max-width: for-screens-value();
+			}
+			> .row {
+				width: 100%;
+			}
+			.field {
+				@include for-screens((
+					xs: 1rem,
+					s: 1.1rem,
+					m: 1.2rem,
+					l: 1.3rem,
+					xl: 1.5rem
+				)) {
+					font-size: for-screens-value();
+				}
+				@include for-screens((
+					xs: 0.2rem,
+					s: 0.26rem,
+					m: 0.32rem,
+					l: 0.38rem,
+					xl: 0.44rem
+				)) {
+					margin-bottom: for-screens-value();
+				}
+			}
+			.value {
+				@include for-screens((
+					xs: 1.25rem,
+					s: 1.4rem,
+					m: 1.8rem,
+					l: 2.1rem,
+					xl: 2.3rem
+				)) {
+					font-size: for-screens-value();
+				}
+				@extend .display;
+				@include for-screens((
+					xs: 0.4rem,
+					s: 0.55rem,
+					m: 0.7rem,
+					l: 0.85rem,
+					xl: 1.0rem
+				)) {
+					margin-bottom: for-screens-value();
+				}
+				border-bottom: 1px dotted $on-dark-text-color;
+			}
 		}
-		&:nth-child(odd) img {
-			margin-right: 10px;
-			float: left;
+	}
+
+	%panel {
+		img, .img {
+			display: block;
+			width: 33%;
+			max-width: 200px;
+			margin: 0 auto 5px auto;
+			padding: 0;
+		}
+		#{headers()} {
+			@include align(center);
+		}
+		.elegant {
+			@extend .accent;
+		}
+		.name {
+			@extend .display;
+		}
+		@include for-screens-prefixes {
+			$p: for-screens-prefixes-pre();
+			&.#{$p}left-img {
+				img, .img {
+					float: left;
+					margin-left: 0;
+					margin-right: 10px;
+				}
+				#{headers()} {
+					@include align(right);
+				}
+			}
+			&.#{$p}right-img {
+				img, .img {
+					float: right;
+					margin-right: 0;
+					margin-left: 10px;
+				}
+				#{headers()} {
+					@include align(left)
+				}
+			}
+		}
+	}
+	.section {
+		#{selector-append(headers(), ".col")} {
+			@include align(center);
+		}
+		h1.col {
+			margin-bottom: $section-padding;
+		}
+		&.us {
+			@extend .full-height;
+			@include valign(middle);
+			.person {
+				@extend %panel;
+				@include for-screens((
+					xs: 250px,
+					s: 300px,
+					m: 340px
+				)) {
+					min-width: for-screens-value();
+				}
+				max-width: 500px;
+				&:nth-child(even) {
+					@extend .s-left-img;
+				}
+				&:nth-child(odd) {
+					@extend .s-right-img;
+				}
+			}
+		}
+		&.story {
+			@extend .full-height;
+			@include valign(middle);
+			.chapter {
+				@extend %panel;
+				@include for-screens((
+					xs: 250px,
+					m: 350px
+				)) {
+					min-width: for-screens-value();
+				}
+				img, .img {
+					max-width: 300px;
+				}
+			}
+			.row:nth-child(even) .chapter {
+				@extend .s-left-img;
+			}
+			.row:nth-child(odd) .chapter {
+				@extend .s-right-img;
+			}
+		}
+		&.party {
+			@extend .full-height;
+			@include valign(middle);
+			.person {
+				@extend %panel;
+				@include for-screens((
+					xs: 250px,
+					l: 295px
+				)) {
+					min-width: for-screens-value();
+				}
+				max-width: 500px;
+				// img, .img {
+				// 	width: 38%;
+				// }
+				&:nth-child(4n+1), &:nth-child(4n) {
+					@extend .m-left-img;
+				}
+				&:nth-child(4n+2), &:nth-child(4n+3) {
+					@extend .m-right-img;
+				}
+				&:nth-child(even) {
+					@extend .s-right-img, .xl-right-img;
+				}
+				&:nth-child(odd) {
+					@extend .s-left-img, .xl-left-img;
+				}
+			}
+		}
+		&.events, &.registry {
+			@extend .full-height;
+			@include valign(middle);
+			> .container > .row:not(.no-gaps) {
+				margin-bottom: $section-padding / 2;
+			}
+			> .container > .row > .col {
+				@include align-and-valign(center, middle);
+				img, .img {
+					max-width: 100%;
+					max-height: 250px;
+				}
+			}
 		}
 	}
 }

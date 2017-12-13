@@ -1,0 +1,56 @@
+@function zip($lists...) {
+    $list: ();
+    @for $i from 1 through length(nth($lists, 1)) {
+        $item: ();
+        @each $l in $lists {
+            $item: append($item, nth($l, $i));
+        }
+        $list: append($list, $item);
+    }
+    @return $list;
+}
+
+@function map-zip($keys, $lists...) {
+    $map: ();
+    @for $i from 1 through length($keys) {
+        $item: ();
+        @each $l in $lists {
+            $item: append($item, nth($l, $i));
+        }
+        $map: map-merge($map, (nth($keys, $i): $item));
+    }
+    @return $map;
+}
+
+@function str-explode($str, $delim: " ") {
+    $list: ();
+    @while (str-length($str) > 0) {
+        $idx: str-index($str, $delim);
+        @if (not $idx) {
+            $idx: str-length($str) + 1;
+        }
+        $list: append($list, str-slice($str, 0, $idx - 1), comma);
+        $str: str-slice($str, $idx + 1);
+        @debug $list, $str;
+    }
+    @return $list;
+}
+
+@function list-implode($list, $delim: ",") {
+    $str: "";
+    @each $item in $list {
+        $str: $str + $item + $delim;
+    }
+    @return str-slice($str, 0, str-length($str) - 1);
+}
+
+@function str-last-index($str, $needle) {
+    $index: str-index($str, $needle);
+    $result: null;
+    @while ($index) {
+        $result: if($result, $result, 0) + $index;
+        $str: str-slice($str, $index + 1);
+        $index: str-index($str, $needle);
+    }
+    @return $result;
+}

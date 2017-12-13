@@ -1,0 +1,7 @@
+@mixin properties-zip($properties, $values) {
+    //@debug $properties, $values;
+    //@debug map-zip($properties, $values);
+    @each $prop, $val in map-zip($properties, $values) {
+        #{$prop}: #{$val};
+    }
+}

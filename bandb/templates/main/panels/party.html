@@ -1,47 +1,72 @@
 {# from 'main/panels/person.html' import person #}
 
 {% macro person(name, side, image) %}
-	<div class="col person">
+	<div class="col person xs-full m-half xl-third">
 		<img src="../static/img/{{ image }}.jpg" />
-		<h4 class="elegant">{{name}}</h4>
+		<h4 class="name">{{name}}</h4>
 		<h6>{{side}}'s Side</h6>
 		{{ caller() }}
 	</div>
 {% endmacro %}
 
 <div class="background">
-	<div class="container">
-		<div class="row">
-			{% call person('Tanner', 'Billy', 'man') %}
-				<p>my roommate from Notre Dame, ever longing for a pony</p>
-			{% endcall %}
-			{% call person('David', 'Betsy', 'man') %}
-				<p>kinda of complicated but met in college and have been great friends since</p>
-			{% endcall %}
-			{% call person('Deny', 'Billy', 'man') %}
-				<p>my brother and partner in driving mom & dad crazy growing up</p>
-			{% endcall %}
-			{% call person('Jen G', 'Betsy', 'woman') %}
-				<p>met originally through Patrick, spent the last almost decade living it up in DC, now our neighbor</p>
-			{% endcall %}
-			{% call person('Jen H', 'Billy', 'woman') %}
-				<p>met at an ND freshman send off in NJ, became great band buddies, always happy to take a late night phone call for advice</p>
-			{% endcall %}
-			{% call person('Patrick', 'Betsy', 'man') %}
-				<p>met through David became fast friends (David's husband)</p>
-			{% endcall %}
-			{% call person('Jenn T', 'Billy', 'woman') %}
-				<p>fellow Georgia Tech pilot and PhD student, was always willing to complain about grad school (married to Shahin)</p>
-			{% endcall %}
-			{% call person('Simmie', 'Betsy', 'woman') %}
-				<p>met at work, became roommates, still surviving being women engineers together</p>
-			{% endcall %}
-			{% call person('Shahin', 'Billy', 'man') %}
-				<p>one of the first people I met when I joined the Yellow Jacket Flying Club, many flying adventures (married to Jenn T)</p>
-			{% endcall %}
-			{% call person('Shelby', 'Betsy', 'woman') %}
-				<p>roommate from Stanford, weathered the Toyon plague and Marguerite rides to Target together</p>
-			{% endcall %}
+	<div class="section party">
+		<div class="container">
+			<div class="row no-gaps">
+				<h1 class="col">The Flight Crew</h1>
+			</div>
+			<div class="row items-space-around">
+				{% call person('Tanner', 'Billy', 'man') %}
+					<p>Tanner and I lived across the hall from each other freshman year at Notre Dame. We quickly became great friends,
+						and were roommates the following three years. We've got many great stories, and he is ever asking for a pony!
+						Now he's a doctor in Pittsburgh finding a cure for cancer (and a way to build a spaceship out of proteins).</p>
+				{% endcall %}
+				{% call person('David', 'Betsy', 'man') %}
+					<p>kinda of complicated but met in college and have been great friends since
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras diam massa, feugiat dignissim volutpat et, accumsan sit 
+						amet orci. Nam a pharetra arcu. Aenean auctor purus ut nulla ultricies pharetra. Nunc fermentum id mauris ut tincidunt.</p>
+				{% endcall %}
+				{% call person('Deny', 'Billy', 'man') %}
+					<p>My younger brother and I have always been very close! We've shared our love of many things, like soccer and 
+						Seinfield, and he's taught me how to be more outgoing! He also spent four years in the midwest, at Marquette 
+						Univeristy in Milwaukee, and now works in New York City making awesome radio programs and podcasts.</p>
+				{% endcall %}
+				{% call person('Jen G', 'Betsy', 'woman') %}
+					<p>met originally through Patrick, spent the last almost decade living it up in DC, now our neighbor
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras diam massa, feugiat dignissim volutpat et, accumsan sit 
+						amet orci. Nam a pharetra arcu. Aenean auctor purus ut nulla ultricies pharetra. Nunc fermentum id mauris ut tincidunt.</p>
+				{% endcall %}
+				{% call person('Jen H', 'Billy', 'woman') %}
+					<p>She may deny it, but Jen is from north Jersey! We met before freshman year at a send off dinner for new Notre 
+						Dame students and bonded over marching band. After college, Jen was always happy to answer the phone and provide
+						plenty of advice! Jen works in pediatrics, living in North Carolina with her husband and adorable little daughter.</p>
+				{% endcall %}
+				{% call person('Patrick', 'Betsy', 'man') %}
+					<p>met through David became fast friends (David's husband)
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras diam massa, feugiat dignissim volutpat et, accumsan sit 
+						amet orci. Nam a pharetra arcu. Aenean auctor purus ut nulla ultricies pharetra. Nunc fermentum id mauris ut tincidunt.</p>
+				{% endcall %}
+				{% call person('Jenn T', 'Billy', 'woman') %}
+					<p>A fellow PhD student at Georgia Tech, Jenn was always up for grabbing a drink and complaining about grad school!
+						She's originally from New Jersery, is an excellent pilot who flies helicopters and vintage warbirds, and will 
+						eagerly show you cool features of rock formations! She and Shahin now live in Texas and/or Atlanta.</p>
+				{% endcall %}
+				{% call person('Simmie', 'Betsy', 'woman') %}
+					<p>met at work, became roommates, still surviving being women engineers together
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras diam massa, feugiat dignissim volutpat et, accumsan sit 
+						amet orci. Nam a pharetra arcu. Aenean auctor purus ut nulla ultricies pharetra. Nunc fermentum id mauris ut tincidunt.</p>
+				{% endcall %}
+				{% call person('Shahin', 'Billy', 'man') %}
+					<p>Shahin was one of the first people I met when I joined the Yellow Jacket Flying Club at Georgia Tech. We've had
+						lots of great flying adventures, including a couple trips to EAA AirVenture Oshkosh. Though video replay did show
+						he had a head start at the last YJFC Air Rally... After previously working at JSC, he now works for Delta in Atlanta.</p>
+				{% endcall %}
+				{% call person('Shelby', 'Betsy', 'woman') %}
+					<p>roommate from Stanford, weathered the Toyon plague and Marguerite rides to Target together
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras diam massa, feugiat dignissim volutpat et, accumsan sit 
+						amet orci. Nam a pharetra arcu. Aenean auctor purus ut nulla ultricies pharetra. Nunc fermentum id mauris ut tincidunt.</p>
+				{% endcall %}
+			</div>
 		</div>
 	</div>
 </div>

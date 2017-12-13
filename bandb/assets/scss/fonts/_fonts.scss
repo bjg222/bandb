@@ -1,0 +1,53 @@
+$font-path-base: "static/fonts";
+
+@font-face {
+	font-family: "American Typewriter";
+	src: url("static/fonts/typewriter/American-Typewriter-Regular.eot");
+	src: local("American Typewriter"),
+		url("#{$font-path-base}/typewriter/American-Typewriter-Regular.woff2") format("woff2"),
+		url("#{$font-path-base}/typewriter/American-Typewriter-Regular.woff") format("woff"),
+		url("#{$font-path-base}/typewriter/American-Typewriter-Regular.ttf") format("truetype");
+	font-weight: 400;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: local("Roboto Thin"),
+        url("#{$font-path-base}/roboto/Roboto-Thin.woff2") format("woff2"),
+        url("#{$font-path-base}/roboto/Roboto-Thin.woff") format("woff");
+
+    font-weight: 100;
+}
+@font-face {
+    font-family: "Roboto";
+    src: local("Roboto Light"),
+        url("#{$font-path-base}/roboto/Roboto-Light.woff2") format("woff2"),
+        url("#{$font-path-base}/roboto/Roboto-Light.woff") format("woff");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: local("Roboto Regular"), 
+        url("#{$font-path-base}/roboto/Roboto-Regular.woff2") format("woff2"),
+        url("#{$font-path-base}/roboto/Roboto-Regular.woff") format("woff");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: local("Roboto Medium"),
+        url("#{$font-path-base}/roboto/Roboto-Medium.woff2") format("woff2"),
+        url("#{$font-path-base}/roboto/Roboto-Medium.woff") format("woff");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: local("Roboto Bold"),
+        url("#{$font-path-base}/roboto/Roboto-Bold.woff2") format("woff2"),
+        url("#{$font-path-base}/roboto/Roboto-Bold.woff") format("woff");
+    font-weight: 700;
+}
+
+@import "icons";

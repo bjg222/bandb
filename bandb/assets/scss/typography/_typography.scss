@@ -1,0 +1,110 @@
+html {
+    font-size: $base-fontsize;
+    @if $grow-fontsize-by {
+        $fs: null;
+        @each $size in map-keys($sizes) {
+            @if ($fs) {
+                $fs: $fs + $grow-fontsize-by;
+                @include only($size) {
+                    font-size: $fs;
+                }
+            } @else {
+                $fs: $base-fontsize;
+            }
+        }
+    }
+    line-height: $base-line-height;
+    font-family: $base-font-family;
+    font-weight: $base-font-weight;
+}
+
+a {
+    text-decoration: none;
+    color: $link-color;
+    &:visited, 
+    &:active {
+        color: $link-visited-color;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $heading-font-family;
+    font-weight: $heading-font-weight;
+    & a {
+        font-weight: inherit;
+    }
+}
+
+h1 {
+    font-size: $h1-fontsize;
+    line-height: $h1-line-height;
+}
+
+h2 {
+    font-size: $h2-fontsize;
+    line-height: $h2-line-height;
+}
+
+h3 {
+    font-size: $h3-fontsize;
+    line-height: $h3-line-height;
+}
+
+h4 {
+    font-size: $h4-fontsize;
+    line-height: $h4-line-height;
+}
+
+h5 {
+    font-size: $h5-fontsize;
+    line-height: $h5-line-height;
+}
+
+h6 {
+    font-size: $h6-fontsize;
+    line-height: $h6-line-height;
+}
+
+p {
+    text-align: justify;
+}
+
+em, .italic { 
+    font-style: italic; 
+}
+
+strong, .bold { 
+    font-weight: 500; 
+}
+
+big, .big {
+    font-size: 1.25em; 
+}
+
+small, .small { 
+    font-size: 0.75em; 
+}
+
+.light { 
+    font-weight: 300; 
+}
+
+.thin { 
+    font-weight: 200; 
+}
+
+.accent {
+    font-family: $accent-font-family;
+    font-weight: $accent-font-weight;
+}
+
+.display {
+    font-family: $display-font-family;
+    font-weight: $display-font-weight;
+}
+
+@mixin big-first-letter {
+    &::first-letter {
+      font-size: 1.5em;
+    }
+  }

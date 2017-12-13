@@ -1,0 +1,99 @@
+.section {
+    padding: $section-padding 0;
+    &.no-padding {
+        padding: 0;
+    }
+    &.full-height {
+        min-height: 100vh;
+    }
+}
+
+.container {
+    @if (type-of($container-width) != map) {
+        width: $container-width;
+    }
+    @if (type-of($container-max-width) != map) {
+        max-width: $container-max-width;
+    }
+    @include for-screens {
+        $s: for-screens-size();
+        @if (type-of($container-width) == map) {
+            width: map-get($container-width, $s);
+        }
+        @if (type-of($container-max-width) == map) {
+            max-width: map-get($container-max-width, $s);
+        }
+    }
+    margin: 0 auto;
+    padding: 0;
+}
+
+@mixin align($pos) {
+    text-align: $pos;
+}
+
+.align {
+    &-left {
+        @include align(left);
+    }
+    &-right {
+        @include align(right);
+    }
+    &-center {
+        @include align(center);
+    }
+}
+
+@mixin valign($pos) {
+    display: flex;
+    align-items: if($pos == "top", flex-start, if($pos == "bottom", flex-end, center));
+}
+
+.valign {
+    &-top {
+        @include valign(top);
+    }
+    &-middle {
+        @include valign(middle);
+    }
+    &-bottom {
+        @include valign(bottom);
+    }
+}
+
+@mixin align-and-valign($hpos, $vpos) {
+    @include valign($vpos);
+    justify-content: if($hpos == "left", flex-start, if($hpos == "right", flex-end, center));
+}
+
+@mixin float($pos) {
+    float: $pos; //Need important?
+}
+
+.float {
+    &-left {
+        @include float(left);
+    }
+    &-right {
+        @include float(right);
+    }
+}
+
+@mixin center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center {
+    @include center;
+}
+
+@mixin ellipsize {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ellipsize {
+    @include ellipsize;
+}

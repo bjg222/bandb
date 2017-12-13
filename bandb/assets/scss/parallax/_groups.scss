@@ -10,7 +10,7 @@
   z-index: 3;
   > .background {
   	@extend %plx-base;
-    padding: 5rem 0;
+    //padding: 5rem 0;
     margin-bottom: -1px;
   	background-color: $dark-background-color;
   	color: $on-dark-text-color;

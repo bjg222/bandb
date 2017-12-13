@@ -1,0 +1,178 @@
+$size-breaks: ();
+$min: 0px;
+@each $name, $max in $sizes {
+    $size-breaks: map-merge($size-breaks, ($name: ($min, $max)));
+    @if ($max) {
+        $min: $max + 1px;
+    }
+}
+
+@mixin only($size) {
+    @if map-has-key($size-breaks, $size) {
+        $lims: map-get($size-breaks, $size);
+        @if (nth($lims, 1) == 0px) {
+            @include and-down($size) {
+                @content;
+            }
+        } @else if (not nth($lims, 2)) {
+            @include and-up($size) {
+                @content;
+            }
+        } @else {
+            @media screen and (min-width: nth($lims, 1)) and (max-width: nth($lims, 2)) {
+                @content;
+            }
+        }
+    } @else {
+        @warn "Unknown size: #{$size}";
+    }
+}
+
+@mixin and-up($size) {
+    @if map-has-key($size-breaks, $size) {
+        $lims: map-get($size-breaks, $size);
+        @if (nth($lims, 1) > 0px) {
+            @media screen and (min-width: nth($lims, 1)) {
+                @content;
+            }
+        } @else {
+            @content;
+        }
+    } @else {
+        @warn "Unknown size: #{$size}";
+        @debug $size;
+    }
+}
+
+@mixin and-down($size) {
+    @if map-has-key($size-breaks, $size) {
+        $lims: map-get($size-breaks, $size);
+        @if (nth($lims, 2)) {
+            @media screen and (max-width: nth($lims, 2)) {
+                @content;
+            }
+        } @else {
+            @content;
+        }
+    } @else {
+        @warn "Unknown size: #{$size}";
+    }
+}
+
+@mixin screen-mixin-switch($mixin, $size) {
+    @if ($mixin == "only") {
+        @include only($size) {
+            @content;
+        }
+    } @else if ($mixin == "and-up") {
+        @include and-up($size) {
+            @content;
+        }
+    } @else if ($mixin == "and-down") {
+        @include and-down($size) {
+            @content;
+        }
+    } @else {
+        @warn "Unkown mixin: #{$mixin}";
+    }
+}
+
+$for-screens-param-size: null;
+$for-screens-param-value: null;
+$for-screens-param-is-first: null;
+@mixin for-screens($sizes: null) {
+    @if (not $sizes) {
+        $sizes: map-keys($size-breaks);
+    }
+    $for-screens-param-is-first: true !global;
+    @each $size in if(type-of($sizes) == "map", map-keys($sizes), $sizes) {
+        $for-screens-param-size: $size !global;
+        $for-screens-param-value: if(type-of($sizes) == "map", map-get($sizes, $size), null) !global;
+        @include and-up($size) {
+            @content;
+        }
+        $for-screens-param-is-first: false !global;
+    }
+}
+@function for-screens-size() {
+    @return $for-screens-param-size;
+}
+@function for-screens-value() {
+    @return $for-screens-param-value;
+}
+@function for-screens-is-first() {
+    @return $for-screens-param-is-first;
+}
+
+$for-screens-prefixes-param-pre: null;
+@mixin for-screens-prefixes() {
+    @include for-screens() {
+        $s: for-screens-size();
+        $f: for-screens-is-first();
+        @if ($f) {
+            $for-screens-prefixes-param-pre: "" !global;
+            @content;
+        }
+        $for-screens-prefixes-param-pre: $s + "-" !global;
+        @content;
+    }
+}
+@function for-screens-prefixes-pre() {
+    @return $for-screens-prefixes-param-pre;
+}
+
+// @mixin screen-prefix($size, $selector, $class: null) {
+//     // $pre: "";
+//     // $done: if($size, false, true);
+//     // @while (not $done) {
+//     //     $char: quote(str-slice($class, 1, 1));
+//     //     @if $char == "&" or $char == "." or $char == "#" {
+//     //         $selector: str-slice($selector, 2);
+//     //         $pre: $pre + $char;
+//     //     } @else if  $char == " " {
+//     //         $selector: str-slice($selector, 2);
+//     //     } @else {
+//     //         $done: true;
+//     //     }    
+//     // }
+//     @if (not $class) {
+//         $class: str-slice($selector, str-last-index($selector, "."));
+//         @debug $class;
+//     }
+//     $new: null;
+//     @each $s in $size {
+//         $new: if($new, $new + ", ", "") + if($s, selector-replace(#{$selector}, $class, "." + $s + str-slice($class, 2)), $selector);
+//     }
+//     #{$new} {
+//         @content;
+//     }
+// }
+
+// @mixin all-screens-prefix($selector, $class: null, $mixin: "and-up", $unprefixed: true) {
+//     $first: $unprefixed;
+//     @each $size in map-keys($sizes) {
+//         @include screen-mixin-switch($mixin, $size) {
+//             @if ($first) {
+//                 $size: (null, $size);
+//                 $first: false;
+//             }
+//             @include screen-prefix($size, $selector, $class) {
+//                 @content;
+//             }
+//         }
+//     }
+// }
+
+// @mixin for-screens($properties, $map, $mixin: "and-up") {
+//     @if (length($map) == 1) {
+//         @include properties-zip($properties, $map);
+//         @content;
+//     } @else {
+//         @each $size, $items in $map {
+//             @include screen-mixin-switch($mixin, $size) {
+//                 @include properties-zip($properties, $items);
+//                 @content;
+//             }
+//         }
+//     }
+// }

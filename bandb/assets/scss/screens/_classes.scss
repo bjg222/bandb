@@ -1,0 +1,19 @@
+//This will duplicate media queries a bunch in the comiled CSS, but I currently have no
+//elegant way to combine these without passing lots of stuff as maps of parameters, which
+//looks very un-CSS like.
+
+@include for-screens-prefixes {
+    $p: for-screens-prefixes-pre();
+
+    .#{$p}hidden {
+        display: none;
+    }
+
+    #{selector-append(elements-of-type(block), ".#{$p}visible")} {
+        display: block;
+    }
+
+    #{selector-append(elements-of-type(inline), ".#{$p}visible")} {
+        display: inline;
+    }
+}

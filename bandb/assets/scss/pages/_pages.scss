@@ -1,3 +1,17 @@
 @charset "UTF-8";
 
+.elegant {
+    @extend .accent;
+    line-height: 1.1;
+}
+
+.typewriter {
+    @extend .display;
+    line-height: 1.2;
+}
+
+.signature {
+    @extend h5, .elegant;
+}
+
 @import "main/index";

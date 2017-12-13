@@ -1,0 +1,29 @@
+.row .panel.col {
+	@extend .xs-full, .m-half, .xl-five-twelfths;
+	&.wide {
+		@extend .m-full, .l-five-sixths, .xl-three-quarters;
+	}
+	&.narrow {
+		@extend .l-third, .xl-quarter;
+	}
+	img {
+		width: 40%;
+		max-width: 200px;
+		margin: 0;
+		padding: 0;
+	}
+	&.left-img img {
+		float: left;
+		margin-right: 10px;
+	}
+	&.right-img img {
+		float: right;
+		margin-left: 10px;
+	}
+	.title {
+		@extend h3;
+		&.name {
+			@extend .display;
+		}
+	}
+}
