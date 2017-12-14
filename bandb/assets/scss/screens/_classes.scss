@@ -9,7 +9,7 @@
         display: none;
     }
 
-    #{selector-append(elements-of-type(block), ".#{$p}visible")} {
+    .#{$p}visible {
         display: block;
     }
 

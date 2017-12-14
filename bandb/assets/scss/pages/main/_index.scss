@@ -283,9 +283,10 @@
 					max-width: 90%;
 					max-height: 200px;
 				}
+				.map {
+					width: 100%;
+				}
 			}
-		}
-		&.registry {
 			a.col {
 				min-width: 200px;
 				max-width: 350px;
@@ -298,9 +299,5 @@
 				}
 			}
 		}
-		// &.registry a.row {
-		// 	//height: 100%;
-		// 	@include align(center);
-		// }
 	}
 }

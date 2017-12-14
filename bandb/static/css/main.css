@@ -2506,7 +2506,7 @@ textarea {
   display: none;
 }
 
-address.visible, article.visible, aside.visible, blockquote.visible, center.visible, dir.visible, div.visible, dd.visible, details.visible, dl.visible, dt.visible, fieldset.visible, figcaption.visible, figure.visible, form.visible, footer.visible, frameset.visible, h1.visible, h2.visible, h3.visible, h4.visible, h5.visible, .visible.signature, h6.visible, hr.visible, header.visible, hgroup.visible, isindex.visible, main.visible, menu.visible, nav.visible, noframes.visible, noscript.visible, ol.visible, p.visible, pre.visible, section.visible, summary.visible, ul.visible {
+.visible {
   display: block;
 }
 
@@ -2518,7 +2518,7 @@ a.visible, abbr.visible, acronym.visible, audio.visible, b.visible, basefont.vis
   display: none;
 }
 
-address.xs-visible, article.xs-visible, aside.xs-visible, blockquote.xs-visible, center.xs-visible, dir.xs-visible, div.xs-visible, dd.xs-visible, details.xs-visible, dl.xs-visible, dt.xs-visible, fieldset.xs-visible, figcaption.xs-visible, figure.xs-visible, form.xs-visible, footer.xs-visible, frameset.xs-visible, h1.xs-visible, h2.xs-visible, h3.xs-visible, h4.xs-visible, h5.xs-visible, .xs-visible.signature, h6.xs-visible, hr.xs-visible, header.xs-visible, hgroup.xs-visible, isindex.xs-visible, main.xs-visible, menu.xs-visible, nav.xs-visible, noframes.xs-visible, noscript.xs-visible, ol.xs-visible, p.xs-visible, pre.xs-visible, section.xs-visible, summary.xs-visible, ul.xs-visible {
+.xs-visible {
   display: block;
 }
 
@@ -2531,7 +2531,7 @@ a.xs-visible, abbr.xs-visible, acronym.xs-visible, audio.xs-visible, b.xs-visibl
     display: none;
   }
 
-  address.s-visible, article.s-visible, aside.s-visible, blockquote.s-visible, center.s-visible, dir.s-visible, div.s-visible, dd.s-visible, details.s-visible, dl.s-visible, dt.s-visible, fieldset.s-visible, figcaption.s-visible, figure.s-visible, form.s-visible, footer.s-visible, frameset.s-visible, h1.s-visible, h2.s-visible, h3.s-visible, h4.s-visible, h5.s-visible, .s-visible.signature, h6.s-visible, hr.s-visible, header.s-visible, hgroup.s-visible, isindex.s-visible, main.s-visible, menu.s-visible, nav.s-visible, noframes.s-visible, noscript.s-visible, ol.s-visible, p.s-visible, pre.s-visible, section.s-visible, summary.s-visible, ul.s-visible {
+  .s-visible {
     display: block;
   }
 
@@ -2544,7 +2544,7 @@ a.xs-visible, abbr.xs-visible, acronym.xs-visible, audio.xs-visible, b.xs-visibl
     display: none;
   }
 
-  address.m-visible, article.m-visible, aside.m-visible, blockquote.m-visible, center.m-visible, dir.m-visible, div.m-visible, dd.m-visible, details.m-visible, dl.m-visible, dt.m-visible, fieldset.m-visible, figcaption.m-visible, figure.m-visible, form.m-visible, footer.m-visible, frameset.m-visible, h1.m-visible, h2.m-visible, h3.m-visible, h4.m-visible, h5.m-visible, .m-visible.signature, h6.m-visible, hr.m-visible, header.m-visible, hgroup.m-visible, isindex.m-visible, main.m-visible, menu.m-visible, nav.m-visible, noframes.m-visible, noscript.m-visible, ol.m-visible, p.m-visible, pre.m-visible, section.m-visible, summary.m-visible, ul.m-visible {
+  .m-visible {
     display: block;
   }
 
@@ -2557,7 +2557,7 @@ a.xs-visible, abbr.xs-visible, acronym.xs-visible, audio.xs-visible, b.xs-visibl
     display: none;
   }
 
-  address.l-visible, article.l-visible, aside.l-visible, blockquote.l-visible, center.l-visible, dir.l-visible, div.l-visible, dd.l-visible, details.l-visible, dl.l-visible, dt.l-visible, fieldset.l-visible, figcaption.l-visible, figure.l-visible, form.l-visible, footer.l-visible, frameset.l-visible, h1.l-visible, h2.l-visible, h3.l-visible, h4.l-visible, h5.l-visible, .l-visible.signature, h6.l-visible, hr.l-visible, header.l-visible, hgroup.l-visible, isindex.l-visible, main.l-visible, menu.l-visible, nav.l-visible, noframes.l-visible, noscript.l-visible, ol.l-visible, p.l-visible, pre.l-visible, section.l-visible, summary.l-visible, ul.l-visible {
+  .l-visible {
     display: block;
   }
 
@@ -2570,7 +2570,7 @@ a.xs-visible, abbr.xs-visible, acronym.xs-visible, audio.xs-visible, b.xs-visibl
     display: none;
   }
 
-  address.xl-visible, article.xl-visible, aside.xl-visible, blockquote.xl-visible, center.xl-visible, dir.xl-visible, div.xl-visible, dd.xl-visible, details.xl-visible, dl.xl-visible, dt.xl-visible, fieldset.xl-visible, figcaption.xl-visible, figure.xl-visible, form.xl-visible, footer.xl-visible, frameset.xl-visible, h1.xl-visible, h2.xl-visible, h3.xl-visible, h4.xl-visible, h5.xl-visible, .xl-visible.signature, h6.xl-visible, hr.xl-visible, header.xl-visible, hgroup.xl-visible, isindex.xl-visible, main.xl-visible, menu.xl-visible, nav.xl-visible, noframes.xl-visible, noscript.xl-visible, ol.xl-visible, p.xl-visible, pre.xl-visible, section.xl-visible, summary.xl-visible, ul.xl-visible {
+  .xl-visible {
     display: block;
   }
 
@@ -2583,7 +2583,7 @@ a.xs-visible, abbr.xs-visible, acronym.xs-visible, audio.xs-visible, b.xs-visibl
     display: none;
   }
 
-  address.xxl-visible, article.xxl-visible, aside.xxl-visible, blockquote.xxl-visible, center.xxl-visible, dir.xxl-visible, div.xxl-visible, dd.xxl-visible, details.xxl-visible, dl.xxl-visible, dt.xxl-visible, fieldset.xxl-visible, figcaption.xxl-visible, figure.xxl-visible, form.xxl-visible, footer.xxl-visible, frameset.xxl-visible, h1.xxl-visible, h2.xxl-visible, h3.xxl-visible, h4.xxl-visible, h5.xxl-visible, .xxl-visible.signature, h6.xxl-visible, hr.xxl-visible, header.xxl-visible, hgroup.xxl-visible, isindex.xxl-visible, main.xxl-visible, menu.xxl-visible, nav.xxl-visible, noframes.xxl-visible, noscript.xxl-visible, ol.xxl-visible, p.xxl-visible, pre.xxl-visible, section.xxl-visible, summary.xxl-visible, ul.xxl-visible {
+  .xxl-visible {
     display: block;
   }
 
@@ -4646,14 +4646,17 @@ td, th {
   max-width: 90%;
   max-height: 200px;
 }
-#index .section.registry a.col {
+#index .section.events > .container > .row > .col .map, #index .section.registry > .container > .row > .col .map {
+  width: 100%;
+}
+#index .section.events a.col, #index .section.registry a.col {
   min-width: 200px;
   max-width: 350px;
 }
-#index .section.registry a.col h1, #index .section.registry a.col h2, #index .section.registry a.col h3, #index .section.registry a.col h4, #index .section.registry a.col h5, #index .section.registry a.col .signature, #index .section.registry a.col h6 {
+#index .section.events a.col h1, #index .section.events a.col h2, #index .section.events a.col h3, #index .section.events a.col h4, #index .section.events a.col h5, #index .section.events a.col .signature, #index .section.events a.col h6, #index .section.registry a.col h1, #index .section.registry a.col h2, #index .section.registry a.col h3, #index .section.registry a.col h4, #index .section.registry a.col h5, #index .section.registry a.col .signature, #index .section.registry a.col h6 {
   flex: 0 0 35%;
 }
-#index .section.registry a.col img, #index .section.registry a.col .img {
+#index .section.events a.col img, #index .section.events a.col .img, #index .section.registry a.col img, #index .section.registry a.col .img {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
