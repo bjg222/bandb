@@ -1,0 +1,10 @@
+{% extends "main/main_base.html" %}
+
+{% set page_sections = [
+	{'page': 'main/panels/more.html', 				'divider_after': false,		'dev_only': false}] %}
+
+{% block page_id %}hotel{% endblock %}
+
+{% block plx_hero_image %}
+{% include "main/heros/hotel.html" %}
+{% endblock %}

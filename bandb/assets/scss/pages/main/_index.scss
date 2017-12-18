@@ -290,6 +290,7 @@
 			a.col {
 				min-width: 200px;
 				max-width: 350px;
+				min-height: 250px;
 				#{headings()} {
 					flex: 0 0 35%;
 				}

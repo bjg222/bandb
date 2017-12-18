@@ -4652,6 +4652,7 @@ td, th {
 #index .section.events a.col, #index .section.registry a.col {
   min-width: 200px;
   max-width: 350px;
+  min-height: 250px;
 }
 #index .section.events a.col h1, #index .section.events a.col h2, #index .section.events a.col h3, #index .section.events a.col h4, #index .section.events a.col h5, #index .section.events a.col .signature, #index .section.events a.col h6, #index .section.registry a.col h1, #index .section.registry a.col h2, #index .section.registry a.col h3, #index .section.registry a.col h4, #index .section.registry a.col h5, #index .section.registry a.col .signature, #index .section.registry a.col h6 {
   flex: 0 0 35%;
