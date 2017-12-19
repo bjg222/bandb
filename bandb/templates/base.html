@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-{% include "gtag.html" %}
+{# include "ganalytics.html" #}
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{% block title %}Home{% endblock %} - B and B</title>
@@ -26,5 +26,6 @@
 	{% endif %}
 {% endwith %}
 {% block content %}{% endblock %}
+{% include "clicky.html" %}
 </body>
 </html>
