@@ -1,0 +1,137 @@
+//Text Inputs + Textarea
+$select-focus: $secondary-color;
+$button-background-focus: $secondary-color;
+$label-font-size: $h5-fontsize;
+$input-border-color: $on-dark-text-color;
+$input-border: 1px solid $input-border-color;
+$input-height: 3rem;
+$input-background: $dark-background-color;
+$input-font-size: $h4-fontsize;
+$input-error-color: $error-color;
+$input-success-color: $ok-color;
+$input-focus-color: $secondary-color;
+$input-margin-bottom: 1.5rem;
+$input-margin: 0 0 $input-margin-bottom 0;
+$input-padding: 0;
+$input-transition: all 0.3s;
+$input-disabled-color: rgba(0, 0, 0, 0.42);
+$input-disabled-solid-color: #949494;
+$input-disabled-border: 1px dotted $input-disabled-color;
+$input-invalid-border: 1px solid $input-error-color;
+$placeholder-text-color: lighten($input-border-color, 20%);
+
+// Radio Buttons
+$radio-fill-color: $secondary-color !default;
+$radio-empty-color: #5a5a5a !default;
+$radio-border: 2px solid $radio-fill-color !default;
+
+// Range
+$range-height: 14px !default;
+$range-width: 14px !default;
+$track-height: 3px !default;
+
+// Select
+$select-border: 1px solid #f2f2f2 !default;
+$select-background: rgba(255, 255, 255, 0.90) !default;
+$select-focus: 1px solid lighten($secondary-color, 47%) !default;
+$select-option-hover: rgba(0,0,0,.06) !default;
+$select-option-focus: rgba(0,0,0,.03) !default;
+$select-padding: 5px !default;
+$select-radius: 2px !default;
+$select-disabled-color: rgba(0,0,0,.3) !default;
+
+// Switches
+$switch-bg-color: $secondary-color !default;
+$switch-checked-lever-bg: desaturate(lighten($switch-bg-color, 25%), 25%) !default;
+$switch-unchecked-bg: #F1F1F1 !default;
+$switch-unchecked-lever-bg: rgba(0,0,0,.38) !default;
+$switch-radius: 15px !default;
+
+// Dropdown
+$dropdown-bg-color: #fff !default;
+$dropdown-hover-bg-color: #eee !default;
+$dropdown-color: $secondary-color !default;
+$dropdown-item-height: 50px !default;
+
+// Date & Time Picker
+$datepicker-display-font-size: 2.8rem;
+$datepicker-weekday-color: rgba(0, 0, 0, .87) !default;
+$datepicker-weekday-bg: darken($secondary-color, 7%) !default;
+$datepicker-date-bg: $secondary-color !default;
+$datepicker-year: rgba(255, 255, 255, .7) !default;
+$datepicker-focus: rgba(0,0,0, .05) !default;
+$datepicker-selected: $secondary-color !default;
+$datepicker-selected-outfocus: desaturate(lighten($secondary-color, 35%), 15%) !default;
+$timepicker-clock-color: rgba(0, 0, 0, .87) !default;
+$timepicker-clock-plate-bg: #eee;
+
+// Buttons Shared styles
+$button-border: none !default;
+$button-background-focus: lighten($primar-color, 5%) !default;
+$button-font-size: 1rem !default;
+$button-icon-font-size: 1.3rem !default;
+$button-height: 2.5rem !default;
+$button-padding: 0 2rem !default;
+$button-radius: 2px !default;
+
+// Buttons Disabled styles
+$button-disabled-background: #DFDFDF !default;
+$button-disabled-color: #9F9F9F !default;
+
+// Buttons Raised buttons
+$button-raised-background: lighten($primary-color, 5%) !default;
+$button-raised-background-hover: lighten($button-raised-background, 5%) !default;
+$button-raised-color: #fff !default;
+
+// Buttons Large buttons
+$button-large-icon-font-size: 1.6rem !default;
+$button-large-height: $button-height * 1.5 !default;
+
+// Buttons Flat buttons
+$button-flat-color: #343434 !default;
+$button-flat-disabled-color: lighten(#999, 10%) !default;
+
+// Buttons Floating buttons
+$button-floating-background: $secondary-color !default;
+$button-floating-background-hover: $button-floating-background !default;
+$button-floating-color: #fff !default;
+$button-floating-size: 40px !default;
+$button-floating-large-size: 56px !default;
+$button-floating-radius: 50% !default;
+
+// Generic
+$gutter-width: $col-spacing * 2;
+
+// Remove Focus Boxes
+select:focus {
+  outline: $select-focus;
+}
+
+button:focus {
+  outline: none;
+  background-color: $button-background-focus;
+}
+
+label {
+  font-size: $label-font-size;
+  color: $input-border-color;
+}
+
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+}
+
+@import 'input-fields';
+@import 'radio-buttons';
+@import 'checkboxes';
+@import 'switches';
+@import 'select';
+@import 'file-input';
+@import 'range';
+@import "picker";
+@import "picker.date";
+@import "picker.time";
+@import "buttons";

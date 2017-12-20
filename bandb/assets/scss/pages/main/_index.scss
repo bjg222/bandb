@@ -300,5 +300,19 @@
 				}
 			}
 		}
+		&.more {
+			@include valign(middle);
+			min-height: 100vh;
+			form {
+				.row {
+					margin-top: 4em;
+				}
+				.col {
+					@include align-and-valign(center, middle);
+					min-width: 200px;
+					max-width: 300px;
+				}
+			}
+		}
 	}
 }

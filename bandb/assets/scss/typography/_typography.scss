@@ -69,6 +69,11 @@ p {
     text-align: justify;
 }
 
+form, input, select, button {
+    font-family: $base-font-family;
+    font-weight: $base-font-weight
+}
+
 em, .italic { 
     font-style: italic; 
 }

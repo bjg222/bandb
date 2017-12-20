@@ -1,11 +1,42 @@
 <div class="background">
-	<div class="section valign-middle" style="height:100vh">
+	<div class="section more">
 		<div class="container">
+			<a name="more"></a>
 			<div class="row">
 				<h2 class="col">
-                    Don't worry, we'll answer all your questions as the details are finalized! Check back soon for more!
+                    Don't worry, we'll answer all your questions as the details are finalized! Check back soon for more!  If you want us to let you know, fill in your information below!
                 </h2>
 			</div>
+			{% if form %}
+				<form action="{{ url_for('main.index') }}#more" method="post">
+				{{ form.hidden_tag() }}
+					<div class="row">
+						<div class="col input-field">
+							{% if errors.name %}
+								{{ form.name(class_="validate invalid", required="required") }}
+							{% else %}
+								{{ form.name(class_="validate", required="required") }}
+							{% endif %}
+							<label for="{{ form.name.id }}">Name</label>
+						</div>
+						<div class="col input-field">
+								{% if errors.email %}
+									{{ form.email(class_="validate invalid", required="required") }}
+								{% else %}
+									{{ form.email(class_="validate", required="required") }}
+								{% endif %}
+							<label for="{{ form.email.id }}" data-error="Please enter a valid email">Email</label>
+						</div>
+						<div class="col input-field">
+							<button class="btn" type="submit" name="action">Submit</button>				
+						</div>
+					</div>
+				</form>
+			{% else %}
+				<h4 class="col">
+                    Thanks, we'll let you know when we update this page!
+                </h4>
+			{% endif %}
 		</div>
 	</div>
 </div>
