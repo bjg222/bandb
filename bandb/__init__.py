@@ -3,7 +3,7 @@ from flask import Flask, session
 from flask_sqlalchemy import SQLAlchemy
 
 from .main import main
-#from .rsvp import rsvp
+from .rsvp import rsvp
 
 app = Flask(__name__)
 #TODO: Actual config.  config.py is blank right now, and I'm just manually configging here.  Fix this.
@@ -11,7 +11,7 @@ app.config['DEBUG'] = True
 app.config['SECRET_KEY'] = 'bandb-key'
 
 app.register_blueprint(main)
-#app.register_blueprint(rsvp, url_prefix='/rsvp')
+app.register_blueprint(rsvp, url_prefix='/rsvp')
 
 
 
@@ -20,7 +20,7 @@ app.register_blueprint(main)
 
 # from flask import Flask, render_template, redirect, request, url_for
 # from flask_sqlalchemy import SQLAlchemy
-# 
+#
 # app = Flask(__name__)
 # app.secret_key = 'This is really unique and secret'
 # app.config["DEBUG"] = True
@@ -32,20 +32,20 @@ app.register_blueprint(main)
 # )
 # app.config["SQLALCHEMY_DATABASE_URI"] = SQLALCHEMY_DATABASE_URI
 # app.config["SQLALCHEMY_POOL_RECYCLE"] = 299
-# 
+#
 # db = SQLAlchemy(app)
-# 
+#
 # class Comment(db.Model):
-# 
+#
 #     __tablename__ = "comments"
-# 
+#
 #     id = db.Column(db.Integer, primary_key=True)
 #     content = db.Column(db.String(4096))
-# 
+#
 # @app.route('/')
 # def index():
 #     return render_template("parallax.html")
-# 
+#
 # @app.route('/form', methods=["GET", "POST"])
 # def form():
 #     if request.method == "GET":
