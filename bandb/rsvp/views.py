@@ -47,7 +47,7 @@ def verify():
             return redirect(url_for('.main'))
     elif (form.errors):
         flash(form.errors)
-    return render_template('verify.html', form=form)
+    return render_template('rsvp/rsvp.html', page='verify', form=form)
 
 @rsvp.route('/clear')
 def clear():
@@ -85,7 +85,7 @@ def response():
         return redirect(url_for('.details'))
     elif (form.errors):
         flash(form.errors)
-    return render_template('response.html', form=form)
+    return render_template('rsvp/rsvp.html', page='response', form=form)
 
 @rsvp.route('/details', methods=['GET', 'POST'])
 def details():
@@ -115,7 +115,7 @@ def details():
         return redirect(url_for('.review'))
     elif (form.errors):
         flash(form.errors)
-    return render_template('details.html', form=form)
+    return render_template('rsvp/rsvp.html', page='details', form=form)
 
 @rsvp.route('/review', methods=['GET', 'POST'])
 def review():
@@ -138,7 +138,7 @@ def review():
     elif (form.errors):
         flash(form.errors)
     data = {key: session[key] for key in ['addressee', 'attending', 'attendees', 'diet', 'songs'] if key in session}
-    return render_template('review.html', data=data, form=form)
+    return render_template('rsvp/rsvp.html', page='review', data=data, form=form)
 
 @rsvp.route('/summary')
 def summary():
@@ -149,5 +149,5 @@ def summary():
         flash('Please complete your RSVP first')
         return redirect(url_for('.main'))
     data = {key: session[key] for key in ['addressee', 'attending', 'attendees'] if key in session}
-    return render_template('summary.html', data=data)
+    return render_template('rsvp/rsvp.html', page='summary', data=data)
     

@@ -1,6 +1,6 @@
 {% extends "parallax.html" %}
 
-{% block page_id %}main{% endblock %}
+{% block page_id %}rsvp{% endblock %}
 
 {% block plx_content %}
 <!-- sections: {{sections}} -->
@@ -12,8 +12,16 @@
 	<!-- sect: {{sect}} -->
 	{% if dev or not sect.dev_only %}
 		<div class="group-panel">
-			{% include sect.page %}
+			<div class="background">
+					<div class="section rsvp">
+						<div class="container">
+							{% block rsvp_content %}{% endblock rsvp_content %}
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
+		{% include sect.page %}
 		{% if sect.divider_after %}
 			<div class="group-divider">
 				<div class="window"></div>

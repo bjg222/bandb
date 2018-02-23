@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+#rsvp {
+	#group-hero-image {
+        #us {
+            @extend %plx-base;
+            height: 100vh;
+        }
+        #plane {
+            @include make-plx-layer(-300px);
+        }
+        #sky {
+            @include make-plx-layer(-400px);
+        }
+        #title {
+            @include make-plx-layer(-125px);
+            > div {
+                margin: 0 auto;
+                padding-top: 130px;
+                color: ivory;
+                font-size: 3em;
+                text-align: center;
+                display: table;
+                h1 {
+                    @extend .elegant;
+                    line-height: 1;
+                    margin: 0;
+                    padding: 0;
+                    font-size: 6rem;
+                }
+            }
+        }
+    }
+
+}

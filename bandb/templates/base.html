@@ -22,6 +22,8 @@
 {% endblock %}
 </head>
 <body>
+{% block content %}{% endblock %}
+{% include "clicky.html" %}
 {% with msgs = get_flashed_messages() %}
 	{% if msgs %}
 		<ul class=flashes>
@@ -31,7 +33,5 @@
 		</ul>
 	{% endif %}
 {% endwith %}
-{% block content %}{% endblock %}
-{% include "clicky.html" %}
 </body>
 </html>
