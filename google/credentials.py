@@ -12,21 +12,21 @@ from oauth2client.service_account import ServiceAccountCredentials
 #TODO: Credential storage
 
 class CredentialHolder(abc.ABC):
-    
+
     _credentials = None
     _authorization = None
-    
+
     def __init__(self):
         self._make_credentials()
-    
+
     @abc.abstractmethod
     def _make_credentials(self):
         pass
-    
+
     def authorize(self):
         if (not self.is_authorized()):
             self._authorization = self._credentials.authorize(Http())
-    
+
     def get_credentials(self):
         return self._credentials
 
@@ -39,14 +39,14 @@ class CredentialHolder(abc.ABC):
 
 
 class ServiceAccount(CredentialHolder):
-    
+
     _keyfile = None
     _scope = None
-    
+
     def __init__(self, keyfile, scope):
         self._keyfile = keyfile
         self._scope = scope
         CredentialHolder.__init__(self)
-        
+
     def _make_credentials(self):
-        self._credentials = ServiceAccountCredentials.from_json_keyfile_name(self._keyfile, self._scope)
+        self._credentials = ServiceAccountCredentials.from_json_keyfile_dict(self._keyfile, self._scope)
