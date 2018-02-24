@@ -1,22 +1,40 @@
-{# extends "rsvp_base.html" #}
+{% extends "rsvp/rsvp_base.html" %}
 
 {% block js %}
 {{ super() }}
 <script type="text/javascript">
 $(document).ready(function() {
-	var nsongs = 1;
+	var nsongs = {{ form.songs|length }};
+	if (nsongs >= 3) {
+		$('#songs-add').remove();
+		return;
+	}
 	$('#songs-add-link').click(function() {
-		if (nsongs >= 3)
+		if (nsongs >= 3) {
+			$('#songs-add').hide(200)
+			setTimeout(function(){$('#songs-add').remove();}, 300);
 			return;
+		}
 		var sp = $('.song-input').last().clone();
 		var inp = $('input', sp);
 		inp.attr('id', inp.attr('id').slice(0,-1) + (Number(inp.attr('id').slice(-1)) + 1));
 		inp.attr('name', inp.attr('name').slice(0,-1) + (Number(inp.attr('name').slice(-1)) + 1));
 		inp.val('');
+		sp.hide()
 		$('#songs').append(sp);
+		sp.show(200);
 		nsongs ++;
-		if (nsongs >= 3)
-			$('#songs-add').remove();
+		if (nsongs >= 3) {
+			$('#songs-add').hide(200)
+			setTimeout(function(){$('#songs-add').remove();}, 300);
+		}
+	});
+	$('#guest').hide();
+	$(':checkbox[value=99]').change(function() {
+		if (this.checked)
+			$('#guest').show(200);
+		else
+			$('#guest').hide(200);
 	});
 });
 </script>
@@ -24,21 +42,112 @@ $(document).ready(function() {
 
 {% block rsvp_content %}
 <form action="{{ url_for('rsvp.details') }}" method="post">
-{{ form.hidden_tag() }}
-<label for="{{ form.attendees.id }}">Please indicate who will be attending:</label><br />
-{{ form.attendees() }}<br /><br />
-{% if 'guest' in form %}
-	<label for="{{ form.guest.id }}">Please enter your guest's name:</label><br />
-	{{ form.guest() }}<br /><br />
-{% endif %}
-<label for="{{ form.diet.id }}">If any attendees have food allergies or special dietary restrictions, please list then below:</label><br />
-{{ form.diet() }}<br /><br />
-<label for="{{ form.songs.id }}">If you have any songs you'd love to hear at the reception, please send us your requests below:</label><br />
-<span id="songs">
-{% for elem in form.songs %}
-	<span class="song-input">{{ elem() }}<br /></span>
-{% endfor %}</span>
-<span id="songs-add"><a href='#' id="songs-add-link">Add</a><br /></span><br />
-{{ form.submit() }}
+	{{ form.hidden_tag() }}
+    <div class="row">
+		<h2 class="col">
+			Please provide a few details!
+		</h2>
+	</div>
+	<div class="row">
+		<h4 class="col">
+			Who will be there?
+		</h4>
+	</div>
+	<div class="row attendees">
+		<div class="col">
+			{% for subfield in form.attendees %}
+				<div class="row">
+					<div class="col">
+						{{ subfield() }}
+						<label for="{{ subfield.id }}">{{ subfield.label.text }}</label>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+	{% if 'guest' in form %}
+		<div class="row" id="guest">
+			<div class="col input-field">
+				{% if errors.guest %}
+					{{ form.guest(class_="validate invalid", required="required") }}
+				{% else %}
+					{{ form.guest(class_="validate", required="required") }}
+				{% endif %}
+				<label for="{{ form.guest.id }}">Guest Name</label>
+			</div>
+		</div>
+	{% endif %}
+	<div class="row">
+		<h4 class="col">
+			How can we contact you?
+		</h4>
+	</div>
+	<div class="row">
+		<div class="col input-field">
+			{% if errors.email %}
+				{{ form.email(class_="validate invalid", required="required") }}
+			{% else %}
+				{{ form.email(class_="validate", required="required") }}
+			{% endif %}
+			<label for="{{ form.email.id }}" data-error="Please enter a valid email">Email</label>
+		</div>
+	</div>
+	<div class="row">
+		<h4 class="col">
+			Where will you be staying?
+		</h4>
+	</div>
+	<div class="row">
+		<div class="col input-field">
+			{% if errors.lodging %}
+				{{ form.lodging(class_="validate invalid", required="required") }}
+			{% else %}
+				{{ form.lodging(class_="validate", required="required") }}
+			{% endif %}
+			<label for="{{ form.lodging.id }}">Lodging</label>
+		</div>
+	</div>
+	<div class="row">
+		<h4 class="col">
+			Do you have any allergies or food restrictions?
+		</h4>
+	</div>
+	<div class="row">
+		<div class="col input-field">
+			{% if errors.diet %}
+				{{ form.diet(class_="validate invalid") }}
+			{% else %}
+				{{ form.diet(class_="validate") }}
+			{% endif %}
+			<label for="{{ form.diet.id }}">Dietary Requirements</label>
+		</div>
+	</div>
+	<div class="row">
+		<h4 class="col">
+			We want everyone to have a good time, so give us a few songs that you promise you'll dance to if we play them!
+		</h4>
+	</div>
+	<div class="row">
+		<div class="col" id="songs">
+			{% for subfield in form.songs %}
+				<div class="row song-input">
+					<div class="col input-field">
+						{{ subfield() }}
+						<label for="{{ subfield.id }}">Song Name and Artist</label>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+	<div class="row" id="songs-add">
+		<div class="col">
+			<a href='#' id="songs-add-link">Add a Song</a>
+		</div>
+	</div>
+    <div class="row">
+		<div class="col input-field">
+			<button class="btn" type="submit" name="action">Submit</button>
+		</div>
+	</div>
 </form>
 {% endblock rsvp_content%}

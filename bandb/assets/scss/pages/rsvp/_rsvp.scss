@@ -32,4 +32,27 @@
         }
     }
 
+    .section.rsvp {
+        @extend .full-height-exact;
+        @include valign(middle);
+        .col {
+            @include align(center);
+        }
+        form {
+            & > .row {
+                padding-top: 0.5em;
+                padding-bottom: 0.5em;
+            }
+            a {
+                font-size: 1.5em;
+            }
+            .attendees > .col {
+                flex-grow: 0;
+                .col {
+                    @include align(left);
+                }
+            }
+        }
+    }
+
 }

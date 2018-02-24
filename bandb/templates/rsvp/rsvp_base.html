@@ -2,36 +2,22 @@
 
 {% block page_id %}rsvp{% endblock %}
 
-{% block plx_content %}
-<!-- sections: {{sections}} -->
-{% if not sections %}
-	{% set sections = page_sections %}
+
+{% block plx_hero_image %}
+{% if false %}
+	{% include "rsvp/heros/rsvp.html" %}
 {% endif %}
-<!-- sections: {{sections}} -->
-{% for sect in sections %}
-	<!-- sect: {{sect}} -->
-	{% if dev or not sect.dev_only %}
-		<div class="group-panel">
-			<div class="background">
-					<div class="section rsvp">
-						<div class="container">
-							{% block rsvp_content %}{% endblock rsvp_content %}
-						</div>
-					</div>
+{% endblock %}
+
+{% block plx_content %}
+<div class="group-panel">
+	<div class="background">
+			<div class="section rsvp">
+				<div class="container">
+					{% block rsvp_content %}{% endblock rsvp_content %}
 				</div>
 			</div>
 		</div>
-		{% include sect.page %}
-		{% if sect.divider_after %}
-			<div class="group-divider">
-				<div class="window"></div>
-				{% if sect.divider_image %}
-					<div class="background" style="background-image:url({{sect.divider_image}})"></div>
-				{% else %}
-					<div class="background"></div>
-				{% endif %}
-			</div>
-		{% endif %}
-	{% endif %}
-{% endfor %}
+	</div>
+</div>
 {% endblock %}

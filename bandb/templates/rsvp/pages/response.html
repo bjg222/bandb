@@ -1,10 +1,23 @@
-{# extends "rsvp_base.html" #}
+{% extends "rsvp/rsvp_base.html" %}
 
 {% block rsvp_content %}
 <form action="{{ url_for('rsvp.response') }}" method="post">
-{{ form.hidden_tag() }}
-<label for="{{ form.attending.id }}">Will you be attending?</label><br />
-{{ form.attending() }}<br /><br />
-{{ form.submit() }}
+    {{ form.hidden_tag() }}
+    <div class="row">
+        <h2 class="col">
+            Will you be joining us?
+        </h2>
+    </div>
+    <div class="row">
+        {% for subfield in form.attending %}
+            <div class="col">
+                {{ subfield(class_="with-gap") }}
+                <label for="{{ subfield.id }}">{{ subfield.label.text }}</label>
+            </div>
+        {% endfor %}
+        <div class="col input-field">
+            <button class="btn" type="submit" name="action">Submit</button>
+        </div>
+    </div>
 </form>
 {% endblock rsvp_content%}

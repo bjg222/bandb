@@ -5,6 +5,9 @@
     }
     &.full-height {
         min-height: 110vh;
+        &-exact {
+            min-height: 100vh;
+        }
     }
 }
 

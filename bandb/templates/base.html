@@ -8,7 +8,10 @@
 {% block js %}
 <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.1.1.js') }}"></script>
 <!--<script type="text/javascript" src="{{ url_for('static', filename='js/materialize.js') }}"></script>-->
+<script type="text/javascript" src="{{ url_for('static', filename='js/velocity.min.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='js/global.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/toasts.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/tooltip.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='js/buttons.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='js/forms.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='js/picker.js') }}"></script>
@@ -26,11 +29,16 @@
 {% include "clicky.html" %}
 {% with msgs = get_flashed_messages() %}
 	{% if msgs %}
-		<ul class=flashes>
-			{% for msg in msgs %}
-				<li>{{ msg }}</li>
-			{% endfor %}
-		</ul>
+		<script>
+			$(document).ready(function() {
+				var toast = '<span>';
+				{% for msg in msgs %}
+					toast += '{{ msg }}<br>';
+				{% endfor %}
+				toast = toast.slice(0,-4) + '</span>';
+				Materialize.toast($(toast), 10000);
+			})
+		</script>
 	{% endif %}
 {% endwith %}
 </body>

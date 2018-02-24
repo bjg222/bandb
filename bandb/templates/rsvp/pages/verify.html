@@ -1,12 +1,37 @@
-{# extends "rsvp_base.html" #}
+{% extends "rsvp/rsvp_base.html" %}
 
 {% block rsvp_content %}
 <form action="{{ url_for('rsvp.verify') }}" method="post">
-{{ form.hidden_tag() }}
-<label for="{{ form.last_name.id }}">Please enter your last name:</label><br />
-{{ form.last_name() }}<br /><br />
-<label for="{{ form.invite_code.id }}">Please enter the 4 digit code on your invitation:</label><br />
-{{ form.invite_code() }}<br /><br />
-{{ form.submit() }}
+    {{ form.hidden_tag() }}
+    <div class="row">
+        <h2 class="col">
+            Please verify your invitation using the 4 digit code on your RSVP card.
+        </h2>
+    </div>
+    <div class="row">
+        <div class="col input-field">
+            {% if errors.last_name %}
+                {{ form.last_name(class_="validate invalid", required="required") }}
+            {% else %}
+                {{ form.last_name(class_="validate", required="required") }}
+            {% endif %}
+            <label for="{{ form.last_name.id }}">Last Name</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col input-field">
+            {% if errors.invite_code %}
+                {{ form.invite_code(class_="validate invalid", required="required") }}
+            {% else %}
+                {{ form.invite_code(class_="validate", required="required") }}
+            {% endif %}
+            <label for="{{ form.invite_code.id }}">Invite Code</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col input-field">
+            <button class="btn" type="submit" name="action">Submit</button>
+        </div>
+    </div>
 </form>
 {% endblock rsvp_content %}

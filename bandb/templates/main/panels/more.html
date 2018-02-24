@@ -20,15 +20,15 @@
 							<label for="{{ form.name.id }}">Name</label>
 						</div>
 						<div class="col input-field">
-								{% if errors.email %}
-									{{ form.email(class_="validate invalid", required="required") }}
-								{% else %}
-									{{ form.email(class_="validate", required="required") }}
-								{% endif %}
+							{% if errors.email %}
+								{{ form.email(class_="validate invalid", required="required") }}
+							{% else %}
+								{{ form.email(class_="validate", required="required") }}
+							{% endif %}
 							<label for="{{ form.email.id }}" data-error="Please enter a valid email">Email</label>
 						</div>
 						<div class="col input-field">
-							<button class="btn" type="submit" name="action">Submit</button>				
+							<button class="btn" type="submit" name="action">Submit</button>
 						</div>
 					</div>
 				</form>
