@@ -44,6 +44,16 @@
             {% endif %}
         </div>
     </div>
+    {% if data.songs %}
+        <div class="row">
+            <div class="col">
+                Song suggestions:<br>
+                {% for song in data.songs %}
+                    {{ song }}<br>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
 {% endif %}
 <form action="{{ url_for('rsvp.review') }}" method="post">
     {{ form.hidden_tag() }}

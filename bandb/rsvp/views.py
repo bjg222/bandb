@@ -125,7 +125,7 @@ def details():
             session['attendees'].append(form.guest.data)
         if (form.email.data):
             session['email'] = form.email.data.strip()
-        if (form.diet.data):
+        if (form.lodging.data):
             session['lodging'] = form.lodging.data.strip()
         if (form.diet.data):
             session['diet'] = form.diet.data.strip()
