@@ -36,7 +36,7 @@ def verify():
     errors = None
     if (form.validate_on_submit()):
         print(form.data)
-        data = get_rsvp_sheet().get_invitee(last_name=form.last_name.data, invite_code=form.invite_code.data)
+        data = get_rsvp_sheet().get_invitee(last_name=form.last_name.data, invite_code=form.invite_code.data.upper())
         if (data is not None):
             print(data)
             session['rsvp_id'] = data['id']
@@ -46,8 +46,15 @@ def verify():
             print(session)
             flash('Thanks for verifying your invitation')
             return redirect(url_for('.main'))
+        else:
+            flash('Invitation not found, please double check your entries')
     elif (form.errors):
-        flash(form.errors)
+        if ('last_name' in form.errors):
+            flash('Verify you\'ve entered your last name correctly')
+        if ('invite_code' in form.errors):
+            flash('Verify you\'ve entered your 4 digit invite code correctly')
+        if ('csrf_token' in form.errors):
+            flash('Something went wrong, please try again')
         errors = form.errors
     return render_template('rsvp/pages/verify.html', form=form, errors=errors)
 
@@ -87,6 +94,10 @@ def response():
         flash('We\'re thrilled you can make it!  Please provide some more details.')
         return redirect(url_for('.details'))
     elif (form.errors):
+        if ('attending' in form.errors):
+            flash('Verify you\'ve selected a response')
+        if ('csrf_token' in form.errors):
+            flash('Something went wrong, please try again')
         flash(form.errors)
         errors = form.errors
     return render_template('rsvp/pages/response.html', form=form, errors=errors)
@@ -112,6 +123,10 @@ def details():
         if (session['guest'] and 99 in form.attendees.data):
             session['bringing_guest'] = True
             session['attendees'].append(form.guest.data)
+        if (form.email.data):
+            session['email'] = form.email.data.strip()
+        if (form.diet.data):
+            session['lodging'] = form.lodging.data.strip()
         if (form.diet.data):
             session['diet'] = form.diet.data.strip()
         if (form.songs.data):
@@ -119,7 +134,21 @@ def details():
         flash('Thanks for providing us some info!  Please confirm your RSVP')
         return redirect(url_for('.review'))
     elif (form.errors):
-        flash(form.errors)
+        for fld in form.errors:
+            if ('attendees' in form.errors):
+                flash('Verify you\'ve selected who\'s attending')
+            if ('guest' in form.errors):
+                flash('Verify you\'ve entered your guest\'s name')
+            if ('email' in form.errors):
+                flash('Verify you\'ve entered a valid email address')
+            if ('lodging' in form.errors):
+                flash('Verify you\'ve entered your lodging information')
+            if ('diet' in form.errors):
+                flash('Verify you\'re dietary information')
+            if ('songs' in form.errors):
+                flash('Verify you\'re song entries')
+            if ('csrf_token' in form.errors):
+                flash('Something went wrong, please try again')
         errors = form.errors
     return render_template('rsvp/pages/details.html', form=form, errors=errors)
 
@@ -137,13 +166,16 @@ def review():
                                          session['addressee'],
                                          session['attendees'] if session['attending'] else None,
                                          True if 'bringing_guest' in session and session['bringing_guest'] else False,
+                                         session['email'] if 'email' in session else None,
+                                         session['lodging'] if 'lodging' in session else None,
                                          session['songs'] if 'songs' in session else None,
                                          session['diet'] if 'diet' in session else None)
         flash('RSVP Saved')
         return redirect(url_for('.summary'))
     elif (form.errors):
-        flash(form.errors)
-    data = {key: session[key] for key in ['addressee', 'attending', 'attendees', 'diet', 'songs'] if key in session}
+        if ('csrf_token' in form.errors):
+            flash('Something went wrong, please try again')
+    data = {key: session[key] for key in ['addressee', 'attending', 'attendees', 'email', 'lodging', 'diet', 'songs'] if key in session}
     return render_template('rsvp/pages/review.html', data=data, form=form)
 
 @rsvp.route('/summary')

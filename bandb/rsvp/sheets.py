@@ -58,24 +58,24 @@ def caseless_equal(left, right):
     return normalize(left) == normalize(right)
 
 class RsvpSheet(Client):
-    
+
     _error = None
-    
+
     _rsvp_id = '1MB5M2RURsmlPGdwL1dKMDIFLQg1pyuu5LoS8cClUt5g'
-    
+
     _header_rows = 1
-    
+
     _headers = {}
 #     _types = {}
-    
+
     _data_sheet = 'Data'
     _data_range = col_range('A', 'I')
     _data_id_col = 'A'
     _data_code_col = 'B'
     _data_last_name = 'last_names'
-    
+
     _response_sheet = 'RSVP'
-    _response_range = col_range('A', 'F')
+    _response_range = col_range('A', 'I')
     _response_id_col = 'A'
 
     def __init__(self):
@@ -84,16 +84,16 @@ class RsvpSheet(Client):
             self.connect()
         except Exception as exc:
             _error = exc
-    
+
     def connect(self):
         self.login().build('sheets', 'v4')
-        
+
     def has_error(self):
         return self._error is not None
-    
+
     def get_error(self):
         return self._error
-        
+
     def _get_values(self, crange):
         if (self.has_error()):
             return None
@@ -102,7 +102,7 @@ class RsvpSheet(Client):
 #         except Exception as exc:
 #             self._error = exc
 #             return None
-    
+
     def _append_values(self, data, crange, raw=False):
         if (self.has_error()):
             return False
@@ -111,13 +111,13 @@ class RsvpSheet(Client):
 #         except Exception as exc:
 #             self._error = exc
 #         return False
-    
+
     def _format_data(self, data, sheet):
         if (sheet not in self._headers):
             headers = self._get_values(cells(sheet=sheet, start=1, end=2))
             self._headers[sheet] = [re.sub('[^0-9a-zA-Z]+', '_', normalize(s.strip())) for s in headers[0]]
         return [dict(itertools.zip_longest(self._headers[sheet], [self._clean(d) for d in r])) for r in data]
-    
+
     def _clean(self, data):
         if (not isinstance(data, str)):
             return data
@@ -127,10 +127,10 @@ class RsvpSheet(Client):
             return [d.strip() for d in data.split(';')]
         else:
             return data.strip()
-    
+
     def _col_index(self, col):
         return [c for c in self._data_range].index(col)
-    
+
     def get_invitee(self, **kwargs):
         if ('rsvp_id' in kwargs and isinstance(kwargs['rsvp_id'], int)):
             return self._get_invitee_by_rsvp_id(kwargs['rsvp_id'])
@@ -138,7 +138,7 @@ class RsvpSheet(Client):
             return self._get_invitee_by_code_and_last_name(kwargs['invite_code'], kwargs['last_name'])
         else:
             raise ValueError('Cannot get invitee from the provided arguments: ' + str(kwargs))
-       
+
     def _get_invitee_by_rsvp_id(self, rsvp_id):
         try:
             rownum = self._get_values(col(self._data_id_col, self._data_sheet)).index([rsvp_id]) + 1
@@ -146,7 +146,7 @@ class RsvpSheet(Client):
             return None
         data = self._format_data(self._get_values(row(rownum, self._data_sheet)), self._data_sheet)[0]
         return data
-    
+
     def _get_invitee_by_code_and_last_name(self, invite_code, last_name):
         try:
             rownum = self._get_values(col(self._data_code_col, self._data_sheet)).index([invite_code]) + 1
@@ -162,7 +162,7 @@ class RsvpSheet(Client):
             return (self.get_rsvp(rsvp_id) is not None)
         except:
             return False
-        
+
     def get_rsvp(self, rsvp_id):
         try:
             rownum = self._get_values(col(self._response_id_col, self._response_sheet)).index([rsvp_id]) + 1
@@ -171,13 +171,19 @@ class RsvpSheet(Client):
         data = self._format_data(self._get_values(row(rownum, self._response_sheet)), self._response_sheet)[0]
         return data
 
-    def save_rsvp(self, rsvp_id, addressee, people, guest=False, songs=None, diet=None):
+    def save_rsvp(self, rsvp_id, addressee, people=None, guest=False, email=None, lodging=None, songs=None, diet=None):
         if (guest):
             people[-1] = people[-1] + '(Guest of ' + addressee + ')'
-        row = [rsvp_id, datetime.now(timezone('US/Eastern')).strftime('%Y-%m-%d %H:%M:%S'), addressee, ';'.join(people), len(people)]
-        if (songs):
-            row.append(';'.join(songs))
-        if (diet):
-            row.append(diet)
+        row = [
+            rsvp_id,
+            datetime.now(timezone('US/Eastern')).strftime('%Y-%m-%d %H:%M:%S'),
+            addressee,
+            ';'.join(people) if people else '',
+            len(people) if people else 0,
+            email if email else '',
+            lodging if lodging else '',
+            ';'.join(songs) if songs else '',
+            diet if diet else ''
+        ]
         return self._append_values([row], self._response_sheet)
 

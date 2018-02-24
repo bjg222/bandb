@@ -1,6 +1,14 @@
 {% extends "rsvp/rsvp_base.html" %}
 
 {% block rsvp_content %}
-<p>Summary below:</p>
-{{ data }}<br />
+<div class="row">
+    <h2 class="col">
+        Thanks for getting back to us,
+        {% if data.attending %}
+            we'll see you there!
+        {% else %}
+            we'll miss you!
+        {% endif %}
+    </h2>
+</div>
 {% endblock rsvp_content%}

@@ -1,10 +1,61 @@
 {% extends "rsvp/rsvp_base.html" %}
 
 {% block rsvp_content %}
+<div class="row">
+    <h2 class="col">
+        Please confirm that everything looks right!
+    </h2>
+</div>
+<div class="row">
+    <h4 class="col">
+        You have indicated that you will
+        {% if not data.attending %}
+            not
+        {% endif %}
+        be joining us
+    </h4>
+</div>
+{% if data.attending %}
+    <div class="row">
+        <div class="col">
+            People attending:<br>
+            {% for attendee in data.attendees %}
+                {{ attendee }}<br>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Contact Email: {{ data.email }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Lodging: {{ data.lodging }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Dietary Restrictions:
+            {% if data.diet %}
+                {{ data.diet }}
+            {% else %}
+                None
+            {% endif %}
+        </div>
+    </div>
+{% endif %}
 <form action="{{ url_for('rsvp.review') }}" method="post">
-{{ form.hidden_tag() }}
-<p>Please confirm the information below:</p>
-{{ data }}<br />
-{{ form.submit() }}
+    {{ form.hidden_tag() }}
+    <div class="row">
+        <div class="col input-field">
+            <button class="btn" type="submit" name="action">Looks good</button>
+        </div>
+    </div>
 </form>
+<div class="row">
+        <h4 class="col">
+            If something doesn't look right, just hit the back button on your browser and fix it!
+        </h4>
+    </div>
 {% endblock rsvp_content%}
