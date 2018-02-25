@@ -35,7 +35,7 @@
 				{% for msg in msgs %}
 					toast += '{{ msg }}<br>';
 				{% endfor %}
-				toast = toast.slice(0,-4) + '</span>';
+				toast += '<a href="mailto:billygandbetsyc@gmail.com" target="_blank">Email us</a> if you need any help!</span>';
 				Materialize.toast($(toast), 10000);
 			})
 		</script>

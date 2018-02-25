@@ -29,6 +29,7 @@ class DetailsForm(FlaskForm):
     lodging = StringField(validators=[InputRequired()])
     diet = StringField()
     songs = FieldList(StringField(), min_entries=1, max_entries=3)
+    extras = SelectMultipleField(widget=TableWidget(), option_widget=CheckboxInput())
     submit = SubmitField('Submit')
 
 class SubmitForm(FlaskForm):

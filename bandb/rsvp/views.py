@@ -27,7 +27,7 @@ def main():
         session['attendees'] = data['people']
     else:
         session['attending'] = False
-    flash('Welcome back, your RSVP is below')
+    flash('Welcome back, your RSVP is shown')
     return redirect(url_for('.summary'))
 
 @rsvp.route('/verify', methods=['GET', 'POST'])
@@ -43,6 +43,7 @@ def verify():
             session['people'] = (data['people'] if isinstance(data['people'], list) else [data['people']])
             session['addressee'] = data['addressee']
             session['guest'] = data['guest']
+            session['rehearsal'] = data['rehearsal']
             print(session)
             flash('Thanks for verifying your invitation')
             return redirect(url_for('.main'))
@@ -74,6 +75,7 @@ def reset():
         session['people'] = (data['people'] if isinstance(data['people'], list) else [data['people']])
         session['addressee'] = data['addressee']
         session['guest'] = data['guest']
+        session['rehearsal'] = data['rehearsal']
         print(session)
     flash('Session reset')
     return redirect(url_for('.main'))
@@ -89,7 +91,7 @@ def response():
         print(form.data)
         session['attending'] = bool(form.attending.data)
         if (not session['attending']):
-            flash('We\'re sorry you can\'t make it.  Please confirm your RSVP.')
+            flash('We\'re sorry you can\'t make it!  Please confirm your RSVP.')
             return redirect(url_for('.review'))
         flash('We\'re thrilled you can make it!  Please provide some more details.')
         return redirect(url_for('.details'))
@@ -117,6 +119,10 @@ def details():
             form.guest.data = form.guest.default
     else:
         del form.guest
+    form.extras.choices = [('nats', 'Nationals vs Rockies - Thurs, 7:05pm'), ('5k', 'Crystal City 5k - Fri, 6:30pm')]
+    if (session['rehearsal']):
+        form.extras.choices.append(('rehearsal', 'Rehearsal Dinner - Fri, 7:30pm'))
+    form.extras.choices.append(('brunch', 'Brunch - Sun, morning'))
     if (form.validate_on_submit()):
         print(form.data)
         session['attendees'] = [session['people'][idx] for idx in form.attendees.data if idx < 99]
@@ -131,6 +137,8 @@ def details():
             session['diet'] = form.diet.data.strip()
         if (form.songs.data):
             session['songs'] = [song.strip() for song in form.songs.data if song.strip()]
+        if (form.extras.data):
+            session['extras'] = [extra for extra in form.extras.data if extra]
         flash('Thanks for providing us some info!  Please confirm your RSVP')
         return redirect(url_for('.review'))
     elif (form.errors):
@@ -147,6 +155,8 @@ def details():
                 flash('Verify you\'re dietary information')
             if ('songs' in form.errors):
                 flash('Verify you\'re song entries')
+            if ('extras' in form.errors):
+                flash('Verify you\'re selelction of other activities')
             if ('csrf_token' in form.errors):
                 flash('Something went wrong, please try again')
         errors = form.errors
@@ -169,13 +179,14 @@ def review():
                                          session['email'] if 'email' in session else None,
                                          session['lodging'] if 'lodging' in session else None,
                                          session['songs'] if 'songs' in session else None,
-                                         session['diet'] if 'diet' in session else None)
+                                         session['diet'] if 'diet' in session else None,
+                                         session['extras'] if 'extras' in session else None)
         flash('RSVP Saved')
         return redirect(url_for('.summary'))
     elif (form.errors):
         if ('csrf_token' in form.errors):
             flash('Something went wrong, please try again')
-    data = {key: session[key] for key in ['addressee', 'attending', 'attendees', 'email', 'lodging', 'diet', 'songs'] if key in session}
+    data = {key: session[key] for key in ['addressee', 'attending', 'attendees', 'email', 'lodging', 'diet', 'songs', 'extras'] if key in session}
     return render_template('rsvp/pages/review.html', data=data, form=form)
 
 @rsvp.route('/summary')

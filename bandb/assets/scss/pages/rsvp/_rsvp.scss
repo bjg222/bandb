@@ -46,7 +46,7 @@
             a {
                 font-size: 1.5em;
             }
-            .attendees > .col {
+            .checkboxes > .col {
                 flex-grow: 0;
                 .col {
                     @include align(left);

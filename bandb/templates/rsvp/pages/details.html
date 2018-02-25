@@ -53,7 +53,7 @@ $(document).ready(function() {
 			Who will be there?
 		</h4>
 	</div>
-	<div class="row attendees">
+	<div class="row checkboxes">
 		<div class="col">
 			{% for subfield in form.attendees %}
 				<div class="row">
@@ -142,6 +142,23 @@ $(document).ready(function() {
 	<div class="row" id="songs-add">
 		<div class="col">
 			<a href='#' id="songs-add-link">Add a Song</a>
+		</div>
+	</div>
+	<div class="row">
+		<h4 class="col">
+			Are you interested in joining us for some the other fun activities we're planning?
+		</h4>
+	</div>
+	<div class="row checkboxes">
+		<div class="col">
+			{% for subfield in form.extras %}
+				<div class="row">
+					<div class="col">
+						{{ subfield() }}
+						<label for="{{ subfield.id }}">{{ subfield.label.text }}</label>
+					</div>
+				</div>
+			{% endfor %}
 		</div>
 	</div>
     <div class="row">

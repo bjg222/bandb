@@ -70,13 +70,13 @@ class RsvpSheet(Client):
 #     _types = {}
 
     _data_sheet = 'Data'
-    _data_range = col_range('A', 'I')
+    _data_range = col_range('A', 'J')
     _data_id_col = 'A'
     _data_code_col = 'B'
     _data_last_name = 'last_names'
 
     _response_sheet = 'RSVP'
-    _response_range = col_range('A', 'I')
+    _response_range = col_range('A', 'J')
     _response_id_col = 'A'
 
     def __init__(self):
@@ -184,7 +184,7 @@ class RsvpSheet(Client):
         data = self._format_data(self._get_values(row(rownum, self._response_sheet)), self._response_sheet)[0]
         return data
 
-    def save_rsvp(self, rsvp_id, addressee, people=None, guest=False, email=None, lodging=None, songs=None, diet=None):
+    def save_rsvp(self, rsvp_id, addressee, people=None, guest=False, email=None, lodging=None, songs=None, diet=None, extras=None):
         if (guest):
             people[-1] = people[-1] + '(Guest of ' + addressee + ')'
         row = [
@@ -196,7 +196,8 @@ class RsvpSheet(Client):
             email if email else '',
             lodging if lodging else '',
             ';'.join(songs) if songs else '',
-            diet if diet else ''
+            diet if diet else '',
+            ';'.join(extras) if extras else ''
         ]
         return self._append_values([row], self._response_sheet)
 

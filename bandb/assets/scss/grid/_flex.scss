@@ -1,12 +1,12 @@
 $denominators: (
-    1: "full", 
-    2: "half", 
-    3: "third", 
-    4: "quarter", 
-    5: "fifth", 
+    1: "full",
+    2: "half",
+    3: "third",
+    4: "quarter",
+    5: "fifth",
     6: "sixth",
-    8: "eighth", 
-    10: "tenth", 
+    8: "eighth",
+    10: "tenth",
     12: "twelfth",
     //16: "sixteenth",
     //20: "tewntieth"
@@ -176,12 +176,20 @@ $numerators: (
         // > div:only-child {
         //     height: 100%;
         // }
-        
+
+        &.auto {
+            flex: 1 1 auto;
+        }
+
         @include for-screens-prefixes {
             $p: for-screens-prefixes-pre();
 
             @include fractions($numerators, $denominators, $p);
-                
+
+            &.#{$p}auto {
+                flex: 1 1 auto;
+            }
+
             &.#{$p}self {
                 &-top {
                     align-self: flex-start;

@@ -10,7 +10,7 @@
     </div>
     <div class="row">
         {% for subfield in form.attending %}
-            <div class="col">
+            <div class="col xs-full s-auto">
                 {{ subfield(class_="with-gap") }}
                 <label for="{{ subfield.id }}">{{ subfield.label.text }}</label>
             </div>

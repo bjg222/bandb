@@ -3161,6 +3161,9 @@ a.xs-visible, abbr.xs-visible, acronym.xs-visible, audio.xs-visible, b.xs-visibl
   margin: 0;
   padding: 0.5rem 0 0 1.5rem;
 }
+.row .col.auto {
+  flex: 1 1 auto;
+}
 .row .col.full {
   flex: 0 0 100%;
 }
@@ -3232,6 +3235,9 @@ a.xs-visible, abbr.xs-visible, acronym.xs-visible, audio.xs-visible, b.xs-visibl
 }
 .row .col.eleven-twelfths {
   flex: 0 0 91.66667%;
+}
+.row .col.auto {
+  flex: 1 1 auto;
 }
 .row .col.self-top {
   align-self: flex-start;
@@ -3330,6 +3336,9 @@ a.xs-visible, abbr.xs-visible, acronym.xs-visible, audio.xs-visible, b.xs-visibl
 .row .col.xs-eleven-twelfths {
   flex: 0 0 91.66667%;
 }
+.row .col.xs-auto {
+  flex: 1 1 auto;
+}
 .row .col.xs-self-top {
   align-self: flex-start;
 }
@@ -3427,6 +3436,9 @@ a.xs-visible, abbr.xs-visible, acronym.xs-visible, audio.xs-visible, b.xs-visibl
   }
   .row .col.s-eleven-twelfths {
     flex: 0 0 91.66667%;
+  }
+  .row .col.s-auto {
+    flex: 1 1 auto;
   }
   .row .col.s-self-top {
     align-self: flex-start;
@@ -3527,6 +3539,9 @@ a.xs-visible, abbr.xs-visible, acronym.xs-visible, audio.xs-visible, b.xs-visibl
   .row .col.m-eleven-twelfths {
     flex: 0 0 91.66667%;
   }
+  .row .col.m-auto {
+    flex: 1 1 auto;
+  }
   .row .col.m-self-top {
     align-self: flex-start;
   }
@@ -3625,6 +3640,9 @@ a.xs-visible, abbr.xs-visible, acronym.xs-visible, audio.xs-visible, b.xs-visibl
   }
   .row .col.l-eleven-twelfths {
     flex: 0 0 91.66667%;
+  }
+  .row .col.l-auto {
+    flex: 1 1 auto;
   }
   .row .col.l-self-top {
     align-self: flex-start;
@@ -3725,6 +3743,9 @@ a.xs-visible, abbr.xs-visible, acronym.xs-visible, audio.xs-visible, b.xs-visibl
   .row .col.xl-eleven-twelfths {
     flex: 0 0 91.66667%;
   }
+  .row .col.xl-auto {
+    flex: 1 1 auto;
+  }
   .row .col.xl-self-top {
     align-self: flex-start;
   }
@@ -3823,6 +3844,9 @@ a.xs-visible, abbr.xs-visible, acronym.xs-visible, audio.xs-visible, b.xs-visibl
   }
   .row .col.xxl-eleven-twelfths {
     flex: 0 0 91.66667%;
+  }
+  .row .col.xxl-auto {
+    flex: 1 1 auto;
   }
   .row .col.xxl-self-top {
     align-self: flex-start;
@@ -7183,10 +7207,10 @@ button.btn-floating {
 #rsvp .section.rsvp form a {
   font-size: 1.5em;
 }
-#rsvp .section.rsvp form .attendees > .col {
+#rsvp .section.rsvp form .checkboxes > .col {
   flex-grow: 0;
 }
-#rsvp .section.rsvp form .attendees > .col .col {
+#rsvp .section.rsvp form .checkboxes > .col .col {
   text-align: left;
 }
 
