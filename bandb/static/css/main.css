@@ -3905,7 +3905,7 @@ html, body {
   transition: transform 1s;
 }
 
-.group-panel > .background, .group-divider > .window, #index #group-hero-image #us, #rsvp #group-hero-image #us, .group-divider > .background, #index #group-hero-image #trees, #index #group-hero-image #moon, #index #group-hero-image #title, #rsvp #group-hero-image #plane, #rsvp #group-hero-image #sky, #rsvp #group-hero-image #title {
+.group-panel > .background, .group-divider > .window, #index #group-hero-image #us, #rsvp #group-hero-image #us, .group-divider > .background, #index #group-hero-image #trees, #index #group-hero-image #moon, #index #group-hero-image #title, #rsvp #group-hero-image #ground, #rsvp #group-hero-image #plane, #rsvp #group-hero-image #sky, #rsvp #group-hero-image #title {
   position: absolute;
   top: 0;
   left: 0;
@@ -7169,20 +7169,39 @@ button.btn-floating {
 
 #rsvp #group-hero-image #us {
   height: 100vh;
+  background-image: url(/static/img/rsvp/hero/rsvp-us.png);
+  background-size: auto 70%;
+}
+#rsvp #group-hero-image #ground {
+  transform: translateZ(-125px) scale(1.41667);
+  background-image: url(/static/img/rsvp/hero/rsvp-ground.png);
+  background-position: bottom center;
+  background-size: 100% auto;
+  bottom: -15vh;
 }
 #rsvp #group-hero-image #plane {
-  transform: translateZ(-300px) scale(2);
+  transform: translateZ(-50px) scale(1.16667);
+  background-image: url(/static/img/rsvp/hero/rsvp-plane.png);
+  background-position: top left;
+  background-size: auto 30%;
+  left: 30vw;
+  top: 40vh;
 }
 #rsvp #group-hero-image #sky {
   transform: translateZ(-400px) scale(2.33333);
+  background-image: url(/static/img/rsvp/hero/rsvp-sky.png);
+  background-size: cover;
+  background-position: top center;
+  left: -0.5vw;
+  top: -5vh;
 }
 #rsvp #group-hero-image #title {
-  transform: translateZ(-125px) scale(1.41667);
+  transform: translateZ(-100px) scale(1.33333);
 }
 #rsvp #group-hero-image #title > div {
   margin: 0 auto;
   padding-top: 130px;
-  color: ivory;
+  color: rgba(0, 0, 0, 0.87);
   font-size: 3em;
   text-align: center;
   display: table;

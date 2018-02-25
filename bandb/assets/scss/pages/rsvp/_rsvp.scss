@@ -5,19 +5,38 @@
         #us {
             @extend %plx-base;
             height: 100vh;
+            background-image: url(/static/img/rsvp/hero/rsvp-us.png);
+            background-size: auto 70%;
+        }
+        #ground {
+            @include make-plx-layer(-125px);
+            background-image: url(/static/img/rsvp/hero/rsvp-ground.png);
+            background-position: bottom center;
+            background-size: 100% auto;
+            bottom: -15vh;
         }
         #plane {
-            @include make-plx-layer(-300px);
+            @include make-plx-layer(-50px);
+            background-image: url(/static/img/rsvp/hero/rsvp-plane.png);
+            background-position: top left;
+            background-size: auto 30%;
+            left: 30vw;
+            top: 40vh;
         }
         #sky {
             @include make-plx-layer(-400px);
+            background-image: url(/static/img/rsvp/hero/rsvp-sky.png);
+            background-size: cover;
+            background-position: top center;
+            left: -0.5vw;
+            top: -5vh;
         }
         #title {
-            @include make-plx-layer(-125px);
+            @include make-plx-layer(-100px);
             > div {
                 margin: 0 auto;
                 padding-top: 130px;
-                color: ivory;
+                color: $on-light-text-color;
                 font-size: 3em;
                 text-align: center;
                 display: table;

@@ -13,6 +13,10 @@ def get_rsvp_sheet():
     return s
 
 @rsvp.route('/')
+def index():
+    return render_template('rsvp/pages/landing.html', showhero=True)
+
+@rsvp.route('/main')
 def main():
     if ('rsvp_id' not in session):
         flash('Welcome, please verify your invitation')

@@ -1,0 +1,17 @@
+{% extends "rsvp/rsvp_base.html" %}
+
+{% block rsvp_content %}
+<div class="row">
+    <h2 class="col">
+        <a href="{{ url_for('rsvp.main') }}">
+            Click here to let us know if you can join us!
+        </a>
+    </h2>
+</div>
+<div class="row">
+    <div class="col">
+        And by the way, hold your thumb over the stamp on your
+        invitation to warm it up and see what's blocking the sun!
+    </div>
+</div>
+{% endblock %}
