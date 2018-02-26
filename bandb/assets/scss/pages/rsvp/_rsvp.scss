@@ -25,7 +25,7 @@
             background-position: bottom center;
             background-size: 100% auto;
             @include and-down(s) {
-                bottom: -4vh;
+                bottom: -2vh;
             }
             @include only(m) {
                 bottom: -7vh;

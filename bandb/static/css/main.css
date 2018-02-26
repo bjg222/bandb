@@ -7199,7 +7199,7 @@ button.btn-floating {
 }
 @media screen and (max-width: 600px) {
   #rsvp #group-hero-image #ground {
-    bottom: -4vh;
+    bottom: -2vh;
   }
 }
 @media screen and (min-width: 601px) and (max-width: 900px) {
