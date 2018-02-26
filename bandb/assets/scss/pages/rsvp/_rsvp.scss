@@ -6,22 +6,57 @@
             @extend %plx-base;
             height: 100vh;
             background-image: url(/static/img/rsvp/hero/rsvp-us.png);
-            background-size: auto 70%;
+            @include and-down(s) {
+                background-size: auto 50%;
+            }
+            @include only(m) {
+                background-size: auto 60%;
+            }
+            @include and-up(l) {
+                background-size: auto 65%;
+            }
+            @include and-up(xl) {
+                background-size: auto 70%;
+            }
         }
         #ground {
             @include make-plx-layer(-125px);
             background-image: url(/static/img/rsvp/hero/rsvp-ground.png);
             background-position: bottom center;
             background-size: 100% auto;
-            bottom: -15vh;
+            @include and-down(s) {
+                bottom: -4vh;
+            }
+            @include only(m) {
+                bottom: -7vh;
+            }
+            @include and-up(l) {
+                bottom: -15vh;
+            }
         }
         #plane {
             @include make-plx-layer(-50px);
             background-image: url(/static/img/rsvp/hero/rsvp-plane.png);
             background-position: top left;
-            background-size: auto 30%;
-            left: 30vw;
-            top: 40vh;
+            @include and-down(s) {
+                background-size: auto 15%;
+                left: 15vw;
+                top: 40vh;
+            }
+            @include only(m) {
+                background-size: auto 22%;
+                left: 20vw;
+                top: 40vh;
+            }
+            @include and-up(l) {
+                background-size: auto 30%;
+                left: 24vw;
+                top: 40vh;
+            }
+            @include and-up(xl) {
+                left: 28vw;
+                top: 40vh;
+            }
         }
         #sky {
             @include make-plx-layer(-400px);

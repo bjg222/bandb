@@ -7170,22 +7170,79 @@ button.btn-floating {
 #rsvp #group-hero-image #us {
   height: 100vh;
   background-image: url(/static/img/rsvp/hero/rsvp-us.png);
-  background-size: auto 70%;
+}
+@media screen and (max-width: 600px) {
+  #rsvp #group-hero-image #us {
+    background-size: auto 50%;
+  }
+}
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  #rsvp #group-hero-image #us {
+    background-size: auto 60%;
+  }
+}
+@media screen and (min-width: 901px) {
+  #rsvp #group-hero-image #us {
+    background-size: auto 65%;
+  }
+}
+@media screen and (min-width: 1201px) {
+  #rsvp #group-hero-image #us {
+    background-size: auto 70%;
+  }
 }
 #rsvp #group-hero-image #ground {
   transform: translateZ(-125px) scale(1.41667);
   background-image: url(/static/img/rsvp/hero/rsvp-ground.png);
   background-position: bottom center;
   background-size: 100% auto;
-  bottom: -15vh;
+}
+@media screen and (max-width: 600px) {
+  #rsvp #group-hero-image #ground {
+    bottom: -4vh;
+  }
+}
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  #rsvp #group-hero-image #ground {
+    bottom: -7vh;
+  }
+}
+@media screen and (min-width: 901px) {
+  #rsvp #group-hero-image #ground {
+    bottom: -15vh;
+  }
 }
 #rsvp #group-hero-image #plane {
   transform: translateZ(-50px) scale(1.16667);
   background-image: url(/static/img/rsvp/hero/rsvp-plane.png);
   background-position: top left;
-  background-size: auto 30%;
-  left: 30vw;
-  top: 40vh;
+}
+@media screen and (max-width: 600px) {
+  #rsvp #group-hero-image #plane {
+    background-size: auto 15%;
+    left: 15vw;
+    top: 40vh;
+  }
+}
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  #rsvp #group-hero-image #plane {
+    background-size: auto 22%;
+    left: 20vw;
+    top: 40vh;
+  }
+}
+@media screen and (min-width: 901px) {
+  #rsvp #group-hero-image #plane {
+    background-size: auto 30%;
+    left: 24vw;
+    top: 40vh;
+  }
+}
+@media screen and (min-width: 1201px) {
+  #rsvp #group-hero-image #plane {
+    left: 28vw;
+    top: 40vh;
+  }
 }
 #rsvp #group-hero-image #sky {
   transform: translateZ(-400px) scale(2.33333);
