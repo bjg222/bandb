@@ -2611,10 +2611,10 @@ a.xs-visible, abbr.xs-visible, acronym.xs-visible, audio.xs-visible, b.xs-visibl
 .row.no-row-gap .col, .row.no-gaps .col {
   padding-top: 0;
 }
-.row.no-col-gap, .row.no-gaps {
+.row.no-col-gap, .row.no-gaps, #hotel .section .row.as-col {
   margin-left: 0;
 }
-.row.no-col-gap .col, .row.no-gaps .col {
+.row.no-col-gap .col, .row.no-gaps .col, #hotel .section .row.as-col .col {
   padding-left: 0;
 }
 .row.no-gutter {
@@ -2663,7 +2663,7 @@ a.xs-visible, abbr.xs-visible, acronym.xs-visible, audio.xs-visible, b.xs-visibl
 .row.items-top {
   align-items: flex-start;
 }
-.row.items-middle {
+.row.items-middle, #hotel .section .row.as-col {
   align-items: center;
 }
 .row.items-bottom {
@@ -4222,6 +4222,9 @@ td, th {
 }
 .align-center {
   text-align: center;
+}
+.align-justify {
+  text-align: justify;
 }
 
 .valign-top {
@@ -7183,6 +7186,34 @@ button.btn-floating {
   justify-content: center;
   min-width: 200px;
   max-width: 300px;
+}
+
+#hotel {
+  	/*#group-hero-image {
+  
+      }*/
+}
+#hotel .section img {
+  width: 100%;
+}
+#hotel .section h1, #hotel .section h2, #hotel .section h3, #hotel .section h4, #hotel .section h5, #hotel .section .signature, #hotel .section h6 {
+  text-align: center;
+}
+#hotel .section .as-col .col {
+  text-align: center;
+}
+#hotel .section.intro div.col {
+  display: flex;
+  align-items: center;
+}
+#hotel .section.contact .container .row:last-child {
+  margin-top: 1em;
+}
+#hotel .section.contact .problems {
+  max-width: 350px;
+}
+#hotel .section.contact .instructions {
+  max-width: 470px;
 }
 
 #rsvp #group-hero-image #us {

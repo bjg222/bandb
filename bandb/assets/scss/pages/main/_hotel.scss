@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+#hotel {
+	/*#group-hero-image {
+
+    }*/
+
+    .section {
+        img {
+            width: 100%;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            @include align(center);
+        }
+        .as-col {
+            @extend .items-middle;
+            @extend .no-col-gap;
+            .col {
+                @include align(center);
+            }
+        }
+        &.intro {
+            div.col {
+                @include valign(middle);
+            }
+        }
+        &.contact {
+            .container .row:last-child {
+                margin-top: 1em;
+            }
+            .problems {
+                max-width: 350px;
+            }
+            .instructions {
+                max-width: 470px;
+            }
+        }
+    }
+}

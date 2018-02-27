@@ -45,6 +45,9 @@
     &-center {
         @include align(center);
     }
+    &-justify {
+        @include align(justify);
+    }
 }
 
 @mixin valign($pos) {

@@ -1,10 +1,12 @@
 {% extends "main/main_base.html" %}
 
 {% set page_sections = [
-	{'page': 'main/panels/more.html', 				'divider_after': false,		'dev_only': false}] %}
+	{'page': 'main/panels/hotelintro.html', 				'divider_after': false,		'dev_only': false},
+	{'page': 'main/panels/hoteldetails.html', 				'divider_after': false,		'dev_only': false},
+	{'page': 'main/panels/hotelcontact.html', 				'divider_after': false,		'dev_only': false}] %}
 
 {% block page_id %}hotel{% endblock %}
 
 {% block plx_hero_image %}
-{% include "main/heros/hotel.html" %}
+{# include "main/heros/hotel.html" #}
 {% endblock %}
