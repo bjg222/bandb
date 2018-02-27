@@ -5,34 +5,35 @@
 	  #us {
 	    @extend %plx-base;
 	    height: 100vh;
-	    background-image: url(/static/img/main/index/us.png);
+	    background-image: url(/static/img/main/index/hero/index-us.png);
 	    background-size: auto 40%;
 	  }
 	  #trees {
-	    @include make-plx-layer(-200px);
-	    background-image: url(/static/img/main/index/trees.png);
+	    @include make-plx-layer(-250px);
+	    background-image: url(/static/img/main/index/hero/index-trees.png);
 	    background-size: cover;
-	    background-position: top center;
-	    left: -0.5vw;
-	    top: -10vh;
+		background-position: top center;
+		left: -2vw;
 	  }
-	  #moon {
-	    @include make-plx-layer(-300px);
-	    background-image: url(/static/img/main/index/moon.png);
-	    background-size: auto 40%;
-	    background-position: top center;
-	    left: 7vw;
-	    top: -22vh
+	  #sky {
+	    @include make-plx-layer(-350px);
+	    background-image: url(/static/img/main/index/hero/index-sky.png);
+	    background-size: cover;
+		background-position: top center;
+		left: -2vw;
 	  }
 	  #title {
 	    @include make-plx-layer(-125px);
 	    > div {
 	      margin: 0 auto;
-	      padding-top: 130px;
+	      padding-top: 10vh;
 	      color: ivory;
 	      font-size: 3em;
 	      text-align: center;
-	      display: table;
+		  display: table;
+		  @include and-down(s) {
+			  font-size: 1.8em;
+		  }
           h1 {
           	@extend .elegant;
           	line-height: 1;
@@ -42,11 +43,22 @@
             &#billy {
               padding-right: 2.5em;
               @include big-first-letter;
+			  @include and-down(s) {
+				  padding-right: 1em;
+			  }
             }
             &#betsy {
               padding-left: 2.5em;
               @include big-first-letter;
-            }
+			  @include and-down(s) {
+				  padding-left: 1em;
+			  }
+			}
+			@include and-down(s) {
+				&#and {
+					line-height: 1.2;
+				}
+			}
           }
 	    }
 	  }

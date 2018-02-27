@@ -3905,7 +3905,7 @@ html, body {
   transition: transform 1s;
 }
 
-.group-panel > .background, .group-divider > .window, #index #group-hero-image #us, #rsvp #group-hero-image #us, .group-divider > .background, #index #group-hero-image #trees, #index #group-hero-image #moon, #index #group-hero-image #title, #rsvp #group-hero-image #ground, #rsvp #group-hero-image #plane, #rsvp #group-hero-image #sky, #rsvp #group-hero-image #title {
+.group-panel > .background, .group-divider > .window, #index #group-hero-image #us, #rsvp #group-hero-image #us, .group-divider > .background, #index #group-hero-image #trees, #index #group-hero-image #sky, #index #group-hero-image #title, #rsvp #group-hero-image #ground, #rsvp #group-hero-image #plane, #rsvp #group-hero-image #sky, #rsvp #group-hero-image #title {
   position: absolute;
   top: 0;
   left: 0;
@@ -6723,35 +6723,38 @@ button.btn-floating {
 
 #index #group-hero-image #us {
   height: 100vh;
-  background-image: url(/static/img/main/index/us.png);
+  background-image: url(/static/img/main/index/hero/index-us.png);
   background-size: auto 40%;
 }
 #index #group-hero-image #trees {
-  transform: translateZ(-200px) scale(1.66667);
-  background-image: url(/static/img/main/index/trees.png);
+  transform: translateZ(-250px) scale(1.83333);
+  background-image: url(/static/img/main/index/hero/index-trees.png);
   background-size: cover;
   background-position: top center;
-  left: -0.5vw;
-  top: -10vh;
+  left: -2vw;
 }
-#index #group-hero-image #moon {
-  transform: translateZ(-300px) scale(2);
-  background-image: url(/static/img/main/index/moon.png);
-  background-size: auto 40%;
+#index #group-hero-image #sky {
+  transform: translateZ(-350px) scale(2.16667);
+  background-image: url(/static/img/main/index/hero/index-sky.png);
+  background-size: cover;
   background-position: top center;
-  left: 7vw;
-  top: -22vh;
+  left: -2vw;
 }
 #index #group-hero-image #title {
   transform: translateZ(-125px) scale(1.41667);
 }
 #index #group-hero-image #title > div {
   margin: 0 auto;
-  padding-top: 130px;
+  padding-top: 10vh;
   color: ivory;
   font-size: 3em;
   text-align: center;
   display: table;
+}
+@media screen and (max-width: 600px) {
+  #index #group-hero-image #title > div {
+    font-size: 1.8em;
+  }
 }
 #index #group-hero-image #title > div h1 {
   line-height: 1;
@@ -6765,11 +6768,26 @@ button.btn-floating {
 #index #group-hero-image #title > div h1#billy::first-letter {
   font-size: 1.5em;
 }
+@media screen and (max-width: 600px) {
+  #index #group-hero-image #title > div h1#billy {
+    padding-right: 1em;
+  }
+}
 #index #group-hero-image #title > div h1#betsy {
   padding-left: 2.5em;
 }
 #index #group-hero-image #title > div h1#betsy::first-letter {
   font-size: 1.5em;
+}
+@media screen and (max-width: 600px) {
+  #index #group-hero-image #title > div h1#betsy {
+    padding-left: 1em;
+  }
+}
+@media screen and (max-width: 600px) {
+  #index #group-hero-image #title > div h1#and {
+    line-height: 1.2;
+  }
 }
 #index .group-divider > .background {
   background-image: url(http://www.storywarren.com/wp-content/uploads/2016/09/space-1.jpg);
