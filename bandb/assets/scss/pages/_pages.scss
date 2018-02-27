@@ -14,6 +14,16 @@
     @extend h5, .elegant;
 }
 
+@mixin dividers($imgs) {
+    .group-divider {
+        @each $idx, $div in $imgs {
+		    &:nth-of-type(#{$idx}) > .background {
+			    background-image: url(/static/img/dividers/divider-#{$div}.jpg);
+            }
+        }
+    }
+}
+
 @import "main/index";
 @import "main/hotel";
 @import "rsvp/rsvp";

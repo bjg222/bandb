@@ -63,10 +63,8 @@
 	    }
 	  }
 	}
-	
-	.group-divider > .background {
-	    background-image: url(http://www.storywarren.com/wp-content/uploads/2016/09/space-1.jpg);
-	}
+
+	@include dividers((4: 26, 8: 15, 98: 32));
 
 	.section.save-the-date {
 		@extend .full-height;

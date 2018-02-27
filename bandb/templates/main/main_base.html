@@ -3,13 +3,10 @@
 {% block page_id %}main{% endblock %}
 
 {% block plx_content %}
-<!-- sections: {{sections}} -->
 {% if not sections %}
 	{% set sections = page_sections %}
 {% endif %}
-<!-- sections: {{sections}} -->
 {% for sect in sections %}
-	<!-- sect: {{sect}} -->
 	{% if dev or not sect.dev_only %}
 		<div class="group-panel">
 			{% include sect.page %}

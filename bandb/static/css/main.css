@@ -6792,8 +6792,14 @@ button.btn-floating {
     line-height: 1.2;
   }
 }
-#index .group-divider > .background {
-  background-image: url(http://www.storywarren.com/wp-content/uploads/2016/09/space-1.jpg);
+#index .group-divider:nth-of-type(4) > .background {
+  background-image: url(/static/img/dividers/divider-26.jpg);
+}
+#index .group-divider:nth-of-type(8) > .background {
+  background-image: url(/static/img/dividers/divider-15.jpg);
+}
+#index .group-divider:nth-of-type(98) > .background {
+  background-image: url(/static/img/dividers/divider-32.jpg);
 }
 #index .section.save-the-date {
   display: flex;
