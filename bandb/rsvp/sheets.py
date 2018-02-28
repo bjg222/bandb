@@ -127,8 +127,9 @@ class RsvpSheet(Client):
 
     def _format_data(self, data, sheet):
         if (sheet not in self._headers):
-            headers = self._get_values(cells(sheet=sheet, start=1, end=2))
-            self._headers[sheet] = [re.sub('[^0-9a-zA-Z]+', '_', normalize(s.strip())) for s in headers[0]]
+            headers = self._get_values(cells(sheet=sheet, start='A1', end=1))
+            print(headers)
+            self._headers[sheet] = [re.sub('[^0-9a-zA-Z]+', '_', normalize(str(s).strip())) for s in headers[0]]
         return [dict(itertools.zip_longest(self._headers[sheet], [self._clean(d) for d in r])) for r in data]
 
     def _clean(self, data):
