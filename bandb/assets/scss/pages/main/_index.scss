@@ -64,7 +64,7 @@
 	  }
 	}
 
-	@include dividers((4: 26, 8: 15, 98: 32));
+	@include dividers((4: 26, 7: 15, 9: 32, 13: 38));
 
 	.section.save-the-date {
 		@extend .full-height;
@@ -222,10 +222,10 @@
 					min-width: for-screens-value();
 				}
 				max-width: 500px;
-				&:nth-child(even) {
+				&:nth-child(odd) {
 					@extend .s-left-img;
 				}
-				&:nth-child(odd) {
+				&:nth-child(even) {
 					@extend .s-right-img;
 				}
 			}
@@ -242,7 +242,8 @@
 					min-width: for-screens-value();
 				}
 				img, .img {
-					max-width: 300px;
+					width: 50%;
+					max-width: 400px;
 				}
 			}
 			.row:nth-child(even) .chapter {

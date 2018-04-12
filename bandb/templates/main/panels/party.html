@@ -2,7 +2,7 @@
 
 {% macro person(name, side, image) %}
 	<div class="col person xs-full m-half xl-third">
-		<img src="../static/img/{{ image }}.jpg" />
+		<img src="../static/img/main/index/{{ image }}.jpg" />
 		<h4 class="name">{{name}}</h4>
 		<h6>{{side}}'s Side</h6>
 		{{ caller() }}
@@ -15,56 +15,69 @@
 			<div class="row no-gaps">
 				<h1 class="col">The Flight Crew</h1>
 			</div>
+			<div class="row ">
+				<h5 class="col">(Yes, there are 3 Jen's in the wedding party!)</h5>
+			</div>
+			<div class="row"><div class="col"></div></div>
 			<div class="row items-space-around">
-				{% call person('Tanner', 'Billy', 'man') %}
+				{% call person('Tanner', 'Billy', 'tanner') %}
 					<p>Tanner and I lived across the hall from each other freshman year at Notre Dame. We quickly became great friends,
 						and were roommates the following three years. We've got many great stories, and he is ever asking for a pony!
-						Now he's a doctor in Pittsburgh finding a cure for cancer (and a way to build a spaceship out of proteins).</p>
+						Now he's a doctor in Pittsburgh finding a cure for cancer (and a way to build a spaceship out of proteins).
+					</p>
 				{% endcall %}
-				{% call person('David', 'Betsy', 'man') %}
-					<p>kinda of complicated but met in college and have been great friends since
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras diam massa, feugiat dignissim volutpat et, accumsan sit 
-						amet orci. Nam a pharetra arcu. Aenean auctor purus ut nulla ultricies pharetra. Nunc fermentum id mauris ut tincidunt.</p>
+				{% call person('David', 'Betsy', 'david') %}
+					<p>
+							It's kind of complicated, but we met in college and have been great friends ever since! It is hard to believe that we have known each other for almost 14 years now. David and Patrick live not far from us in DC. He is an expert in event planning of all kinds: classy parties, receiving lines, and ridiculous Halloween Parties. And If you ever run a half marathon, he'll be happy to feed you amazing food after you finish!
+					</p>
 				{% endcall %}
-				{% call person('Deny', 'Billy', 'man') %}
-					<p>My younger brother and I have always been very close! We've shared our love of many things, like soccer and 
+				{% call person('Deny', 'Billy', 'deny') %}
+					<p>
+						My younger brother and I have always been very close! We've shared our love of many things, like soccer and 
 						Seinfield, and he's taught me how to be more outgoing! He also spent four years in the midwest, at Marquette 
-						Univeristy in Milwaukee, and now works in New York City making awesome radio programs and podcasts.</p>
+						Univeristy in Milwaukee, and now works in New York City making awesome radio programs and podcasts.
+					</p>
 				{% endcall %}
-				{% call person('Jen G', 'Betsy', 'woman') %}
-					<p>met originally through Patrick, spent the last almost decade living it up in DC, now our neighbor
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras diam massa, feugiat dignissim volutpat et, accumsan sit 
-						amet orci. Nam a pharetra arcu. Aenean auctor purus ut nulla ultricies pharetra. Nunc fermentum id mauris ut tincidunt.</p>
+				{% call person('Jen G', 'Betsy', 'jeng') %}
+					<p>
+							We met originally through Patrick, and spent the last decade living it up in DC. Jen is now our neighbor, just a block away from us, which is perfect for grabbing dinner or enjoying Nutella bombs from The Pretzel Bakery together. Jen and I also love going to Caps and Nats games together. Jen is also an avid soccer fan, both of the US National teams and the DC United.
+					</p>
 				{% endcall %}
-				{% call person('Jen H', 'Billy', 'woman') %}
-					<p>She may deny it, but Jen is from north Jersey! We met before freshman year at a send off dinner for new Notre 
+				{% call person('Jen H', 'Billy', 'jenh') %}
+					<p>
+						She may deny it, but Jen is from North Jersey! We met before freshman year at a send off dinner for new Notre 
 						Dame students and bonded over marching band. After college, Jen was always happy to answer the phone and provide
-						plenty of advice! Jen works in pediatrics, living in North Carolina with her husband and adorable little daughter.</p>
+						plenty of advice! Jen works in pediatrics, living in North Carolina with her husband and adorable little daughter.
+					</p>
 				{% endcall %}
-				{% call person('Patrick', 'Betsy', 'man') %}
-					<p>met through David became fast friends (David's husband)
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras diam massa, feugiat dignissim volutpat et, accumsan sit 
-						amet orci. Nam a pharetra arcu. Aenean auctor purus ut nulla ultricies pharetra. Nunc fermentum id mauris ut tincidunt.</p>
+				{% call person('Patrick', 'Betsy', 'patrick') %}
+					<p>
+							We met through David and became fast friends. Since David and Patrick are so close to us in DC, we always are up for dinner or drinks out. Patrick has an amazing sense of humor and excels in improv comedy. He can always be counted on for a good laugh!
+					</p>
 				{% endcall %}
-				{% call person('Jenn T', 'Billy', 'woman') %}
-					<p>A fellow PhD student at Georgia Tech, Jenn was always up for grabbing a drink and complaining about grad school!
+				{% call person('Jenn T', 'Billy', 'jenn') %}
+					<p>
+						A fellow PhD student at Georgia Tech, Jenn was always up for grabbing a drink and complaining about grad school!
 						She's originally from New Jersery, is an excellent pilot who flies helicopters and vintage warbirds, and will 
-						eagerly show you cool features of rock formations! She and Shahin now live in Texas and/or Atlanta.</p>
+						eagerly show you cool features of rock formations, especially from volcanos! She and Shahin live in Atlanta.
+					</p>
 				{% endcall %}
-				{% call person('Simmie', 'Betsy', 'woman') %}
-					<p>met at work, became roommates, still surviving being women engineers together
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras diam massa, feugiat dignissim volutpat et, accumsan sit 
-						amet orci. Nam a pharetra arcu. Aenean auctor purus ut nulla ultricies pharetra. Nunc fermentum id mauris ut tincidunt.</p>
+				{% call person('Simmie', 'Betsy', 'simmie') %}
+					<p>
+							We originally met at APL building spacecraft, and then became roommates when I lived out in the suburbs. Simmie loves to bake: delicious cakes, cookies, and hamentashen. Simmie has many hidden talents and hobbies including Tae Kwon Do, Roller Derby and running races. Ask Simmie about her chocolate chip cookie recipe, they are my favorite!
+					</p>
 				{% endcall %}
-				{% call person('Shahin', 'Billy', 'man') %}
-					<p>Shahin was one of the first people I met when I joined the Yellow Jacket Flying Club at Georgia Tech. We've had
-						lots of great flying adventures, including a couple trips to EAA AirVenture Oshkosh. Though video replay did show
-						he had a head start at the last YJFC Air Rally... After previously working at JSC, he now works for Delta in Atlanta.</p>
+				{% call person('Shahin', 'Billy', 'shahin') %}
+					<p>
+						Shahin was one of the first people I met when I joined the Yellow Jacket Flying Club at Georgia Tech. We've had lots of
+						great flying adventures, including a couple trips to EAA AirVenture Oshkosh. Though video replay showed he had a head
+						start at the YJFC Air Rally... After previously working at JSC, he now works for Delta, and he and Jenn live in Atlanta.
+					</p>
 				{% endcall %}
-				{% call person('Shelby', 'Betsy', 'woman') %}
-					<p>roommate from Stanford, weathered the Toyon plague and Marguerite rides to Target together
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras diam massa, feugiat dignissim volutpat et, accumsan sit 
-						amet orci. Nam a pharetra arcu. Aenean auctor purus ut nulla ultricies pharetra. Nunc fermentum id mauris ut tincidunt.</p>
+				{% call person('Shelby', 'Betsy', 'shelby') %}
+					<p>
+							Shelby was my roommate freshman year at Stanford and we have been friends for over 13 years.  We weathered the Toyon plague and Marguerite rides to Target together. Shelby is a lover of languages and all things biology. After spending some time in Central America and South Korea as a teacher, Shelby is now teaching in New York City, where she and her husband live.
+					</p>
 				{% endcall %}
 			</div>
 		</div>
